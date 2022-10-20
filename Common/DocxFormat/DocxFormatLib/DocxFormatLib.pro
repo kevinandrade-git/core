@@ -22,6 +22,13 @@ DEFINES +=  UNICODE _UNICODE \
 #BOOST
 include($$PWD/../../3dParty/boost/boost.pri)
 
+# Use Precompiled headers (PCH)
+use_pch {
+CONFIG += precompile_header
+PRECOMPILED_HEADER = precompiled_docx.h
+HEADERS += precompiled_docx.h
+}
+
 core_release {
 SOURCES += \
     docxformatlib_logic.cpp
