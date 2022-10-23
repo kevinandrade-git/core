@@ -545,15 +545,15 @@ namespace SimpleTypes
 	class COnOff : public CSimpleType<EOnOff, eDefValue>
 	{
 	public:
-		COnOff() {}
+        COnOff();// {}
 		
-		COnOff(const bool & bVal)
-		{
+        COnOff(const bool & bVal);
+        /*{
 			this->m_eValue = (false != bVal) ? onoffTrue : onoffFalse;
-		}
+        }*/
 
-        virtual EOnOff  FromString(std::wstring &sValue)
-		{
+        virtual EOnOff  FromString(std::wstring &sValue);
+        /*{
             if      ( L"true"  == sValue ) this->m_eValue = onoffTrue;
             else if ( L"True"  == sValue ) this->m_eValue = onoffTrue;
             else if ( L"1"     == sValue ) this->m_eValue = onoffTrue;
@@ -567,9 +567,10 @@ namespace SimpleTypes
             else                              this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
-		virtual EOnOff  FromStringA(const char* sValue)
-		{
+        }*/
+
+        virtual EOnOff  FromStringA(const char* sValue);
+        /*{
 			if		(strcmp("1",		sValue) == 0) this->m_eValue = onoffTrue;
 			else if	(strcmp("0",		sValue) == 0) this->m_eValue = onoffFalse;
 			else if	(strcmp("true",		sValue) == 0) this->m_eValue = onoffTrue;
@@ -583,19 +584,20 @@ namespace SimpleTypes
 			else this->m_eValue = eDefValue;
 
 			return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case onoffFalse : return L"false";
 			case onoffTrue  : return L"true";
 			default         : return L"false";
 			}
-		}
-        std::wstring ToString2(EOnOffToString eType) const
-		{
+        }*/
+
+        std::wstring ToString2(EOnOffToString eType) const;
+        /*{
 			if (onofftostringTrue == eType)
 			{
                 switch (this->m_eValue)
@@ -633,9 +635,10 @@ namespace SimpleTypes
 				}
 			}
 			return L"false";
-		}
-		std::wstring ToString3(EOnOffToString eType) const
-		{
+        }*/
+
+        std::wstring ToString3(EOnOffToString eType) const;
+        /*{
 			if(onofftostringTrue == eType)
 			{
                 switch(this->m_eValue)
@@ -673,15 +676,17 @@ namespace SimpleTypes
 				}
 			}
 			return L"false";
-		}
-		bool ToBool() 
-		{
+        }*/
+
+        bool ToBool();
+        /*{
             return onoffTrue == this->m_eValue;
-		}
-		void FromBool(bool bVal) 
-		{
+        }*/
+
+        void FromBool(bool bVal);
+		/*{
             this->m_eValue = (false != bVal) ? onoffTrue : onoffFalse;
-		}
+        }*/
 
 		SimpleType_FromString     (EOnOff)
 		SimpleType_Operator_Equal (COnOff)
@@ -690,25 +695,27 @@ namespace SimpleTypes
 	class CBool : public COnOff<>
 	{
 	public:
-		CBool() {}
+        CBool();// {}
 
-		CBool(const bool & bVal)
-		{
+        CBool(const bool & bVal);
+        /*{
 			this->m_eValue = (false != bVal) ? onoffTrue : onoffFalse;
-		}
-		virtual std::wstring ToString() const
-		{
+        }*/
+
+        virtual std::wstring ToString() const;
+        /*{
 			switch (m_eValue)
 			{
 				case onoffTrue: return L"1";
 				case onoffFalse:
 				default:		return L"0";
 			}
-		}
-		virtual EOnOff FromString(std::wstring &sValue)
-		{
+        }*/
+
+        virtual EOnOff FromString(std::wstring &sValue);
+        /*{
 			return COnOff<>::FromString(sValue);
-		}
+        }*/
 		
 		SimpleType_FromString(EOnOff)
 		SimpleType_Operator_Equal(CBool)
@@ -959,10 +966,10 @@ namespace SimpleTypes
 	class CXAlign : public CSimpleType<EXAlign, eDefValue>
 	{
 	public:
-		CXAlign() {}
+        CXAlign();// {}
 
-        virtual EXAlign FromString(std::wstring &sValue)
-		{
+        virtual EXAlign FromString(std::wstring &sValue);
+        /*{
             if      ( L"center"  == sValue )	this->m_eValue = xalignCenter;
             else if ( L"inside"  == sValue )	this->m_eValue = xalignInside;
             else if ( L"left"    == sValue )	this->m_eValue = xalignLeft;
@@ -971,10 +978,10 @@ namespace SimpleTypes
             else								this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case xalignCenter  : return L"center";
@@ -984,7 +991,7 @@ namespace SimpleTypes
 			case xalignRight   : return L"right";
 			default            : return L"left";
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EXAlign)
 		SimpleType_Operator_Equal (CXAlign)
@@ -1011,10 +1018,10 @@ namespace SimpleTypes
 	class CYAlign : public CSimpleType<EYAlign, eDefValue>
 	{
 	public:
-		CYAlign() {}
+        CYAlign();// {}
 
-        virtual EYAlign FromString(std::wstring &sValue)
-		{
+        virtual EYAlign FromString(std::wstring &sValue);
+        /*{
             if      ( L"bottom"		== sValue ) this->m_eValue = yalignBottom;
             else if ( L"bot"		== sValue ) this->m_eValue = yalignBottom;
             else if ( L"center"		== sValue ) this->m_eValue = yalignCenter;
@@ -1025,10 +1032,10 @@ namespace SimpleTypes
             else								this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case yalignBottom  : return L"bottom";
@@ -1039,7 +1046,7 @@ namespace SimpleTypes
 			case yalignTop     : return L"top";
 			default            : return L"top";
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EYAlign)
 		SimpleType_Operator_Equal (CYAlign)
@@ -1082,17 +1089,17 @@ namespace SimpleTypes
 	class CColorType : public CSimpleType<EColorType, eDefValue>
 	{
     public:
-        CColorType()
-        {
+        CColorType();
+        /*{
             SetRGB();
 
 			std::wstringstream sstream;
 			sstream << boost::wformat( L"%02x%02x%02x" ) % m_unR % m_unG % m_unB;
 			m_sValue = sstream.str();
-        }
+        }*/
 
-        virtual EColorType FromString(std::wstring& sValue)
-        {
+        virtual EColorType FromString(std::wstring& sValue);
+        /*{
             wchar_t wsFirstChar = 0;
             if (sValue.length() > 0)
                 wsFirstChar = sValue[0];
@@ -1107,15 +1114,15 @@ namespace SimpleTypes
                 ByColorName(sValue);
 
             return this->m_eValue;
-        }
+        }*/
 
-        virtual std::wstring ToString() const
-        {
+        virtual std::wstring ToString() const;
+        /*{
             return m_sValue;
-        }
+        }*/
 
-        void SetRGB(unsigned char unR, unsigned char unG, unsigned char unB)
-        {
+        void SetRGB(unsigned char unR, unsigned char unG, unsigned char unB);
+        /*{
             this->m_eValue = colortypeRGB;
             m_unR = unR;
             m_unG = unG;
@@ -1124,34 +1131,32 @@ namespace SimpleTypes
 			std::wstringstream sstream;
 			sstream << boost::wformat( L"%02x%02x%02x" ) % m_unR % m_unG % m_unB;
 			m_sValue = sstream.str();
-        }
+        }*/
 
         SimpleType_FromString     (EColorType)
         SimpleType_Operator_Equal (CColorType)
 
-        unsigned char Get_R() const
-        {
+        unsigned char Get_R() const;
+        /*{
             return m_unR;
-        }
-        unsigned char Get_G() const
-        {
+        }*/
+        unsigned char Get_G() const;
+        /*{
             return m_unG;
-        }
+        }*/
 
-        unsigned char Get_B() const
-        {
+        unsigned char Get_B() const;
+        /*{
             return m_unB;
-        }
-        unsigned char Get_A() const
-        {
+        }*/
+        unsigned char Get_A() const;
+        /*{
             return 255;
-        }
-
-
+        }*/
 
 	private:
-        void ByHexColor(std::wstring& sValue)
-		{
+        void ByHexColor(std::wstring& sValue);
+        /*{
             this->m_eValue = colortypeRGB;
 
 			CHexColor<> hexColor;
@@ -1160,9 +1165,9 @@ namespace SimpleTypes
 			m_unR = hexColor.Get_R();
 			m_unG = hexColor.Get_G();
 			m_unB = hexColor.Get_B();
-		}
-		void SetRGB()
-		{
+        }*/
+        void SetRGB();
+        /*{
 			if (this->m_eValue == colortypeRGB) return;
 
             switch(this->m_eValue)
@@ -1271,9 +1276,10 @@ namespace SimpleTypes
 					m_unB = 0;
 				}break;
 			}
-		}
-        void ByColorName(std::wstring& sValue)
-		{
+        }*/
+
+        void ByColorName(std::wstring& sValue);
+        /*{
 			this->m_eValue = colortypeNone;
 
 			if      (std::wstring::npos != sValue.find(L"aqua"))	this->m_eValue = colortypeAqua;
@@ -1318,7 +1324,7 @@ namespace SimpleTypes
 			}
 
 			SetRGB();
-		}
+        }*/
 
 	private:
 
@@ -1342,10 +1348,10 @@ namespace SimpleTypes
 	class CTrueFalse : public CSimpleType<ETrueFalse, eDefValue>
 	{
 	public:
-		CTrueFalse() {}
+        CTrueFalse();// {}
 
-        virtual ETrueFalse FromString(std::wstring &sValue)
-		{
+        virtual ETrueFalse FromString(std::wstring &sValue);
+        /*{
             if      ( L"t"     == sValue )	this->m_eValue = booleanTrue;
             else if ( L"true"  == sValue )	this->m_eValue = booleanTrue;
             else if ( L"True"  == sValue )	this->m_eValue = booleanTrue;
@@ -1356,22 +1362,22 @@ namespace SimpleTypes
             else							this->m_eValue = booleanFalse;
 
             return this->m_eValue;
-		}
+        }*/
 
-		bool GetBool()
-		{
+        bool GetBool();
+        /*{
 			return this->m_eValue == booleanTrue;
-		}
+        }*/
 
-        virtual std::wstring    ToString  () const
-		{
+        virtual std::wstring    ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case booleanFalse : return L"f";
 			case booleanTrue  : return L"t";
 			default           : return L"f";
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ETrueFalse)
 		SimpleType_Operator_Equal (CTrueFalse)

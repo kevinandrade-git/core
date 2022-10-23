@@ -32,6 +32,7 @@
 #pragma once
 
 #include "../../include/CPScopedPtr.h"
+#include <iosfwd>>
 
 namespace cpdoccore {
 namespace oox {

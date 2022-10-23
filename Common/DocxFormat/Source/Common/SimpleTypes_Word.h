@@ -291,10 +291,10 @@ namespace SimpleTypes
 	{
 	public:
 
-		CBorder() {}
+        CBorder();// {}
 
-        virtual EBorder FromString(std::wstring &sValue)
-		{
+        virtual EBorder FromString(std::wstring &sValue);
+        /*{
 			wchar_t wsFirstChar = 0;
 
             if ( sValue.length() > 0 )
@@ -613,10 +613,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case bordervalueApples                : return (L"apples");
@@ -815,27 +815,25 @@ namespace SimpleTypes
 
 			default                               : return (L"none");
 			}
-		}
-
-
-
+        }*/
 
 		SimpleType_FromString     (EBorder)
 		SimpleType_Operator_Equal (CBorder)
 
-		bool IsArtBorder () const
-		{
+        bool IsArtBorder () const;
+        /*{
             return ((int)this->m_eValue > 100);
-		}
-		bool IsLineBorder() const
-		{
-            return ( (int)this->m_eValue <= 25 && (int)this->m_eValue >= 1 );
-		}
-		bool IsNoBorder  () const
-		{
-            return ( (int)this->m_eValue <= 0 );
-		}
+        }*/
 
+        bool IsLineBorder() const;
+        /*{
+            return ( (int)this->m_eValue <= 25 && (int)this->m_eValue >= 1 );
+        }*/
+
+        bool IsNoBorder  () const;
+        /*{
+            return ( (int)this->m_eValue <= 0 );
+        }*/
 	};
 
 
@@ -1118,30 +1116,30 @@ namespace SimpleTypes
 	class CDateTime
 	{
 	public:
-		CDateTime() {}
+        CDateTime();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void    SetValue(const std::wstring &sValue)
-		{
+        void    SetValue(const std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
-		}
+        }*/
 
 
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CDateTime)
@@ -1461,10 +1459,10 @@ namespace SimpleTypes
 	class CDocPartGallery : public CSimpleType<EDocPartGallery, eDefValue>
 	{
 	public:
-		CDocPartGallery() {}
+        CDocPartGallery();// {}
 
-        virtual EDocPartGallery FromString(std::wstring &sValue)
-		{
+        virtual EDocPartGallery FromString(std::wstring &sValue);
+        /*{
             if      ( (L"any")               == sValue ) this->m_eValue = docpartgalleryAny;
             else if ( (L"autoTxt")           == sValue ) this->m_eValue = docpartgalleryAutoTxt;
             else if ( (L"bib")               == sValue ) this->m_eValue = docpartgalleryBib;
@@ -1506,10 +1504,10 @@ namespace SimpleTypes
             else                                          this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring         ToString  () const
-		{
+        virtual std::wstring         ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case docpartgalleryAny               : return (L"any");
@@ -1552,7 +1550,7 @@ namespace SimpleTypes
 			case docpartgalleryWatermarks        : return (L"watermarks");
 			default                              : return (L"default");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EDocPartGallery)
 		SimpleType_Operator_Equal (CDocPartGallery)
@@ -3096,23 +3094,23 @@ namespace SimpleTypes
 	class CHpsMeasure : public CUniversalMeasure
 	{
 	public:
-		CHpsMeasure() {}
+        CHpsMeasure();// {}
 
-        virtual double  FromString(std::wstring &sValue)
-		{
+        virtual double  FromString(std::wstring &sValue);
+        /*{
 			Parse(sValue, 2);
 
 			m_dValue = fabs( m_dValue );
 
 			return m_dValue;
-		}
-		virtual void SetValue(double dValue)
-		{
+        }*/
+        virtual void SetValue(double dValue);
+        /*{
 			m_bUnit = false;
 			m_dValue = dValue;
-		}
-        virtual std::wstring ToString  () const
-		{
+        }*/
+        virtual std::wstring ToString  () const;
+        /*{
             std::wstring sResult;
 
 			if (m_bUnit)
@@ -3125,27 +3123,28 @@ namespace SimpleTypes
 			}
 
 			return sResult;
-		}
-		long ToHps() const
-		{
+        }*/
+        long ToHps() const;
+        /*{
 			return (long)(2 * m_dValue);
-		}
+        }*/
 
-		virtual double FromPoints(double dValue)
-		{
+        virtual double FromPoints(double dValue);
+        /*{
 			m_dValue = fabs( dValue );
 			return m_dValue;
-		}
-		virtual double FromInches(double dValue)
-		{
+        }*/
+        virtual double FromInches(double dValue);
+        /*{
 			m_dValue = fabs( dValue * 72.0 );
 			return m_dValue;
-		}
-		virtual double FromHps(double dValue)
-		{
+        }*/
+        virtual double FromHps(double dValue);
+        /*{
 			m_dValue = dValue / 2;
 			return m_dValue;
-		}
+        }*/
+
 		SimpleType_FromString          (double)
 		SimpleType_Operator_Equal      (CHpsMeasure)
 		UniversalMeasure_AdditionalOpearators(CHpsMeasure)
@@ -3487,29 +3486,29 @@ namespace SimpleTypes
 	class CLongHexNumber : public CSimpleType<int, nDefValue>
 	{
 	public:
-		CLongHexNumber() {}
+        CLongHexNumber();// {}
 
-        virtual int     FromString(std::wstring &sValue)
-		{
+        virtual int     FromString(std::wstring &sValue);
+        /*{
 			if ( !Parse(sValue) )
 			{
                 this->m_eValue = nDefValue;
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             return XmlUtils::IntToString(this->m_eValue, L"%08X");
-		}
+        }*/
 
 		SimpleType_FromString     (unsigned int)
 		SimpleType_Operator_Equal (CLongHexNumber)
 	private:
 
-        bool Parse(std::wstring &sValue)
-		{
+        bool Parse(std::wstring &sValue);
+        /*{
             if ( sValue.length() < 8 )
 				return false;
 
@@ -3525,10 +3524,10 @@ namespace SimpleTypes
             this->m_eValue += HexToInt( (int)sValue[0], bResult ) << 28;
 
 			return bResult;
-		}
+        }*/
 
-		int	HexToInt(int nHex, bool &bResult)
-		{
+        int	HexToInt(int nHex, bool &bResult);
+        /*{
 			if ( nHex >= '0' && nHex <= '9' ) return (nHex - '0');
 			if ( nHex >= 'a' && nHex <= 'f' ) return (nHex - 'a' + 10);
 			if ( nHex >= 'A' && nHex <= 'F' ) return (nHex - 'A' + 10);
@@ -3536,8 +3535,7 @@ namespace SimpleTypes
 			bResult = false;
 
 			return 0;
-		}
-
+        }*/
 	};
 
 
@@ -4010,10 +4008,10 @@ namespace SimpleTypes
 	class CNumberFormat : public CSimpleType<ENumberFormat, eDefValue>
 	{
 	public:
-		CNumberFormat() {}
+        CNumberFormat();// {}
 
-        virtual ENumberFormat FromString(std::wstring &sValue)
-		{
+        virtual ENumberFormat FromString(std::wstring &sValue);
+        /*{
             if      ( (L"aiueo")                        == sValue ) this->m_eValue = numberformatAiueo;
             else if ( (L"aiueoFullWidth")               == sValue ) this->m_eValue = numberformatAiueoFullWidth;
             else if ( (L"arabicAbjad")                  == sValue ) this->m_eValue = numberformatArabicAbjad;
@@ -4080,10 +4078,10 @@ namespace SimpleTypes
             else                                                     this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring       ToString  () const
-		{
+        virtual std::wstring       ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case numberformatAiueo                        : return (L"aiueo");
@@ -4151,14 +4149,15 @@ namespace SimpleTypes
 			case numberformatVietnameseCounting           : return (L"vietnameseCounting");
 			default                                       : return (L"none");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ENumberFormat)
 		SimpleType_Operator_Equal (CNumberFormat)
-		ENumberFormat GetValue() const
-		{
+
+        ENumberFormat GetValue() const;
+        /*{
             return this->m_eValue;
-		}
+        }*/
 	};
 
 
@@ -4494,46 +4493,47 @@ namespace SimpleTypes
 	class CPointMeasure : public CSimpleType<int, nDefValue>
 	{
 	public:
-		CPointMeasure() {}
+        CPointMeasure();// {}
 
-        virtual int     FromString(std::wstring &sValue)
-		{
+        virtual int     FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = _wtoi( sValue.c_str() );
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             std::wstring sResult = std::to_wstring( this->m_eValue);
 
 			return sResult;
-		}
+        }*/
 
 		SimpleType_FromString     (int)
 		SimpleType_Operator_Equal (CPointMeasure)
-		double ToPoints() const
-		{
+
+        double ToPoints() const;
+        /*{
             return (double)this->m_eValue;
-		}
-		double ToMM() const
-		{
+        }*/
+        double ToMM() const;
+        /*{
             return (double)Pt_To_Mm(this->m_eValue);
-		}
-		double ToInches() const
-		{
+        }*/
+        double ToInches() const;
+        /*{
             return this->m_eValue / 72.0;
-		}
+        }*/
 
-		void FromPoints(double dValue)
-		{
+        void FromPoints(double dValue);
+        /*{
             this->m_eValue = dValue;
-		}
+        }*/
 
-		void FromInches(double dValue)
-		{
+        void FromInches(double dValue);
+        /*{
             this->m_eValue = dValue * 72.0;
-		}
+        }*/
 
 	};
 
@@ -5157,21 +5157,21 @@ namespace SimpleTypes
 	class CSignedHpsMeasure : public CUniversalMeasure
 	{
 	public:
-		CSignedHpsMeasure() {}
+        CSignedHpsMeasure();// {}
 
-        virtual double  FromString(std::wstring &sValue)
-		{
+        virtual double  FromString(std::wstring &sValue);
+        /*{
 			Parse(sValue, 2); 
 
 			return m_dValue;
-		}
-		virtual void SetValue(double dValue)
-		{
+        }*/
+        virtual void SetValue(double dValue);
+        /*{
 			m_bUnit = false;
 			m_dValue = dValue;
-		}
-        virtual std::wstring ToString () const
-		{
+        }*/
+        virtual std::wstring ToString () const;
+        /*{
 			std::wstring sResult;
 
 			if (m_bUnit)
@@ -5180,7 +5180,7 @@ namespace SimpleTypes
 				sResult = std::to_wstring((int)(m_dValue * 2));
 
 			return sResult;
-		}
+        }*/
 
 		SimpleType_FromString          (double)
 		SimpleType_Operator_Equal      (CSignedHpsMeasure)
@@ -5194,21 +5194,23 @@ namespace SimpleTypes
 	class CSignedTwipsMeasure : public CUniversalMeasure
 	{
 	public:
-		CSignedTwipsMeasure() {}
-		virtual void SetValue(double dValue)
-		{
+        CSignedTwipsMeasure();// {}
+
+        virtual void SetValue(double dValue);
+        /*{
 			m_bUnit = false;
 			m_dValue = FromTwips(dValue);
-		}
-        virtual double  FromString(std::wstring &sValue)
-		{
+        }*/
+
+        virtual double  FromString(std::wstring &sValue);
+        /*{
 			Parse(sValue, 20); 
 
 			return m_dValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             std::wstring sResult;
 
 			if ( m_bUnit )
@@ -5217,7 +5219,7 @@ namespace SimpleTypes
                 sResult = std::to_wstring( (int)(m_dValue * 20) );
 
 			return sResult;
-		}
+        }*/
 		SimpleType_FromString          (double)
 		SimpleType_Operator_Equal      (CSignedTwipsMeasure)
 		UniversalMeasure_AdditionalOpearators(CSignedTwipsMeasure)
@@ -6064,10 +6066,10 @@ namespace SimpleTypes
 	class CThemeColor : public CSimpleType<EThemeColor, eDefValue>
 	{
 	public:
-		CThemeColor() {}
+        CThemeColor();// {}
 
-        virtual EThemeColor FromString(std::wstring &sValue)
-		{
+        virtual EThemeColor FromString(std::wstring &sValue);
+        /*{
             if      ( (L"accent1")           == sValue ) this->m_eValue = themecolorAccent1;
             else if ( (L"accent2")           == sValue ) this->m_eValue = themecolorAccent2;
             else if ( (L"accent3")           == sValue ) this->m_eValue = themecolorAccent3;
@@ -6088,10 +6090,10 @@ namespace SimpleTypes
             else                                          this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring     ToString  () const
-		{
+        virtual std::wstring     ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case themecolorAccent1           : return (L"accent1");
@@ -6113,7 +6115,7 @@ namespace SimpleTypes
 			case themecolorText2             : return (L"text2");
 			default                          : return (L"none");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EThemeColor)
 		SimpleType_Operator_Equal (CThemeColor)

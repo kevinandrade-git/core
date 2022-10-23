@@ -115,26 +115,26 @@ namespace ComplexTypes
 	{
 	public:
 		ComplexTypes_AdditionConstructors(CDecimalNumber)
-		CDecimalNumber()
-		{
-		}
-		virtual ~CDecimalNumber()
-		{
-		}
+        CDecimalNumber();
+        /*{
+        }*/
+        virtual ~CDecimalNumber();
+        /*{
+        }*/
 
-		virtual void FromXML(XmlUtils::CXmlNode& oNode)
-		{
+        virtual void FromXML(XmlUtils::CXmlNode& oNode);
+        /*{
 			XmlMacroReadAttributeBase( oNode, L"val", m_oVal );
-		}
-		virtual void FromXML(XmlUtils::CXmlLiteReader& oReader)
-		{
+        }*/
+        virtual void FromXML(XmlUtils::CXmlLiteReader& oReader);
+        /*{
 			ReadAttributes(oReader);
 
 			if ( !oReader.IsEmptyNode() )
 				oReader.ReadTillEnd();
-		}
-        virtual std::wstring ToString() const
-		{
+        }*/
+        virtual std::wstring ToString() const;
+        /*{
             std::wstring sResult;
 
 			if ( m_oVal.IsInit() )
@@ -142,14 +142,14 @@ namespace ComplexTypes
 				sResult += L"val=\"" + std::to_wstring(*m_oVal) + L"\"" ;
 			}
 			return sResult;
-		}
+        }*/
 	private:
-		void ReadAttributes(XmlUtils::CXmlLiteReader& oReader)
-		{
+        void ReadAttributes(XmlUtils::CXmlLiteReader& oReader);
+        /*{
 			WritingElement_ReadAttributes_Start_No_NS( oReader )
 			WritingElement_ReadAttributes_ReadSingle( oReader, L"val", m_oVal )
 			WritingElement_ReadAttributes_End_No_NS( oReader )
-		}
+        }*/
 	public:
 		nullable_int m_oVal;
 	};
@@ -290,15 +290,16 @@ namespace ComplexTypes
 		{
 		public:
 			ComplexTypes_AdditionConstructors(CFonts)
-				CFonts()
-			{
-			}
-			virtual ~CFonts()
-			{
-			}
 
-			virtual void    FromXML(XmlUtils::CXmlNode& oNode)
-			{
+            CFonts();
+            /*{
+            }*/
+            virtual ~CFonts();
+            /*{
+            }*/
+
+            virtual void    FromXML(XmlUtils::CXmlNode& oNode);
+            /*{
 				XmlMacroReadAttributeBase(oNode, L"w:ascii", m_sAscii);
 				XmlMacroReadAttributeBase(oNode, L"w:asciiTheme", m_oAsciiTheme);
 				XmlMacroReadAttributeBase(oNode, L"w:cs", m_sCs);
@@ -308,16 +309,16 @@ namespace ComplexTypes
 				XmlMacroReadAttributeBase(oNode, L"w:hAnsi", m_sHAnsi);
 				XmlMacroReadAttributeBase(oNode, L"w:hAnsiTheme", m_oHAnsiTheme);
 				XmlMacroReadAttributeBase(oNode, L"w:hint", m_oHint);
-			}
-			virtual void    FromXML(XmlUtils::CXmlLiteReader& oReader)
-			{
+            }*/
+            virtual void    FromXML(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				ReadAttributes(oReader);
 
 				if (!oReader.IsEmptyNode())
 					oReader.ReadTillEnd();
-			}
-			virtual std::wstring ToString() const
-			{
+            }*/
+            virtual std::wstring ToString() const;
+            /*{
 				std::wstring sResult;
 
 				if (m_oHint.IsInit())
@@ -375,11 +376,12 @@ namespace ComplexTypes
 					sResult += L"\" ";
 				}
 				return sResult;
-			}
+            }*/
+
 		private:
 
-			void ReadAttributes(XmlUtils::CXmlLiteReader& oReader)
-			{
+            void ReadAttributes(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				WritingElement_ReadAttributes_Start(oReader)
 					WritingElement_ReadAttributes_Read_if(oReader, L"w:ascii", m_sAscii)
 					WritingElement_ReadAttributes_Read_else_if(oReader, L"w:asciiTheme", m_oAsciiTheme)
@@ -394,7 +396,7 @@ namespace ComplexTypes
 					WritingElement_ReadAttributes_Read_else_if(oReader, L"w:h-ansi", m_oHint)
 					WritingElement_ReadAttributes_Read_else_if(oReader, L"w:fareast", m_sEastAsia)
 					WritingElement_ReadAttributes_End(oReader)
-			}
+            }*/
 
 		public:
 
@@ -743,25 +745,25 @@ namespace ComplexTypes
 		{
 		public:
 			ComplexTypes_AdditionConstructors(COnOff)
-			COnOff()
-			{
-			}
-			virtual ~COnOff()
-			{
-			}
-			virtual void FromXML(XmlUtils::CXmlNode& oNode)
-			{
+            COnOff();
+            /*{
+            }*/
+            virtual ~COnOff();
+            /*{
+            }*/
+            virtual void FromXML(XmlUtils::CXmlNode& oNode);
+            /*{
 				XmlMacroReadAttributeBase( oNode, L"w:val", m_oVal );
-			}
-			virtual void FromXML(XmlUtils::CXmlLiteReader& oReader)
-			{
+            }*/
+            virtual void FromXML(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				ReadAttributes(oReader);
 
 				if ( !oReader.IsEmptyNode() )
 					oReader.ReadTillEnd();
-			}
-            virtual std::wstring ToString() const
-			{
+            }*/
+            virtual std::wstring ToString() const;
+            /*{
                 std::wstring sResult;
 
 				if ( m_oVal.IsInit() )
@@ -771,14 +773,14 @@ namespace ComplexTypes
 					sResult += L"\" ";
 				}
 				return sResult;
-			}
+            }*/
 		private:
-			void ReadAttributes(XmlUtils::CXmlLiteReader& oReader)
-			{
+            void ReadAttributes(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				WritingElement_ReadAttributes_Start( oReader )
 				WritingElement_ReadAttributes_ReadSingle( oReader, L"w:val", m_oVal )
 				WritingElement_ReadAttributes_End( oReader )
-			}
+            }*/
 
 		public:
 			nullable<SimpleTypes::COnOff<>> m_oVal;
@@ -789,45 +791,45 @@ namespace ComplexTypes
 		{
 		public:
 			ComplexTypes_AdditionConstructors(COnOff2)
-			COnOff2()
-			{
-			}
-			virtual ~COnOff2()
-			{
-			}
-			virtual void FromXML(XmlUtils::CXmlNode& oNode)
-			{
+            COnOff2();
+            /*{
+            }*/
+            virtual ~COnOff2();
+            /*{
+            }*/
+            virtual void FromXML(XmlUtils::CXmlNode& oNode);
+            /*{
 				XmlMacroReadAttributeBase( oNode, L"w:val", m_oVal );
-			}
-			virtual void    FromXML(XmlUtils::CXmlLiteReader& oReader)
-			{
+            }*/
+            virtual void    FromXML(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				ReadAttributes(oReader);
 
 				if ( !oReader.IsEmptyNode() )
 					oReader.ReadTillEnd();
-			}
-            virtual std::wstring ToString() const
-			{
+            }*/
+            virtual std::wstring ToString() const;
+            /*{
                 std::wstring sResult;
 
 				sResult += L"w:val=\"" + m_oVal.ToString() + L"\" ";
 
 				return sResult;
-			}
-			void ReadAttributes(XmlUtils::CXmlLiteReader& oReader)
-			{
+            }*/
+            void ReadAttributes(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				WritingElement_ReadAttributes_Start_No_NS( oReader )
 				WritingElement_ReadAttributes_ReadSingle( oReader, L"val", m_oVal )
 				WritingElement_ReadAttributes_End_No_NS( oReader )
-			}
-			virtual inline std::wstring ValNode(const std::wstring &node_name)
-			{
+            }*/
+            virtual inline std::wstring ValNode(const std::wstring &node_name);
+            /*{
 				if (m_oVal.ToBool())
 					return L"<" + node_name + L"/>";
 				else 
 					return L"<" + node_name + L" w:val=\"0\"/>";
 				return L"";
-			}
+            }*/
 		public:
 			SimpleTypes::COnOff<eDefValue> m_oVal;
 		};
@@ -839,15 +841,15 @@ namespace ComplexTypes
 		{
 		public:
             ComplexTypes_AdditionConstructors(String)
-            String()
-			{
-			}
-            virtual ~String()
-			{
-			}
+            String();
+            /*{
+            }*/
+            virtual ~String();
+            /*{
+            }*/
 
-			virtual void FromXML(XmlUtils::CXmlNode& oNode)
-			{
+            virtual void FromXML(XmlUtils::CXmlNode& oNode);
+            /*{
 				std::vector<std::wstring > attNames, attValues;
 				oNode.GetAllAttributes(attNames,attValues);
 				for(size_t i = 0; i < attNames.size(); ++i)
@@ -857,20 +859,20 @@ namespace ComplexTypes
 						m_sVal = attValues[i];
 					}
 				}
-			}
-			virtual void FromXML(XmlUtils::CXmlLiteReader& oReader)
-			{
+            }*/
+            virtual void FromXML(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				ReadAttributes(oReader);
 
 				if ( !oReader.IsEmptyNode() )
 					oReader.ReadTillEnd();
-			}
-            virtual std::wstring ToString() const
-			{
+            }*/
+            virtual std::wstring ToString() const;
+            /*{
 				return ToStringWithNS(L"w:");
-			}
-			virtual std::wstring ToStringWithNS(const std::wstring& ns) const
-			{
+            }*/
+            virtual std::wstring ToStringWithNS(const std::wstring& ns) const;
+            /*{
 				std::wstring sResult;
 
 				if ( m_sVal.IsInit() )
@@ -881,23 +883,23 @@ namespace ComplexTypes
 					sResult += L"\" ";
 				}
 				return sResult;
-			}
-            std::wstring ToString2() const
-			{
+            }*/
+            std::wstring ToString2() const;
+            /*{
                 std::wstring sResult;
 
 				if ( m_sVal.IsInit() )
 					sResult += *m_sVal;
 
 				return sResult;
-			}
+            }*/
 		private:
-			void ReadAttributes(XmlUtils::CXmlLiteReader& oReader)
-			{
+            void ReadAttributes(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				WritingElement_ReadAttributes_Start_No_NS( oReader )
 				WritingElement_ReadAttributes_ReadSingle( oReader, L"val", m_sVal )
 				WritingElement_ReadAttributes_End_No_NS( oReader )
-			}
+            }*/
 		public:
             nullable_string m_sVal;
 		};
@@ -1004,28 +1006,28 @@ namespace ComplexTypes
 		{
 		public:
 			ComplexTypes_AdditionConstructors(CColor)
-			CColor()
-			{
-			}
-			virtual ~CColor()
-			{
-			}
-			virtual void FromXML(XmlUtils::CXmlNode& oNode)
-			{
+            CColor();
+            /*{
+            }*/
+            virtual ~CColor();
+            /*{
+            }*/
+            virtual void FromXML(XmlUtils::CXmlNode& oNode);
+            /*{
 				XmlMacroReadAttributeBase( oNode, L"w:themeColor", m_oThemeColor );
 				XmlMacroReadAttributeBase( oNode, L"w:themeShade", m_oThemeShade );
 				XmlMacroReadAttributeBase( oNode, L"w:themeTint",  m_oThemeTint );
 				XmlMacroReadAttributeBase( oNode, L"w:val",        m_oVal );
-			}
-			virtual void FromXML(XmlUtils::CXmlLiteReader& oReader)
-			{
+            }*/
+            virtual void FromXML(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				ReadAttributes(oReader);
 
 				if ( !oReader.IsEmptyNode() )
 					oReader.ReadTillEnd();
-			}
-            virtual std::wstring ToString() const
-			{
+            }*/
+            virtual std::wstring ToString() const;
+            /*{
                 std::wstring sResult;
 
 				if (m_oVal.IsInit())
@@ -1053,17 +1055,17 @@ namespace ComplexTypes
 					sResult += L"\" ";
 				}
 				return sResult;
-			}
+            }*/
 		private:
-			void ReadAttributes(XmlUtils::CXmlLiteReader& oReader)
-			{
+            void ReadAttributes(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				WritingElement_ReadAttributes_Start( oReader )
 				WritingElement_ReadAttributes_Read_if     ( oReader, L"w:themeColor", m_oThemeColor )
 				WritingElement_ReadAttributes_Read_else_if( oReader, L"w:themeShade", m_oThemeShade )
 				WritingElement_ReadAttributes_Read_else_if( oReader, L"w:themeTint",  m_oThemeTint )
 				WritingElement_ReadAttributes_Read_else_if( oReader, L"w:val",        m_oVal )
 				WritingElement_ReadAttributes_End( oReader )
-			}
+            }*/
 		public:
 			nullable<SimpleTypes::CThemeColor<>         > m_oThemeColor;
 			nullable<SimpleTypes::CUcharHexNumber<>     > m_oThemeShade;
@@ -1235,22 +1237,22 @@ namespace ComplexTypes
 		{
 		public:
 			ComplexTypes_AdditionConstructors(CDecimalNumber)
-			CDecimalNumber()
-			{
-			}
-			virtual ~CDecimalNumber()
-			{
-			}
-			virtual void FromXML(XmlUtils::CXmlLiteReader& oReader)
-			{
+            CDecimalNumber();
+            /*{
+            }*/
+            virtual ~CDecimalNumber();
+            /*{
+            }*/
+            virtual void FromXML(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				ComplexTypes::CDecimalNumber::FromXML(oReader);
-			}
-			virtual void FromXML(XmlUtils::CXmlNode& oNode)
-			{
+            }*/
+            virtual void FromXML(XmlUtils::CXmlNode& oNode);
+            /*{
 				XmlMacroReadAttributeBase( oNode, L"w:val", m_oVal );
-			}
-            virtual std::wstring ToString() const
-			{
+            }*/
+            virtual std::wstring ToString() const;
+            /*{
                 std::wstring sResult;
 
 				if ( m_oVal.IsInit() )
@@ -1259,7 +1261,7 @@ namespace ComplexTypes
 				}
 
 				return sResult;
-			}
+            }*/
 		};
 		//--------------------------------------------------------------------------------
 		// DecimalNumberOrPrecent 17.3.1.10 (Part 1)
@@ -1742,40 +1744,40 @@ namespace ComplexTypes
 		{
 		public:
 			ComplexTypes_AdditionConstructors(CLongHexNumber)
-			CLongHexNumber()
-			{
-			}
-			virtual ~CLongHexNumber()
-			{
-			}
+            CLongHexNumber();
+            /*{
+            }*/
+            virtual ~CLongHexNumber();
+            /*{
+            }*/
 
-			virtual void FromXML(XmlUtils::CXmlNode& oNode)
-			{
+            virtual void FromXML(XmlUtils::CXmlNode& oNode);
+            /*{
 				XmlMacroReadAttributeBase( oNode, L"w:val", m_oVal );
-			}
-			virtual void    FromXML(XmlUtils::CXmlLiteReader& oReader)
-			{
+            }*/
+            virtual void    FromXML(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				ReadAttributes(oReader);
 
 				if ( !oReader.IsEmptyNode() )
 					oReader.ReadTillEnd();
-			}
-            virtual std::wstring ToString() const
-			{
+            }*/
+            virtual std::wstring ToString() const;
+            /*{
                 std::wstring sResult;
 
 				ComplexTypes_WriteAttribute( L"w:val=\"", m_oVal );
 
 				return sResult;
-			}
+            }*/
 		private:
 
-			void ReadAttributes(XmlUtils::CXmlLiteReader& oReader)
-			{
+            void ReadAttributes(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				WritingElement_ReadAttributes_Start( oReader )
 				WritingElement_ReadAttributes_ReadSingle( oReader, L"w:val", m_oVal )
 				WritingElement_ReadAttributes_End( oReader )
-			}
+            }*/
 
 		public:
 
@@ -1789,26 +1791,26 @@ namespace ComplexTypes
 		{
 		public:
 			ComplexTypes_AdditionConstructors(CUnsignedDecimalNumber)
-			CUnsignedDecimalNumber()
-			{
-			}
-			virtual ~CUnsignedDecimalNumber()
-			{
-			}
+            CUnsignedDecimalNumber();
+            /*{
+            }*/
+            virtual ~CUnsignedDecimalNumber();
+            /*{
+            }*/
 
-			virtual void    FromXML(XmlUtils::CXmlNode& oNode)
-			{
+            virtual void    FromXML(XmlUtils::CXmlNode& oNode);
+            /*{
 				XmlMacroReadAttributeBase( oNode, L"w:val", m_oVal );
-			}
-			virtual void    FromXML(XmlUtils::CXmlLiteReader& oReader)
-			{
+            }*/
+            virtual void    FromXML(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				ReadAttributes(oReader);
 
 				if ( !oReader.IsEmptyNode() )
 					oReader.ReadTillEnd();
-			}
-            virtual std::wstring ToString() const
-			{
+            }*/
+            virtual std::wstring ToString() const;
+            /*{
                 std::wstring sResult;
 
 				if ( m_oVal.IsInit() )
@@ -1819,15 +1821,15 @@ namespace ComplexTypes
 				}
 
 				return sResult;
-			}
+            }*/
 		private:
 
-			void ReadAttributes(XmlUtils::CXmlLiteReader& oReader)
-			{
+            void ReadAttributes(XmlUtils::CXmlLiteReader& oReader);
+            /*{
 				WritingElement_ReadAttributes_Start( oReader )
 				WritingElement_ReadAttributes_ReadSingle( oReader, L"w:val", m_oVal )
 				WritingElement_ReadAttributes_End( oReader )
-			}
+            }*/
 
 		public:
 

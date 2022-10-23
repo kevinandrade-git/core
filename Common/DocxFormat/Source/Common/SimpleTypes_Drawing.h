@@ -34,6 +34,7 @@
 #include "SimpleTypes_Base.h"
 #include "../Base/ASCWinAPI.h"  // GetSysColor
 #include "../../../../DesktopEditor/common/StringExt.h"
+
 // Здесь представлены все простые типы Drawing-Main из спецификации Office Open Xml (20.1.10)
 namespace SimpleTypes
 {
@@ -875,26 +876,26 @@ namespace SimpleTypes
     class CCoordinate : public CUniversalMeasure
     {
     public:
-        CCoordinate() {}
+        CCoordinate();// {}
 
- 		double GetValue() const
-		{
+        double GetValue() const;
+        /*{
 			return m_dValue;
-		}
-		virtual void SetValue(double dValue)
-		{
+        }*/
+        virtual void SetValue(double dValue);
+        /*{
 			m_bUnit = false;
 			m_dValue = dValue;
-		}
-        virtual double  FromString(std::wstring &sValue)
-        {
+        }*/
+        virtual double  FromString(std::wstring &sValue);
+        /*{
             Parse(sValue, 12700);
 
             return m_dValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
             std::wstring sResult;
 
             if ( m_bUnit )
@@ -903,16 +904,17 @@ namespace SimpleTypes
                 sResult = std::to_wstring( (__int64)m_dValue );
 
             return sResult;
-        }
+        }*/
 
-		__int64 ToEmu() const
-		{
+        __int64 ToEmu() const;
+        /*{
 			return (__int64)Pt_To_Emu( m_dValue );
-		}
- 		double ToCm() const
-		{
+        }*/
+        double ToCm() const;
+        /*{
 			return Pt_To_Cm( m_dValue );
-		}
+        }*/
+
 		SimpleType_FromString     (double)
         SimpleType_Operator_Equal (CCoordinate)
     };
@@ -2272,10 +2274,10 @@ namespace SimpleTypes
 	class CPresetCameraType : public CSimpleType<EPresetCameraType, eDefValue>
 	{
 	public:
-		CPresetCameraType() {}
+        CPresetCameraType();// {}
 
-        virtual EPresetCameraType FromString(std::wstring &sValue)
-		{
+        virtual EPresetCameraType FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -2357,10 +2359,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring           ToString  () const
-		{
+        virtual std::wstring           ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case presetcameratypeIsometricBottomDown: return (L"isometricBottomDown"); // (Isometric Bottom Down) 
@@ -2427,7 +2429,7 @@ namespace SimpleTypes
 			case presetcameratypePerspectiveRight: return (L"perspectiveRight"); // (Perspective Right) 			
 			default :								return (L"orthographicFront");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EPresetCameraType)
 		SimpleType_Operator_Equal (CPresetCameraType)
@@ -2635,10 +2637,10 @@ namespace SimpleTypes
 	class CPresetColorVal : public CSimpleType<EPresetColorVal, eDefValue>
 	{
 	public:
-		CPresetColorVal() {}
+        CPresetColorVal();// {}
 
-        virtual EPresetColorVal FromString(std::wstring &sValue)
-		{
+        virtual EPresetColorVal FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = presetcolorvalBlack;
 			SetRGBA( 0, 0, 0, 255 );
 
@@ -2881,10 +2883,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-		bool FromStringIgnoreCase(std::wstring &sValue)
-		{
+        bool FromStringIgnoreCase(std::wstring &sValue);
+        /*{
 			this->m_eValue = presetcolorvalBlack;
 			SetRGBA( 0, 0, 0, 255 );
 
@@ -3129,10 +3131,10 @@ namespace SimpleTypes
 			}
 			//would exit earlier if 'black' == sValue therefore here presetcolorvalBlack is default value
 			return presetcolorvalBlack != this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring         ToString  () const
-		{
+        virtual std::wstring         ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case presetcolorvalAliceBlue:			return (L"aliceBlue");			
@@ -3327,36 +3329,37 @@ namespace SimpleTypes
 			case presetcolorvalYellowGreen :		return (L"yellowGreen");			
 			default :								return (L"black");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EPresetColorVal)
 		SimpleType_Operator_Equal (CPresetColorVal)
-		unsigned char Get_R() const
-		{
+
+        unsigned char Get_R() const;
+        /*{
 			return m_unR;
-		}
-		unsigned char Get_G() const
-		{
+        }*/
+        unsigned char Get_G() const;
+        /*{
 			return m_unG;
-		}
+        }*/
 
-		unsigned char Get_B() const
-		{
+        unsigned char Get_B() const;
+        /*{
 			return m_unB;
-		}
+        }*/
 
-		unsigned char Get_A() const
-		{
+        unsigned char Get_A() const;
+        /*{
 			return m_unA;
-		}
+        }*/
 
-		void SetRGBA(unsigned char unR, unsigned char unG, unsigned char unB, unsigned char unA = 255)
-		{
+        void SetRGBA(unsigned char unR, unsigned char unG, unsigned char unB, unsigned char unA = 255);
+        /*{
 			m_unR = unR;
 			m_unG = unG;
 			m_unB = unB;
 			m_unA = unA;
-		}
+        }*/
 
 	private:
 
@@ -3614,9 +3617,10 @@ namespace SimpleTypes
 	class CPresetPatternVal : public CSimpleType<EPresetPatternVal, eDefValue>
 	{
 	public:
-		CPresetPatternVal() {}
-        virtual EPresetPatternVal FromString(std::wstring &sValue)
-		{
+        CPresetPatternVal();// {}
+
+        virtual EPresetPatternVal FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -3708,10 +3712,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring           ToString  () const
-		{
+        virtual std::wstring           ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case presetpatternvalCross:      return (L"cross");
@@ -3770,7 +3774,7 @@ namespace SimpleTypes
 			case presetpatternvalZigZag:     return (L"zigZag Zag");
 			default :                        return (L"pct10");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EPresetPatternVal)
 		SimpleType_Operator_Equal (CPresetPatternVal)
@@ -4264,10 +4268,10 @@ namespace SimpleTypes
 	class CShapeType : public CSimpleType<EShapeType, eDefValue>
 	{
 	public:
-		CShapeType() {}
+        CShapeType(); //{}
 
-        virtual EShapeType FromString(std::wstring &sValue)
-		{
+        virtual EShapeType FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -4558,10 +4562,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring    ToString  () const
-		{
+        virtual std::wstring    ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case shapetypeAccentBorderCallout1:			return (L"accentBorderCallout1");
@@ -4782,15 +4786,15 @@ namespace SimpleTypes
 
 			default :									return (L"rect");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EShapeType)
 		SimpleType_Operator_Equal (CShapeType)
 		
-		EShapeType GetValue() const
-		{
+        EShapeType GetValue() const;
+        /*{
             return this->m_eValue;
-		}
+        }*/
 	};
 
 
@@ -4838,10 +4842,10 @@ namespace SimpleTypes
 	class CSystemColorVal : public CSimpleType<ESystemColorVal, eDefValue>
 	{
 	public:
-		CSystemColorVal() {}
+        CSystemColorVal();// {}
 
-        virtual ESystemColorVal FromString(std::wstring &sValue)
-		{
+        virtual ESystemColorVal FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = systemcolorvalWindow;
 			SetRGBA( 0, 0, 0, 255 );
 
@@ -4904,10 +4908,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring         ToString  () const
-		{
+        virtual std::wstring         ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case systemcolorval3dDkShadow:              return (L"3dDkShadow");
@@ -4942,46 +4946,48 @@ namespace SimpleTypes
 			case systemcolorvalWindowText:              return (L"windowText");
 			default :                                   return (L"window");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ESystemColorVal)
 		SimpleType_Operator_Equal (CSystemColorVal)
-		unsigned char Get_R() const
-		{
+
+        unsigned char Get_R() const;
+        /*{
 			return m_unR;
-		}
-		unsigned char Get_G() const
-		{
+        }*/
+
+        unsigned char Get_G() const;
+        /*{
 			return m_unG;
-		}
+        }*/
 
-		unsigned char Get_B() const
-		{
+        unsigned char Get_B() const;
+        /*{
 			return m_unB;
-		}
+        }*/
 
-		unsigned char Get_A() const
-		{
+        unsigned char Get_A() const;
+        /*{
 			return m_unA;
-		}
+        }*/
 
-		void SetRGBASys(int nIndex)
-		{
+        void SetRGBASys(int nIndex);
+        /*{
             DWORD dwRGB = GetSysColor(nIndex);
 
 			m_unB = static_cast<unsigned char>(dwRGB & 0xFF);
 			m_unG = static_cast<unsigned char>((dwRGB & 0xFF00)>>8);
 			m_unR = static_cast<unsigned char>((dwRGB & 0xFF0000)>>16);
 			m_unA = 255;
-		}
+        }*/
 
-		void SetRGBA(unsigned char unR, unsigned char unG, unsigned char unB, unsigned char unA = 255)
-		{
+        void SetRGBA(unsigned char unR, unsigned char unG, unsigned char unB, unsigned char unA = 255);
+        /*{
 			m_unR = unR;
 			m_unG = unG;
 			m_unB = unB;
 			m_unA = unA;
-		}
+        }*/
 
 	private:
 
@@ -5512,10 +5518,10 @@ namespace SimpleTypes
 	class CTextShapeType : public CSimpleType<ETextShapeType, eDefValue>
 	{
 	public:
-		CTextShapeType() {}
+        CTextShapeType();// {}
 
-        virtual ETextShapeType FromString(std::wstring &sValue)
-		{
+        virtual ETextShapeType FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.length() <= 5 )
@@ -5612,10 +5618,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring        ToString  () const
-		{
+        virtual std::wstring        ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case textshapetypeTextArchDown:				return (L"textArchDown");
@@ -5661,7 +5667,7 @@ namespace SimpleTypes
 			case textshapetypeTextWave4:				return (L"textWave4");
 			default :									return (L"textPlain");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ETextShapeType)
 		SimpleType_Operator_Equal (CTextShapeType)
@@ -6740,10 +6746,10 @@ namespace SimpleTypes
 	class CParameterId : public CSimpleType<EParameterId, eDefValue>
 	{
 	public:
-		CParameterId() {}
+        CParameterId();// {}
 
-		virtual EParameterId FromString(std::wstring &sValue)
-		{
+        virtual EParameterId FromString(std::wstring &sValue);
+        /*{
 				 if (L"horzAlign" == sValue) this->m_eValue = parameterId_horzAlign;
 			else if (L"vertAlign" == sValue) this->m_eValue = parameterId_vertAlign;
 			else if (L"chDir" == sValue) this->m_eValue = parameterId_chDir;
@@ -6803,10 +6809,10 @@ namespace SimpleTypes
 			else this->m_eValue = eDefValue;
 
 			return this->m_eValue;
-		}
+        }*/
 
-		virtual std::wstring ToString() const
-		{
+        virtual std::wstring ToString() const;
+        /*{
 			switch (this->m_eValue)
 			{
 				case parameterId_horzAlign: return L"horzAlign";
@@ -6866,7 +6872,8 @@ namespace SimpleTypes
 				case parameterId_endPts: return L"endPts";
 				default: return L"horzAlign";
 			}
-		}
+        }*/
+
 		SimpleType_FromString(EParameterId)
 		SimpleType_Operator_Equal(CParameterId)
 	};
@@ -6978,10 +6985,10 @@ namespace SimpleTypes
 	class CConstraintType : public CSimpleType<EConstraintType, eDefValue>
 	{
 	public:
-		CConstraintType() {}
+        CConstraintType();// {}
 
-		virtual EConstraintType FromString(std::wstring &sValue)
-		{
+        virtual EConstraintType FromString(std::wstring &sValue);
+        /*{
 				 if (L"none" == sValue) this->m_eValue = constraintType_none;
 			else if (L"alignOff" == sValue) this->m_eValue = constraintType_alignOff;
 			else if (L"begMarg" == sValue) this->m_eValue = constraintType_begMarg;
@@ -7048,10 +7055,10 @@ namespace SimpleTypes
 			else this->m_eValue = eDefValue;
 
 			return this->m_eValue;
-		}
+        }*/
 
-		virtual std::wstring ToString() const
-		{
+        virtual std::wstring ToString() const;
+        /*{
 			switch (this->m_eValue)
 			{
 			case constraintType_none: return L"none";
@@ -7119,7 +7126,8 @@ namespace SimpleTypes
 			case constraintType_wOff: return L"wOff";
 			default: return L"none";
 			}
-		}
+        }*/
+
 		SimpleType_FromString(EConstraintType)
 		SimpleType_Operator_Equal(CConstraintType)
 	};

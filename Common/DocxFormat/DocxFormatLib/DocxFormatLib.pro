@@ -93,6 +93,48 @@ SOURCES += \
     ../Source/DocxFormat/Diagram/DiagramQuickStyle.cpp \
     ../Source/DocxFormat/WritingElement.cpp \
     ../Source/Common/SimpleTypes_Word.cpp \
+    ../Source/Common/SimpleTypes_Base/SimpleType.cpp \
+    ../Source/Common/SimpleTypes_Base/Double.cpp \
+    ../Source/Common/SimpleTypes_Base/DecimalNumber.cpp \
+    ../Source/Common/SimpleTypes_Base/Point.cpp \
+    ../Source/Common/SimpleTypes_Base/Inch.cpp \
+    ../Source/Common/SimpleTypes_Base/Emu.cpp \
+    ../Source/Common/SimpleTypes_Base/UniversalMeasure.cpp \
+    ../Source/Common/SimpleTypes_Base/UniversalMeasureOrPercent.cpp \
+    ../Source/Common/SimpleTypes_Shared/TrueFalse.cpp \
+    ../Source/Common/SimpleTypes_Shared/ColorType.cpp \
+    ../Source/Common/SimpleTypes_Shared/OnOff.cpp \
+    ../Source/Common/SimpleTypes_Shared/Bool.cpp \
+    ../Source/Common/SimpleTypes_Shared/XAlign.cpp \
+    ../Source/Common/SimpleTypes_Shared/YAlign.cpp \
+    ../Source/Common/SimpleTypes_Word/Border.cpp \
+    ../Source/Common/SimpleTypes_Word/NumberFormat.cpp \
+    ../Source/Common/SimpleTypes_Word/DocPartGallery.cpp \
+    ../Source/Common/SimpleTypes_Word/HpsMeasure.cpp \
+    ../Source/Common/SimpleTypes_Word/SignedHpsMeasure.cpp \
+    ../Source/Common/SimpleTypes_Word/SignedTwipsMeasure.cpp \
+    ../Source/Common/SimpleTypes_Word/LongHexNumber.cpp \
+    ../Source/Common/SimpleTypes_Word/PointMeasure.cpp \
+    ../Source/Common/SimpleTypes_Word/DateTime.cpp \
+    ../Source/Common/SimpleTypes_Word/ThemeColor.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PresetColorVal.cpp \
+    ../Source/Common/SimpleTypes_Drawing/ShapeType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/SystemColorVal.cpp \
+    ../Source/Common/SimpleTypes_Drawing/ConstraintType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/TextShapeType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/ParameterId.cpp \
+    ../Source/Common/SimpleTypes_Drawing/Coordinate.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PresetPatternVal.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PresetCameraType.cpp \
+    ../Source/Common/ComplexTypes/OnOff.cpp \
+    ../Source/Common/ComplexTypes/OnOff2.cpp \
+    ../Source/Common/ComplexTypes/String.cpp \
+    ../Source/Common/ComplexTypes/Color.cpp \
+    ../Source/Common/ComplexTypes/Fonts.cpp \
+    ../Source/Common/ComplexTypes/LongHexNumber.cpp \
+    ../Source/Common/ComplexTypes/DecimalNumber.cpp \
+    ../Source/Common/ComplexTypes/DecimalNumberWord.cpp \
+    ../Source/Common/ComplexTypes/UnsignedDecimalNumber.cpp \
     ../Source/SystemUtility/SystemUtility.cpp \
     ../Source/XlsxFormat/Styles/rPr.cpp \
     ../Source/XlsxFormat/SharedStrings/Si.cpp \
