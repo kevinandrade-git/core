@@ -25,6 +25,12 @@ DEFINES += UNICODE \
 	DONT_WRITE_EMBEDDED_FONTS \
 	AVS_USE_CONVERT_PPTX_TOCUSTOM_VML
 
+# Use Precompiled headers (PCH)
+use_pch {
+CONFIG += precompile_header
+PRECOMPILED_HEADER = precompiled.h
+HEADERS += precompiled.h
+}
 
 SOURCES += \
     ../DocWrapper/DocxSerializer.cpp \
