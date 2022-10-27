@@ -28,11 +28,11 @@ LIBS += $$DESTDIR -lUnicodeConverter
 }
 
 # Use Precompiled headers (PCH)
-use_pch {
+#use_pch {
 CONFIG += precompile_header
 PRECOMPILED_HEADER = precompiled.h
 HEADERS += precompiled.h
-}
+#}
 
 core_release {
 SOURCES += \
@@ -68,7 +68,57 @@ SOURCES += \
 
 SOURCES += \
     ../source/DestinationCommand.cpp \
-    ../source/ConvertationManager.cpp
+    ../source/ConvertationManager.cpp \
+    ../../../Common/DocxFormat/Source/Base/Nullable.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/SimpleType.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Double.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/DecimalNumber.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Point.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Inch.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Emu.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/UniversalMeasure.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/UniversalMeasureOrPercent.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/TrueFalse.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/ColorType.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/OnOff.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/Bool.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/XAlign.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/YAlign.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/Border.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/NumberFormat.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/DocPartGallery.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/HpsMeasure.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/SignedHpsMeasure.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/SignedTwipsMeasure.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/LongHexNumber.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/PointMeasure.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/DateTime.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/ThemeColor.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/HighlightColor.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/FontCharset.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/WmlColorSchemeIndex.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/FtnEdn.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Word/FtnPos.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/PresetColorVal.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/ShapeType.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/SystemColorVal.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/ConstraintType.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/TextShapeType.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/ParameterId.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/Coordinate.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/PresetPatternVal.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/PresetCameraType.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/AlignH.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/AlignV.cpp \
+    ../../../Common/DocxFormat/Source/Common/ComplexTypes/OnOff.cpp \
+    ../../../Common/DocxFormat/Source/Common/ComplexTypes/OnOff2.cpp \
+    ../../../Common/DocxFormat/Source/Common/ComplexTypes/String.cpp \
+    ../../../Common/DocxFormat/Source/Common/ComplexTypes/Color.cpp \
+    ../../../Common/DocxFormat/Source/Common/ComplexTypes/Fonts.cpp \
+    ../../../Common/DocxFormat/Source/Common/ComplexTypes/LongHexNumber.cpp \
+    ../../../Common/DocxFormat/Source/Common/ComplexTypes/DecimalNumber.cpp \
+    ../../../Common/DocxFormat/Source/Common/ComplexTypes/DecimalNumberWord.cpp \
+    ../../../Common/DocxFormat/Source/Common/ComplexTypes/UnsignedDecimalNumber.cpp \
 
 HEADERS += \
     ../source/Basic.h \

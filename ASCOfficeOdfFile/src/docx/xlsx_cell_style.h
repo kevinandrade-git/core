@@ -31,7 +31,6 @@
  */
 #pragma once
 
-#include <iosfwd>
 #include <string>
 
 #include "../../include/CPSharedPtr.h"

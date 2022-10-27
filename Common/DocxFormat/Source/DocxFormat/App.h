@@ -49,11 +49,11 @@ namespace OOX
 	public:
 		CApp(OOX::Document* pMain);
 		CApp(OOX::Document* pMain, const CPath& oPath);
-		virtual ~CApp()
-		{
-		}
-		virtual void read(const CPath& oPath)
-		{
+        virtual ~CApp();
+        /*{
+        }*/
+        virtual void read(const CPath& oPath);
+        /*{
 			XmlUtils::CXmlNode oProperties;
 			oProperties.FromXmlFile( oPath.GetPath(), true );
 
@@ -127,9 +127,9 @@ namespace OOX
 				if ( oProperties.GetNode( _T("Words"), oItem ) )
 					m_nWords = oItem.GetText();				
 			}
-		}
-		virtual void write(const CPath& oPath, const CPath& oDirectory, CContentTypes& oContent) const
-		{
+        }*/
+        virtual void write(const CPath& oPath, const CPath& oDirectory, CContentTypes& oContent) const;
+        /*{
             std::wstring sXml;
 			sXml = _T("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><Properties xmlns=\"http://schemas.openxmlformats.org/officeDocument/2006/extended-properties\" xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\">");
 
@@ -299,22 +299,22 @@ namespace OOX
 
 			NSFile::CFileBinary::SaveToFile( oPath.GetPath(), sXml );
 			oContent.Registration( type().OverrideType(), oDirectory, oPath.GetFilename() );
-		}
+        }*/
 
-		virtual const OOX::FileType type() const
-		{
+        virtual const OOX::FileType type() const;
+        /*{
 			return FileTypes::App;
-		}
-		virtual const CPath DefaultDirectory() const
-		{
+        }*/
+        virtual const CPath DefaultDirectory() const;
+        /*{
 			return type().DefaultDirectory();
-		}
-		virtual const CPath DefaultFileName() const
-		{
+        }*/
+        virtual const CPath DefaultFileName() const;
+        /*{
 			return type().DefaultFileName();
-		}
-		void SetDefaults()
-		{
+        }*/
+        void SetDefaults();
+        /*{
 			SetRequiredDefaults();
 			
 			m_nDocSecurity = 0;
@@ -322,9 +322,9 @@ namespace OOX
 			m_bLinksUpToDate = false;
 			m_bSharedDoc = false;
 			m_bHyperlinksChanged = false;
-		}
-		void SetRequiredDefaults()
-		{
+        }*/
+        void SetRequiredDefaults();
+        /*{
 			m_sAppVersion.reset(NULL);
 			std::wstring sApplication = NSSystemUtils::GetEnvVariable(NSSystemUtils::gc_EnvApplicationName);
 			if (sApplication.empty())
@@ -334,7 +334,7 @@ namespace OOX
 			sApplication += L"/" + std::wstring(s.begin(), s.end());
 #endif
 			m_sApplication = sApplication;
-		}
+        }*/
  
 		PPTX::App* ToPptxApp();
 		void FromPptxApp(PPTX::App* pApp);

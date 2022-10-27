@@ -34,20 +34,28 @@
 #include "../../XlsxSerializerCom/Common/Common.h"
 #include "../BinWriter/BinReaderWriterDefines.h"
 
+#include "HeaderFooterWriter.h"
+
+namespace NSStringUtils
+{
+    class CStringBuilder;
+}
+
 namespace Writers
 {
 	class DocumentWriter : public ContentWriter
 	{
 		NSStringUtils::CStringBuilder m_oWriter;
-		HeaderFooterWriter& m_oHeaderFooterWriter;
+        HeaderFooterWriter& m_oHeaderFooterWriter;
 	public:
          std::wstring m_sDir;
 
-		DocumentWriter( std::wstring sDir, HeaderFooterWriter& oHeaderFooterWriter) : m_sDir(sDir), m_oHeaderFooterWriter(oHeaderFooterWriter)
-		{
-		}
-		void Write(bool bGlossary = false)
-		{
+        DocumentWriter( std::wstring sDir, HeaderFooterWriter& oHeaderFooterWriter);// : m_sDir(sDir), m_oHeaderFooterWriter(oHeaderFooterWriter)
+        /*{
+        }*/
+
+        void Write(bool bGlossary = false);
+        /*{
 			if (bGlossary)
 			{
 				OOX::CPath filePath = m_sDir + FILE_SEPARATOR_STR + L"word" + FILE_SEPARATOR_STR + L"glossary" + FILE_SEPARATOR_STR + L"document.xml";
@@ -124,10 +132,10 @@ namespace Writers
 				oFile.WriteStringUTF8(std::wstring(L"</w:document>"));
 				oFile.CloseFile();
 			}
-		}
+        }*/
 		
-		std::wstring WriteSectPrHdrFtr()
-		{
+        std::wstring WriteSectPrHdrFtr();
+        /*{
              std::wstring sResult;
 			if(BinDocxRW::g_nCurFormatVersion < 5)
 			{
@@ -176,6 +184,6 @@ namespace Writers
 					sResult += L"<w:titlePg/>";
 			}
 			return sResult;
-		}
+        }*/
 	};
 }

@@ -30,11 +30,11 @@ DEFINES +=  _DEBUG
 }
 
 # Use Precompiled headers (PCH)
-use_pch {
+#use_pch {
 CONFIG += precompile_header
 PRECOMPILED_HEADER = precompiled.h
 HEADERS += precompiled.h
-}
+#}
 
 core_release {
 SOURCES += \
@@ -318,7 +318,8 @@ SOURCES += \
     ../src/common/CPColorUtils.cpp \
     ../src/common/CPString.cpp \
     ../src/common/readdocelement.cpp \
-    ../src/ConvertOO2OOX.cpp
+    ../src/ConvertOO2OOX.cpp \
+    ../../Common/DocxFormat/Source/Base/Nullable.cpp
 
 HEADERS += \
     ../formulasconvert/formulasconvert.h \

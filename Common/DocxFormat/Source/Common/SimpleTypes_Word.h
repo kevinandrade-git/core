@@ -2339,10 +2339,10 @@ namespace SimpleTypes
 	class CFtnEdn : public CSimpleType<EFtnEdn, eDefValue>
 	{
 	public:
-		CFtnEdn() {}
+        CFtnEdn();// {}
 
-        virtual EFtnEdn FromString(std::wstring &sValue)
-		{
+        virtual EFtnEdn FromString(std::wstring &sValue);
+        /*{
             if      (L"continuationNotice"    == sValue ) this->m_eValue = ftnednContinuationNotice;
             else if (L"continuationSeparator" == sValue ||
 					 L"continuation-separator" == sValue) this->m_eValue = ftnednContinuationSeparator;
@@ -2351,10 +2351,10 @@ namespace SimpleTypes
             else                                          this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case ftnednContinuationNotice    : return (L"continuationNotice");
@@ -2363,7 +2363,7 @@ namespace SimpleTypes
 			case ftnednSeparator             : return (L"separator");
 			default                          : return (L"normal");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EFtnEdn)
 		SimpleType_Operator_Equal (CFtnEdn)
@@ -2387,10 +2387,10 @@ namespace SimpleTypes
 	class CFtnPos : public CSimpleType<EFtnPos, eDefValue>
 	{
 	public:
-		CFtnPos() {}
+        CFtnPos();// {}
 
-        virtual EFtnPos FromString(std::wstring &sValue)
-		{
+        virtual EFtnPos FromString(std::wstring &sValue);
+        /*{
             if      ( (L"beneathText") == sValue ) this->m_eValue = ftnposBeneathText;
             else if ( (L"docEnd")      == sValue ) this->m_eValue = ftnposDocEnd;
             else if ( (L"pageBottom")  == sValue ) this->m_eValue = ftnposPageBottom;
@@ -2398,10 +2398,10 @@ namespace SimpleTypes
             else                                    this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case ftnposBeneathText : return (L"beneathText");
@@ -2410,7 +2410,7 @@ namespace SimpleTypes
 			case ftnposSectEnd     : return (L"sectEnd");
 			default                : return (L"sectEnd");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EFtnPos)
 		SimpleType_Operator_Equal (CFtnPos)
@@ -2821,24 +2821,22 @@ namespace SimpleTypes
 	// HighlightColor 17.18.40 (Part 1)
 	//--------------------------------------------------------------------------------		
 
-
-
 	template<EHighlightColor eDefValue = highlightcolorNone>
 	class CHighlightColor : public CSimpleType<EHighlightColor, eDefValue>
 	{
 	public:
-		CHighlightColor() 
-		{
+        CHighlightColor();
+        /*{
 			m_unR = 0;
 			m_unG = 0;
 			m_unB = 0;
 			m_unA = 255;
-		}
-		CHighlightColor(const CHexColor<>& color) 
-				: m_unR(color.Get_R()), m_unG(color.Get_G()), m_unB(color.Get_B()), m_unA(255) {}
+        }*/
+        CHighlightColor(const CHexColor<>& color);
+                //: m_unR(color.Get_R()), m_unG(color.Get_G()), m_unB(color.Get_B()), m_unA(255); {}
 
-        virtual EHighlightColor FromString(std::wstring &sValue)
-		{
+        virtual EHighlightColor FromString(std::wstring &sValue);
+        /*{
 			if      ( (L"black")       == sValue )
 			{
                 this->m_eValue = highlightcolorBlack;
@@ -2985,10 +2983,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring         ToString  () const
-		{
+        virtual std::wstring         ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case highlightcolorBlack       : return (L"black");
@@ -3010,28 +3008,29 @@ namespace SimpleTypes
 			case highlightcolorYellow      : return (L"yellow");
 			default                        : return (L"none");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EHighlightColor)
 		SimpleType_Operator_Equal (CHighlightColor)
-		unsigned char Get_R() const
-		{
+
+        unsigned char Get_R() const;
+        /*{
 			return m_unR;
-		}
-		unsigned char Get_G() const
-		{
+        }*/
+        unsigned char Get_G() const;
+        /*{
 			return m_unG;
-		}
+        }*/
 
-		unsigned char Get_B() const
-		{
+        unsigned char Get_B() const;
+        /*{
 			return m_unB;
-		}
+        }*/
 
-		unsigned char Get_A() const
-		{
+        unsigned char Get_A() const;
+        /*{
 			return m_unA;
-		}
+        }*/
 
 	private:
 
@@ -6443,10 +6442,10 @@ namespace SimpleTypes
 	class CWmlColorSchemeIndex : public CSimpleType<EWmlColorSchemeIndex, eDefValue>
 	{
 	public:
-		CWmlColorSchemeIndex() {}
+        CWmlColorSchemeIndex();// {}
 
-        virtual EWmlColorSchemeIndex FromString(std::wstring &sValue)
-		{
+        virtual EWmlColorSchemeIndex FromString(std::wstring &sValue);;
+        /*{
             if      ( (L"accent1")           == sValue ) this->m_eValue = wmlcolorschemeindexAccent1;
             else if ( (L"accent2")           == sValue ) this->m_eValue = wmlcolorschemeindexAccent2;
             else if ( (L"accent3")           == sValue ) this->m_eValue = wmlcolorschemeindexAccent3;
@@ -6462,10 +6461,10 @@ namespace SimpleTypes
             else                                          this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring              ToString  () const
-		{
+        virtual std::wstring              ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case wmlcolorschemeindexAccent1           : return (L"accent1");
@@ -6482,7 +6481,7 @@ namespace SimpleTypes
 			case wmlcolorschemeindexLight2            : return (L"light2");
 			default                                   : return (L"accent1");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EWmlColorSchemeIndex)
 		SimpleType_Operator_Equal (CWmlColorSchemeIndex)
@@ -6629,10 +6628,10 @@ namespace SimpleTypes
 	class CFontCharset : public CSimpleType<EFontCharset, eDefValue>
 	{
 	public:
-		CFontCharset() {}
+        CFontCharset();// {}
 
-        virtual EFontCharset FromString(std::wstring &sValue)
-		{
+        virtual EFontCharset FromString(std::wstring &sValue);
+        /*{
             if      ( (L"00") == sValue ) this->m_eValue = fontcharsetANSI;
             else if ( (L"01") == sValue ) this->m_eValue = fontcharsetDefault;
             else if ( (L"02") == sValue ) this->m_eValue = fontcharsetSymbol;
@@ -6655,10 +6654,10 @@ namespace SimpleTypes
             else                           this->m_eValue = fontcharsetANSI;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring      ToString  () const
-		{
+        virtual std::wstring      ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case fontcharsetANSI        : return (L"00");
@@ -6682,7 +6681,7 @@ namespace SimpleTypes
 			case fontcharsetOEM         : return (L"FF");
 			default                     : return (L"00");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EFontCharset)
 		SimpleType_Operator_Equal (CFontCharset)

@@ -64,11 +64,11 @@ namespace Writers
 		std::wstring	m_sDocumentPeople;
 		std::wstring	m_sContentUserData;
 
-		CommentsWriter(std::wstring sDir) : m_sDir(sDir)
-		{
-		}
-		void setElements(std::wstring& sComment, std::wstring& sCommentExt, std::wstring& sContentExtensible, std::wstring& sCommentsIds, std::wstring& sPeople, std::wstring& sDocumentComment, std::wstring& sDocumentCommentExt, std::wstring& sDocumentContentExtensible, std::wstring& sDocumentCommentsIds, std::wstring& sDocumentPeople,std::wstring&  sContentUserData)
-		{
+        CommentsWriter(std::wstring sDir);// : m_sDir(sDir)
+        /*{
+        }*/
+        void setElements(std::wstring& sComment, std::wstring& sCommentExt, std::wstring& sContentExtensible, std::wstring& sCommentsIds, std::wstring& sPeople, std::wstring& sDocumentComment, std::wstring& sDocumentCommentExt, std::wstring& sDocumentContentExtensible, std::wstring& sDocumentCommentsIds, std::wstring& sDocumentPeople,std::wstring&  sContentUserData);
+        /*{
 			m_sComment		= sComment;
 			m_sCommentExt	= sCommentExt;
 			m_sContentExtensible	= sContentExtensible;
@@ -80,13 +80,13 @@ namespace Writers
 			m_sDocumentCommentsIds	= sDocumentCommentsIds;
 			m_sDocumentPeople		= sDocumentPeople;
 			m_sContentUserData		= sContentUserData;
-		}
-		std::wstring getFilename()
-		{
+        }*/
+        std::wstring getFilename();
+        /*{
 			return OOX::FileTypes::Comments.DefaultFileName().GetPath();
-		}
-		void Write(bool bGlossary = false)
-		{
+        }*/
+        void Write(bool bGlossary = false);
+        /*{
 			std::wstring sDir = m_sDir + FILE_SEPARATOR_STR + L"word" + (bGlossary ? (FILE_SEPARATOR_STR + std::wstring(L"glossary")) : L"" ) + FILE_SEPARATOR_STR;
             if(false == m_sComment.empty())
 			{
@@ -192,6 +192,6 @@ namespace Writers
 				oFile.WriteStringUTF8(g_string_commentExtensible_End);
 				oFile.CloseFile();
 			}
-		}
+        }*/
 	};
 }

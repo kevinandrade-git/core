@@ -44,23 +44,24 @@ namespace Writers
 			int				index;
 		};
 		std::vector<_chartElem> m_aCharts;
+
 	public:
         std::wstring m_sDir;
 		int nEmbeddedCount;
 
-		ChartWriter(std::wstring sDir) : m_sDir(sDir)
-		{
+        ChartWriter(std::wstring sDir);// : m_sDir(sDir)
+        /*{
 			nEmbeddedCount = 1000;
-		}
-		~ChartWriter()
-		{
-		}
-		bool IsEmpty()
-		{
+        }*/
+        ~ChartWriter();
+        /*{
+        }*/
+        bool IsEmpty();
+        /*{
 			return 0 == m_aCharts.size();
-		}
-		bool Write()
-		{
+        }*/
+        bool Write();
+        /*{
 			if(IsEmpty()) return false;
 
 			OOX::CPath pathChartDir = m_sDir + FILE_SEPARATOR_STR + _T("word") + FILE_SEPARATOR_STR + _T("charts");
@@ -78,9 +79,9 @@ namespace Writers
 				oFile.CloseFile();
 			}
 			return true;
-		}
-		void AddChart(std::wstring& content, std::wstring& sRelsName, std::wstring& sFileName, int index)
-		{
+        }*/
+        void AddChart(std::wstring& content, std::wstring& sRelsName, std::wstring& sFileName, int index);
+        /*{
 			_chartElem oChartElem;
 			
 			oChartElem.content	= content;
@@ -92,6 +93,6 @@ namespace Writers
 			sFileName	= oChartElem.filename;
 
 			m_aCharts.push_back(oChartElem);
-		}
+        }*/
 	};
 }

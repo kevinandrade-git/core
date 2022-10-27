@@ -20,6 +20,9 @@ ADD_DEPENDENCY(graphics, kernel, UnicodeConverter, kernel_network)
 
 #CONFIG += build_xp
 
+#INCLUDEPATH += ../../Common/3dParty/v8_89/v8/include
+#INCLUDEPATH += ../../Common/3dParty/v8_89/v8
+
 core_ios {
     CONFIG += doct_renderer_empty
 }

@@ -31,8 +31,8 @@
  */
 #pragma once
 
+#include <iosfwd>
 #include "../../include/CPScopedPtr.h"
-#include <iosfwd>>
 
 namespace cpdoccore {
 namespace oox {

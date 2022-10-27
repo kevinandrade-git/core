@@ -23,11 +23,11 @@ DEFINES +=  DONT_WRITE_EMBEDDED_FONTS
 include($$PWD/../../3dParty/boost/boost.pri)
 
 # Use Precompiled headers (PCH)
-use_pch {
+#use_pch {
 CONFIG += precompile_header
 PRECOMPILED_HEADER = precompiled_xlsb.h
 HEADERS += precompiled_xlsb.h
-}
+#}
 
 core_release {
 SOURCES += \

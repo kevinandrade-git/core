@@ -39,12 +39,14 @@ namespace Writers
 	class WebSettingsWriter
 	{
         std::wstring	m_sDir;
-	public:
-        WebSettingsWriter(std::wstring sDir):m_sDir(sDir)
-		{
-		}
-		void Write(bool bGlossary = false)
-		{
+
+    public:
+        WebSettingsWriter(std::wstring sDir);//:m_sDir(sDir)
+        /*{
+        }*/
+
+        void Write(bool bGlossary = false);
+        /*{
             std::wstring s_Common;
 
 			s_Common = _T("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> \
@@ -58,7 +60,7 @@ namespace Writers
             oFile.CreateFileW(fileName.GetPath());
             oFile.WriteStringUTF8(s_Common);
 			oFile.CloseFile();
-		}
+        }*/
 	};
 }
 #endif	// #ifndef WEB_SETTINGS_WRITER

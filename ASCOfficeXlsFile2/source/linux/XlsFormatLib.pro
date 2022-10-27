@@ -38,11 +38,11 @@ INCLUDEPATH += ../Common
 INCLUDEPATH += ../../../Common/DocxFormat/Source/XlsbFormat
 
 # Use Precompiled headers (PCH)
-use_pch {
+#use_pch {
 CONFIG += precompile_header
 PRECOMPILED_HEADER = precompiled_xls.h
 HEADERS += precompiled_xls.h
-}
+#}
 
 core_release {
 SOURCES += \
@@ -864,6 +864,15 @@ SOURCES +=  \
     ../XlsXlsxConverter/xlsx_activeX_context.cpp \
     ../XlsXlsxConverter/xlsx_comments.cpp \
     ../XlsXlsxConverter/xlsx_comments_context.cpp \
+    ../../../Common/DocxFormat/Source/Base/Nullable.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/SimpleType.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Double.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/DecimalNumber.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Point.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Inch.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Emu.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/UniversalMeasure.cpp \
+    ../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/UniversalMeasureOrPercent.cpp
 
 HEADERS +=  \
     ../XlsFormat/Logic/Biff_records/AlRuns.h \

@@ -5,18 +5,18 @@
 // Add C++ includes here
 
 
+#include <boost/unordered_map.hpp>
 #include <string>
+#include <map>
+#include <stack>
+#include <vector>
+#include <algorithm>
 #include <iostream>
 #include <memory.h>
 #include <boost/make_shared.hpp>
 #include <unordered_map>
-#include <vector>
-#include <algorithm>
 #include <list>
 #include <stdio.h>
-#include <boost/unordered_map.hpp>
-#include <map>
-#include <stack>
 #include <memory>
 #include <windows.h>
 #include <stdlib.h>
@@ -28,5 +28,17 @@
 #include <thread>
 #include <sstream>
 #include <streambuf>
+
+
+#include "../DocWrapper/FontProcessor.h"
+#include "../BinReader/ChartWriter.h"
+#include "../BinReader/DocumentRelsWriter.h"
+#include "../BinReader/HeaderFooterWriter.h"
+#include "../BinWriter/BinReaderWriterDefines.h"
+#include "../../XlsxSerializerCom/Common/BinReaderWriterDefines.h"
+#include "../../XlsxSerializerCom/Common/Common.h"
+#include "../BinReader/DefaultThemeWriter.h"
+#include "../DocWrapper/ChartWriter.h"
+
 
 #endif

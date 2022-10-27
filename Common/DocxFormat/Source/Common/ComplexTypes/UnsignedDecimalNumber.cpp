@@ -30,8 +30,6 @@
  *
  */
 
-#pragma once
-
 #include "../ComplexTypes.h"
 
 namespace ComplexTypes

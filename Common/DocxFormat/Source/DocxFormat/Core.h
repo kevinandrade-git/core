@@ -47,11 +47,11 @@ namespace OOX
 	public:
 		CCore(OOX::Document* pMain);
 		CCore(OOX::Document* pMain, const CPath& oPath);
-		virtual ~CCore()
-		{
-		}
-		virtual void read(const CPath& oPath)
-		{
+        virtual ~CCore();
+        /*{
+        }*/
+        virtual void read(const CPath& oPath);
+        /*{
 			XmlUtils::CXmlNode oProperties;
 			oProperties.FromXmlFile( oPath.GetPath(), true );
 
@@ -104,9 +104,9 @@ namespace OOX
 				if ( oProperties.GetNode( _T("cp:version"), oItem ) )
 					m_sVersion = oItem.GetText();
 			}
-		}
-		virtual void write(const CPath& oPath, const CPath& oDirectory, CContentTypes& oContent) const
-		{
+        }*/
+        virtual void write(const CPath& oPath, const CPath& oDirectory, CContentTypes& oContent) const;
+        /*{
 			std::wstring sXml;
 			sXml = _T("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\
 <cp:coreProperties \
@@ -209,28 +209,28 @@ xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">");
 
 			NSFile::CFileBinary::SaveToFile( oPath.GetPath(), sXml );
 			oContent.Registration( type().OverrideType(), oDirectory, oPath.GetFilename() );
-		}
+        }*/
 
-		virtual const FileType type() const
-		{
+        virtual const FileType type() const;
+        /*{
 			return FileTypes::Core;
-		}
+        }*/
 
-		virtual const CPath DefaultDirectory() const
-		{
+        virtual const CPath DefaultDirectory() const;
+        /*{
 			return type().DefaultDirectory();
-		}
-		virtual const CPath DefaultFileName() const
-		{
+        }*/
+        virtual const CPath DefaultFileName() const;
+        /*{
 			return type().DefaultFileName();
-		}
-		void SetDefaults()
-		{
+        }*/
+        void SetDefaults();
+        /*{
 //			m_sCreator = L"";
 			m_sLastModifiedBy = L"";
-		}
-		void SetRequiredDefaults()
-		{
+        }*/
+        void SetRequiredDefaults();
+        /*{
 			if (m_sCreator.IsInit())
 			{
 				std::wstring sCreator = NSSystemUtils::GetEnvVariable(NSSystemUtils::gc_EnvCreator);
@@ -250,15 +250,15 @@ xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">");
 			std::wstring sModified = NSSystemUtils::GetEnvVariable(NSSystemUtils::gc_EnvModified);
 			if (!sModified.empty())
 				m_sModified = sModified;
-		}
-		void SetCreator(std::wstring sVal)
-		{
+        }*/
+        void SetCreator(std::wstring sVal);
+        /*{
 			m_sCreator = sVal;
-		}
-		void SetLastModifiedBy(std::wstring sVal)
-		{
+        }*/
+        void SetLastModifiedBy(std::wstring sVal);
+        /*{
 			m_sLastModifiedBy = sVal;
-		}
+        }*/
 		PPTX::Core* ToPptxCore();
 		void FromPptxCore(PPTX::Core* pCore);
 

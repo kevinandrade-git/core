@@ -40,11 +40,11 @@ namespace Writers
 	public:
  		std::wstring m_sContent;
 		
-		DefaultThemeWriter( )
-		{
-		}
-        void Write(std::wstring sThemeFilePath)
-		{
+        DefaultThemeWriter( );
+        /*{
+        }*/
+        void Write(std::wstring sThemeFilePath);
+        /*{
 			if (m_sContent.empty())
 			{
 				m_sContent = L"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>";
@@ -330,7 +330,7 @@ m_sContent +=
   <a:objectDefaults/> \
   <a:extraClrSchemeLst/> \
 </a:theme>";
-			}
+            }
 
             OOX::CPath fileName = sThemeFilePath;
 
@@ -338,7 +338,7 @@ m_sContent +=
             oFile.CreateFileW(fileName.GetPath());
 			oFile.WriteStringUTF8(m_sContent);
 			oFile.CloseFile();
-		}
+        }*/
 	};
 }
 

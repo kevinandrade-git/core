@@ -30,8 +30,6 @@
  *
  */
 
-#pragma once
-
 #include "../SimpleTypes_Base.h"
 
 namespace SimpleTypes

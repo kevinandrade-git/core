@@ -33,6 +33,10 @@
 
 #include "../../XlsxSerializerCom/Common/Common.h"
 
+#include "../../DesktopEditor/common/Path.h"
+#include "../../DesktopEditor/common/Directory.h"
+#include "../../DesktopEditor/common/StringBuilder.h"
+
 namespace Writers
 {
 	class MediaWriter
@@ -40,29 +44,30 @@ namespace Writers
 		NSStringUtils::CStringBuilder	m_oWriter;
         std::wstring            m_sDir;
         std::wstring            m_sMediaDir;
-	public:
+
+    public:
         std::vector<std::wstring> m_aImageNames;
 		long nImageCount;
 
-        MediaWriter(std::wstring sDir):m_sDir(sDir)
-		{
+        MediaWriter(std::wstring sDir);//:m_sDir(sDir)
+        /*{
 			nImageCount = 0;
 
             OOX::CPath filePath = m_sDir + FILE_SEPARATOR_STR + L"word" + FILE_SEPARATOR_STR + L"media";
 
             m_sMediaDir = filePath.GetPath();
-		}
-        std::wstring AddImageGetNewPath()
-		{
+        }*/
+        std::wstring AddImageGetNewPath();
+        /*{
 			NSDirectory::CreateDirectories(m_sMediaDir);
 
             std::wstring sNewImgName = L"image" + std::to_wstring(nImageCount + 1) + L".jpg";
             std::wstring sNewImg = m_sMediaDir + FILE_SEPARATOR_STR + sNewImgName;
 			nImageCount++;
 			return sNewImg;
-		}
-		void AddImage2(FILE* pFile)
-		{
+        }*/
+        void AddImage2(FILE* pFile);
+        /*{
 			long size = ftell(pFile);
 			if(size > 0)
 			{
@@ -81,14 +86,14 @@ namespace Writers
 				}
 				RELEASEARRAYOBJECTS(pData);
 			}
-		}
-        void AddImage(const std::wstring& sImg)
-		{
+        }*/
+        void AddImage(const std::wstring& sImg);
+        /*{
             OOX::CPath pathNewImg = AddImageGetNewPath();
 
             NSFile::CFileBinary::Copy(sImg, pathNewImg.GetPath());
             std::wstring sFilename = NSSystemPath::GetFileName(pathNewImg.GetPath()).c_str();
 			m_aImageNames.push_back(sFilename);
-		}
+        }*/
 	};
 }

@@ -27,7 +27,8 @@ SOURCES +=  \
     ../VbaFormat/Records.cpp \
     ../VbaFormat/StreamObjects.cpp \
     ../VbaFormat/VbaBinary.cpp \
-    ../VbaFormat/VbaReader.cpp 
+    ../VbaFormat/VbaReader.cpp
+
 
 
 HEADERS +=  \

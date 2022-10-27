@@ -38,12 +38,13 @@ namespace Writers
 	class DocumentRelsWriter
 	{
         std::wstring	m_sDir;
+
 	public:
-		DocumentRelsWriter(std::wstring sDir) : m_sDir(sDir), m_bHasCustomProperties(false)
-		{
-		}
-		void Write(bool bGlossary = false)
-		{
+        DocumentRelsWriter(std::wstring sDir);// : m_sDir(sDir), m_bHasCustomProperties(false)
+        /*{
+        }*/
+        void Write(bool bGlossary = false);
+        /*{
             std::wstring s_Common;
 
 			s_Common = _T("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?> \
@@ -63,7 +64,8 @@ namespace Writers
             oFile.CreateFileW(fileName.GetPath());
             oFile.WriteStringUTF8(s_Common);
 			oFile.CloseFile();
-		}
+        }*/
+
 		bool m_bHasCustomProperties = false;
 	};
 }

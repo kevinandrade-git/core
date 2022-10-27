@@ -6057,10 +6057,10 @@ namespace SimpleTypes
 	{
 	public:
 
-		CAlignH() {} 
+        CAlignH();// {}
 
-        virtual EAlignH FromString(std::wstring &sValue)
-		{
+        virtual EAlignH FromString(std::wstring &sValue);
+        /*{
             if       ( (L"center")  == sValue ) this->m_eValue = alignhCenter;
             else if  ( (L"inside")  == sValue ) this->m_eValue = alignhInside;
             else if  ( (L"left")    == sValue ) this->m_eValue = alignhLeft;
@@ -6069,10 +6069,10 @@ namespace SimpleTypes
             else                                 this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString() const
-		{
+        virtual std::wstring ToString() const;
+        /*{
             switch(this->m_eValue)
 			{
 			case alignhCenter  : return (L"center");
@@ -6082,7 +6082,7 @@ namespace SimpleTypes
 			case alignhRight   : return (L"right");
 			default            : return (L"left");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EAlignH)
 		SimpleType_Operator_Equal (CAlignH)
@@ -6108,10 +6108,10 @@ namespace SimpleTypes
 	{
 	public:
 
-		CAlignV() {} 
+        CAlignV();// {}
 
-        virtual EAlignV FromString(std::wstring &sValue)
-		{
+        virtual EAlignV FromString(std::wstring &sValue);
+        /*{
             if       ( (L"bottom")  == sValue ) this->m_eValue = alignvBottom;
             else if  ( (L"center")  == sValue ) this->m_eValue = alignvCenter;
             else if  ( (L"inside")  == sValue ) this->m_eValue = alignvInside;
@@ -6120,10 +6120,10 @@ namespace SimpleTypes
             else                                 this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString() const
-		{
+        virtual std::wstring ToString() const;
+        /*{
             switch(this->m_eValue)
 			{
 			case alignvBottom  : return (L"bottom");
@@ -6133,7 +6133,7 @@ namespace SimpleTypes
 			case alignvTop     : return (L"top");
 			default            : return (L"top");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EAlignV)
 		SimpleType_Operator_Equal (CAlignV)

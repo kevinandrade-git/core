@@ -34,6 +34,11 @@
 #include "../../XlsxSerializerCom/Common/Common.h"
 #include "../../Common/DocxFormat/Source/Common/SimpleTypes_Word.h"
 
+namespace NSStringUtils
+{
+    class CStringBuilder;
+}
+
 namespace Writers
 {
 	class ContentWriter

@@ -27,11 +27,11 @@ DEFINES +=  UNICODE \
         #DISABLE_FILE_DOWNLOADER
 
 # Use Precompiled headers (PCH)
-use_pch {
+#use_pch {
 CONFIG += precompile_header
 PRECOMPILED_HEADER = precompiled.h
 HEADERS += precompiled.h
-}
+#}
 
 HEADERS += \
     ../Enums/RecordType.h \
@@ -304,5 +304,6 @@ SOURCES += \
     ../../../ASCOfficePPTXFile/Editor/Drawing/Elements.cpp \
     ../../../ASCOfficePPTXFile/Editor/Drawing/TextAttributesEx.cpp \
     ../../../Common/3dParty/pole/pole.cpp \
+    ../../../Common/DocxFormat/Source/Base/Nullable.cpp \
     ../PPTXWriter/BulletsConverter.cpp
 

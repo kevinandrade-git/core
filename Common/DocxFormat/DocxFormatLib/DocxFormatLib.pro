@@ -23,11 +23,11 @@ DEFINES +=  UNICODE _UNICODE \
 include($$PWD/../../3dParty/boost/boost.pri)
 
 # Use Precompiled headers (PCH)
-use_pch {
+#use_pch {
 CONFIG += precompile_header
 PRECOMPILED_HEADER = precompiled_docx.h
 HEADERS += precompiled_docx.h
-}
+#}
 
 core_release {
 SOURCES += \
@@ -92,7 +92,26 @@ SOURCES += \
     ../Source/DocxFormat/Diagram/DiagramLayout.cpp \
     ../Source/DocxFormat/Diagram/DiagramQuickStyle.cpp \
     ../Source/DocxFormat/WritingElement.cpp \
-    ../Source/Common/SimpleTypes_Word.cpp \
+    ../Source/Common/SimpleTypes_Word.cpp \    
+    ../Source/SystemUtility/SystemUtility.cpp \
+    ../Source/XlsxFormat/Styles/rPr.cpp \
+    ../Source/XlsxFormat/SharedStrings/Si.cpp \
+    ../Source/XlsxFormat/SharedStrings/Text.cpp \
+    ../Source/XlsxFormat/Pivot/Pivots.cpp \
+    ../Source/XlsxFormat/Slicer/SlicerCache.cpp \
+    ../Source/XlsxFormat/Slicer/SlicerCacheExt.cpp \
+    ../Source/XlsxFormat/Slicer/Slicer.cpp \
+    ../Source/XlsxFormat/NamedSheetViews/NamedSheetViews.cpp \
+    ../Source/XlsxFormat/Pivot/PivotCacheDefinitionExt.cpp \
+    ../Source/XlsxFormat/Workbook/Workbook.cpp
+}
+
+
+SOURCES += docxformatlib.cpp \
+    ../Source/Utility/codecvt.cpp \
+    ../Source/Utility/DateTime.cpp \
+    ../Source/Utility/TxtFile.cpp \
+    ../Source/Base/Nullable.cpp \
     ../Source/Common/SimpleTypes_Base/SimpleType.cpp \
     ../Source/Common/SimpleTypes_Base/Double.cpp \
     ../Source/Common/SimpleTypes_Base/DecimalNumber.cpp \
@@ -117,6 +136,11 @@ SOURCES += \
     ../Source/Common/SimpleTypes_Word/PointMeasure.cpp \
     ../Source/Common/SimpleTypes_Word/DateTime.cpp \
     ../Source/Common/SimpleTypes_Word/ThemeColor.cpp \
+    ../Source/Common/SimpleTypes_Word/HighlightColor.cpp \
+    ../Source/Common/SimpleTypes_Word/FontCharset.cpp \
+    ../Source/Common/SimpleTypes_Word/WmlColorSchemeIndex.cpp \
+    ../Source/Common/SimpleTypes_Word/FtnEdn.cpp \
+    ../Source/Common/SimpleTypes_Word/FtnPos.cpp \
     ../Source/Common/SimpleTypes_Drawing/PresetColorVal.cpp \
     ../Source/Common/SimpleTypes_Drawing/ShapeType.cpp \
     ../Source/Common/SimpleTypes_Drawing/SystemColorVal.cpp \
@@ -126,6 +150,8 @@ SOURCES += \
     ../Source/Common/SimpleTypes_Drawing/Coordinate.cpp \
     ../Source/Common/SimpleTypes_Drawing/PresetPatternVal.cpp \
     ../Source/Common/SimpleTypes_Drawing/PresetCameraType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/AlignH.cpp \
+    ../Source/Common/SimpleTypes_Drawing/AlignV.cpp \
     ../Source/Common/ComplexTypes/OnOff.cpp \
     ../Source/Common/ComplexTypes/OnOff2.cpp \
     ../Source/Common/ComplexTypes/String.cpp \
@@ -135,24 +161,6 @@ SOURCES += \
     ../Source/Common/ComplexTypes/DecimalNumber.cpp \
     ../Source/Common/ComplexTypes/DecimalNumberWord.cpp \
     ../Source/Common/ComplexTypes/UnsignedDecimalNumber.cpp \
-    ../Source/SystemUtility/SystemUtility.cpp \
-    ../Source/XlsxFormat/Styles/rPr.cpp \
-    ../Source/XlsxFormat/SharedStrings/Si.cpp \
-    ../Source/XlsxFormat/SharedStrings/Text.cpp \
-    ../Source/XlsxFormat/Pivot/Pivots.cpp \
-    ../Source/XlsxFormat/Slicer/SlicerCache.cpp \
-    ../Source/XlsxFormat/Slicer/SlicerCacheExt.cpp \
-    ../Source/XlsxFormat/Slicer/Slicer.cpp \
-    ../Source/XlsxFormat/NamedSheetViews/NamedSheetViews.cpp \
-    ../Source/XlsxFormat/Pivot/PivotCacheDefinitionExt.cpp \
-    ../Source/XlsxFormat/Workbook/Workbook.cpp
-}
-
-
-SOURCES += docxformatlib.cpp \
-    ../Source/Utility/codecvt.cpp \
-    ../Source/Utility/DateTime.cpp \
-    ../Source/Utility/TxtFile.cpp \
     ../Source/Base/unicode_util.cpp \
     ../../3dParty/pole/pole.cpp \
 

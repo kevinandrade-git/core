@@ -37,7 +37,6 @@
 #include <boost/function.hpp>
 #include <boost/foreach.hpp>
 
-#include "../src/odf/list.cpp"
 #include "../formulasconvert/formulasconvert.h"
 #include "../src/odf/calcs_styles.h"
 #include "../src/odf/chart_objects.h"

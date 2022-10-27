@@ -31,12 +31,16 @@
  */
 #pragma once
 
+#include <stack>
+
 #include "BinReaderWriterDefines.h"
 
 #include "../../Common/DocxFormat/Source/MathEquation/OutputDev.h"
 #include "../../Common/DocxFormat/Source/Common/SimpleTypes_OMath.h"
 #include "../../Common/DocxFormat/Source/Common/SimpleTypes_Shared.h"
-#include <stack>
+
+#include "../../ASCOfficePPTXFile/Editor/BinaryFileReaderWriter.h"
+
 
 namespace MathEquation
 {
@@ -51,37 +55,37 @@ namespace MathEquation
 			bool bNormal;
 
 		public:
-			EquationRun()
-			{
+            EquationRun();
+            /*{
 				bNormal = false;
-			}
-            void AddChar(std::wstring sChar, TMathFont* pNewFont, LONG lSize)
-			{
+            }*/
+            void AddChar(std::wstring sChar, TMathFont* pNewFont, LONG lSize);
+            /*{
 				str = sChar;
 				pFont = pNewFont;
 				nTextSize = lSize;
 				bAccent = false;
-			}
-			bool CompareFont(TMathFont* pNewFont)
-			{
+            }*/
+            bool CompareFont(TMathFont* pNewFont);
+            /*{
 				if ( pNewFont->sName == pFont->sName && pNewFont->bBold == pFont->bBold && pNewFont->bItalic == pFont->bItalic )
 					return true;
 				else
 					return false;
-			}
-			void SetAccent(bool bAcc, MEMBELTYPE type)
-			{
+            }*/
+            void SetAccent(bool bAcc, MEMBELTYPE type);
+            /*{
 				bAccent = bAcc;
 				eType = type;
-			}
-			TMathFont* GetFont()
-			{
+            }*/
+            TMathFont* GetFont();
+            /*{
 				return pFont;
-			}
-			LONG GetSize()
-			{
+            }*/
+            LONG GetSize();
+            /*{
 				return nTextSize;
-			}
+            }*/
 	};
 
 	class RunManager
@@ -91,58 +95,58 @@ namespace MathEquation
 			std::vector<EquationRun> arrRun;			
 
 		public:
-			RunManager()
-			{
+            RunManager();
+            /*{
 				bAlligment = false;
-			}
-			void SetAlligment(bool bPos)
-			{
+            }*/
+            void SetAlligment(bool bPos);
+            /*{
 				bAlligment = bPos;
 				return;
-			}		
-			bool GetAlligment()
-			{
+            }*/
+            bool GetAlligment();
+            /*{
 				return bAlligment;
-			}
-			void Add(EquationRun oElem)
-			{
+            }*/
+            void Add(EquationRun oElem);
+            /*{
 				arrRun.push_back(oElem);
 				return;
-			}			
-			bool IsEmpty()
-			{
+            }*/
+            bool IsEmpty();
+            /*{
 				return arrRun.empty();
-			}
-			LONG GetSize()
-			{
+            }*/
+            LONG GetSize();
+            /*{
 				return (LONG)arrRun.size();
-			}			
-			bool GetElem (LONG lPos, EquationRun &oRun)
-			{
+            }*/
+            bool GetElem (LONG lPos, EquationRun &oRun);
+            /*{
 				if (lPos < (LONG)arrRun.size() )
 				{
 					oRun = arrRun[lPos];
 					return true;
 				}
 				return false;
-			}
-			void Clear()
-			{
+            }*/
+            void Clear();
+            /*{
 				arrRun.clear();
 				return;
-			}
-			void RemoveElem (LONG lPos)
-			{
+            }*/
+            void RemoveElem (LONG lPos);
+            /*{
 				arrRun.erase(arrRun.begin()+lPos);
 				return;
-			}
-			void Delete(LONG lStart, LONG lCount)
-			{
+            }*/
+            void Delete(LONG lStart, LONG lCount);
+            /*{
 				arrRun.erase(arrRun.begin()+lStart, arrRun.begin()+lCount);
 				return;
-			}
-			void AddAccent (MEMBELTYPE eType)
-			{
+            }*/
+            void AddAccent (MEMBELTYPE eType);
+            /*{
 				LONG lPos = GetSize() - 1;
 
 				if (lPos < 0) return;
@@ -154,7 +158,8 @@ namespace MathEquation
 				oRun.bAccent = true;
 				oRun.eType = eType;
 				Add(oRun);
-			}
+            }*/
+
 		public:
 			bool bAlligment;
 	};
@@ -184,13 +189,14 @@ namespace MathEquation
 			LONG nTextSize;
 			LONG nCtrlSize;
 			BYTE nHAlignPile;
-		public:
-			BinaryEquationWriter(NSBinPptxRW::CBinaryFileWriter &oStream) : bEmbel(false), m_oStream(oStream)
-			{				
-			}
 
-            void WriteRPR(TMathFont* pFont, LONG nSize, bool bIsOpen)
-			{
+		public:
+            BinaryEquationWriter(NSBinPptxRW::CBinaryFileWriter &oStream);// : bEmbel(false), m_oStream(oStream)
+            /*{
+            }*/
+
+            void WriteRPR(TMathFont* pFont, LONG nSize, bool bIsOpen);
+            /*{
 				if (NULL != pFont)
 				{
 					int nCurPos;
@@ -219,16 +225,18 @@ namespace MathEquation
 						m_oStream.WriteBYTE(BinDocxRW::c_oSerPropLenType::Long);
 						m_oStream.WriteLONG(nSize);
 
-						/*m_oStream.WriteBYTE(BinDocxRW::c_oSerProp_rPrType::FontSizeCS);
-						m_oStream.WriteBYTE(BinDocxRW::c_oSerPropLenType::Long);
-						m_oStream.WriteLONG(nSize);*/
+                        //m_oStream.WriteBYTE(BinDocxRW::c_oSerProp_rPrType::FontSizeCS);
+                        //m_oStream.WriteBYTE(BinDocxRW::c_oSerPropLenType::Long);
+                        //m_oStream.WriteLONG(nSize);
 					}
 					WriteItemEnd(nCurPos);
 				}
 				return;
-			}
-			void WriteMRPR(EquationRun oRun)
-			{
+            }*/
+
+
+            void WriteMRPR(EquationRun oRun);
+            /*{
 
 				int nCurPos = WriteItemStart(BinDocxRW::c_oSer_OMathContentType::MRPr);
                 BYTE eStyle = SimpleTypes::stylePlain;
@@ -250,10 +258,11 @@ namespace MathEquation
 					WriteItemVal(BinDocxRW::c_oSer_OMathBottomNodesType::Nor, oRun.bNormal);
 				WriteItemEnd(nCurPos);
 				return;
-			}
+            }*/
 
-			void WriteRunContent(EquationRun oRun, bool bIsOpen)
-			{
+
+            void WriteRunContent(EquationRun oRun, bool bIsOpen);
+            /*{
 				TMathFont* pCurFont = oRun.pFont;
 				int nCurPos = WriteItemStart(BinDocxRW::c_oSer_OMathContentType::MRun);
 				WriteRPR(oRun.pFont, oRun.nTextSize, bIsOpen);
@@ -264,20 +273,21 @@ namespace MathEquation
 				m_oStream.WriteStringW(oRun.str);
 				WriteItemEnd(nCurPos1);
 				WriteItemEnd(nCurPos);
-			}
+            }*/
 
-			void CutRun(int nCount)
-			{
+
+            void CutRun(int nCount);
+            /*{
 				LONG lSize = oRManager.GetSize();
 				if (nCount < lSize+1)
 				{
 					for (int i=0; i<nCount; i++)
 						oRManager.Delete(0,1);
 				}
-			}
+            }*/
 
-			void WriteRun(bool bLast = false)
-			{
+            void WriteRun(bool bLast = false);
+            /*{
                 bool bIsOpen;
 				if (!m_aCommandStack.empty())
 					bIsOpen = m_aCommandStack.top()->IsOpenNode(); //if false write ctrlPrp
@@ -386,41 +396,41 @@ namespace MathEquation
 				}
 				oRManager.SetAlligment(false);
 				return;
-			}
+            }*/
 
-			int WriteItemStart(BYTE type)
-			{
+            int WriteItemStart(BYTE type);
+            /*{
 				//type
 				m_oStream.WriteBYTE(type);
 				return WriteItemWithLengthStart();
-			}
-			void WriteItemEnd(int nStart)
-			{
+            }*/
+            void WriteItemEnd(int nStart);
+            /*{
 				WriteItemWithLengthEnd(nStart);
-			}
-			int WriteItemWithLengthStart()
-			{
+            }*/
+            int WriteItemWithLengthStart();
+            /*{
 				//Запоминаем позицию чтобы в конце записать туда длину
 				int nStartPos = m_oStream.GetPosition();
 				m_oStream.Skip(4);	
 				return nStartPos;
-			}
-			void WriteItemWithLengthEnd(int nStart)
-			{
+            }*/
+            void WriteItemWithLengthEnd(int nStart);
+            /*{
 				//Length
 				int nEnd = m_oStream.GetPosition();
 				m_oStream.SetPosition(nStart);
 				m_oStream.WriteLONG(nEnd - nStart - 4);
 				m_oStream.SetPosition(nEnd);
-			}
+            }*/
 
-			virtual void BeginEquation()
-			{
-				int nCurPos = WriteItemStart(BinDocxRW::c_oSer_OMathContentType::OMath);
-				m_aEquationStack.push(nCurPos);
-			}
-			virtual void EndEquation()
-			{
+            virtual void BeginEquation();
+            /*{
+                int nCurPos = WriteItemStart(BinDocxRW::c_oSer_OMathContentType::OMath);
+                m_aEquationStack.push(nCurPos);
+            }*/
+            virtual void EndEquation();
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -430,30 +440,30 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aEquationStack.pop();
 				}
-			}
-			virtual void BeginBlock()
-			{
+            }*/
+            virtual void BeginBlock();
+            /*{
 				if (!m_aCommandStack.empty())
 				{
 					CBaseCommand* pCommand = TopCommand();
 					pCommand->Next();
 					pCommand->WriteBeginBlock(this);
 				}
-			}
-			virtual void EndBlock()
-			{
+            }*/
+            virtual void EndBlock();
+            /*{
 				if (!m_aCommandStack.empty())
 				{
 					CBaseCommand* pCommand = TopCommand();
 					pCommand->WriteEndBlock(this);
 				}
-			}
-			virtual void SetSize(uint16_t nSize)
-			{
+            }*/
+            virtual void SetSize(uint16_t nSize);
+            /*{
 				nTextSize = nSize*2;				
-			}
-            virtual void BeginChar(unsigned short uChar, unsigned char nTypeFace, bool bSpecialSymbol)
-			{
+            }*/
+            virtual void BeginChar(unsigned short uChar, unsigned char nTypeFace, bool bSpecialSymbol);
+            /*{
                 bool bIsOpen;
 				if (!m_aCommandStack.empty())
 					bIsOpen = m_aCommandStack.top()->IsOpenNode(); //if false write ctrlPrp
@@ -507,40 +517,40 @@ namespace MathEquation
 					oRun.AddChar(str, pFont, nTextSize);
 					oRManager.Add(oRun);
 				}							
-			}
-			virtual void AddCharEmbel(MEMBELTYPE eType)
-			{
+            }*/
+            virtual void AddCharEmbel(MEMBELTYPE eType);
+            /*{
 				oRManager.AddAccent(eType);
-			}
-			virtual void EndChar()
-			{
-				/*if (!m_aRunStack.empty())
-				{
-					int nCurPos = m_aRunStack.top();
-					WriteItemEnd(nCurPos);
-					m_aRunStack.pop();
+            }*/
+            virtual void EndChar();
+            /*{
+//				if (!m_aRunStack.empty())
+//				{
+//					int nCurPos = m_aRunStack.top();
+//					WriteItemEnd(nCurPos);
+//					m_aRunStack.pop();
 
-					if (bEmbel)
-					{
-						int nCurPos;
-						if (!m_aAccentStack.empty())
-						{
-							nCurPos = m_aAccentStack.top();
-							m_aAccentStack.pop();
-							WriteItemEnd(nCurPos);
-						}
-						if (!m_aAccentStack.empty())
-						{
-							nCurPos = m_aAccentStack.top();
-							m_aAccentStack.pop();
-							WriteItemEnd(nCurPos);
-						}
-						bEmbel = false;
-					}
-				}*/
-			}
-            virtual void BeginMatrix(unsigned char nVAlign, MMATRIXHORALIGN eHorAlign, MMATRIXVERALIGN eVerAlign, bool bEqualRows, bool bEqualCols, unsigned char nRows, unsigned char nCols, unsigned char* pVerBorders, unsigned char* pHorBorders)
-			{
+//					if (bEmbel)
+//					{
+//						int nCurPos;
+//						if (!m_aAccentStack.empty())
+//						{
+//							nCurPos = m_aAccentStack.top();
+//							m_aAccentStack.pop();
+//							WriteItemEnd(nCurPos);
+//						}
+//						if (!m_aAccentStack.empty())
+//						{
+//							nCurPos = m_aAccentStack.top();
+//							m_aAccentStack.pop();
+//							WriteItemEnd(nCurPos);
+//						}
+//						bEmbel = false;
+//					}
+//				}
+            }*/
+            virtual void BeginMatrix(unsigned char nVAlign, MMATRIXHORALIGN eHorAlign, MMATRIXVERALIGN eVerAlign, bool bEqualRows, bool bEqualCols, unsigned char nRows, unsigned char nCols, unsigned char* pVerBorders, unsigned char* pHorBorders);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -574,9 +584,9 @@ namespace MathEquation
 				WriteItemEnd(nCurPos2);
 				WriteItemEnd(nCurPos1);
 
-			}
-			virtual void EndMatrix()
-			{
+            }*/
+            virtual void EndMatrix();
+            /*{
 				PopCommand();
 
 				if (!m_aMatrixStack.empty())
@@ -585,9 +595,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aMatrixStack.pop();
 				}
-			}
-            virtual void StartPile(unsigned char nHAlign, unsigned char nVAlign)
-			{
+            }*/
+            virtual void StartPile(unsigned char nHAlign, unsigned char nVAlign);
+            /*{
 				switch (nHAlign)
 				{
 				case 1: 
@@ -603,9 +613,9 @@ namespace MathEquation
 					PushCommand(commandEqArray);
 				}
 				m_aCommandStack.top()->SetPile(true, nHAlignPile);
-			}
-			virtual void EndPile()
-			{
+            }*/
+            virtual void EndPile();
+            /*{
 				if (!m_aCommandStack.empty())
 				{
 					m_aCommandStack.top()->SetPile(false, SimpleTypes::xalignLeft);
@@ -638,9 +648,9 @@ namespace MathEquation
 						pCommand->Next();
 				}
 				nHAlignPile = SimpleTypes::xalignLeft;
-			}
-			virtual void BeginBrackets(MBRACKETSTYPE eType, bool bOpen, bool bClose)
-			{
+            }*/
+            virtual void BeginBrackets(MBRACKETSTYPE eType, bool bOpen, bool bClose);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -710,9 +720,9 @@ namespace MathEquation
 				}
 
 				WriteItemEnd(nCurPos1);
-			}
-			virtual void EndBrackets  (MBRACKETSTYPE eType, bool bOpen, bool bClose)
-			{
+            }*/
+            virtual void EndBrackets  (MBRACKETSTYPE eType, bool bOpen, bool bClose);
+            /*{
 				if (!m_aDelimiterCounter.empty())
 				{
 					int nCount = m_aCommandStack.top()->GetCount();
@@ -731,9 +741,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aDelimiterStack.pop();
 				}
-			}
-			virtual void BeginRoot(bool bDegree)
-			{
+            }*/
+            virtual void BeginRoot(bool bDegree);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -746,9 +756,9 @@ namespace MathEquation
 				if (!bDegree)
 					WriteItemVal(BinDocxRW::c_oSer_OMathBottomNodesType::DegHide, true);
 				WriteItemEnd(nCurPos1);
-			}
-			virtual void EndRoot  ()
-			{
+            }*/
+            virtual void EndRoot  ();
+            /*{
 				PopCommand();
 
 				if (!m_aRadicalStack.empty())
@@ -757,9 +767,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aRadicalStack.pop();
 				}
-			}
-			virtual void BeginFraction(MFRACTIONTYPES eType, bool bInline)
-			{
+            }*/
+            virtual void BeginFraction(MFRACTIONTYPES eType, bool bInline);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -785,9 +795,9 @@ namespace MathEquation
 				WriteItemVal(BinDocxRW::c_oSer_OMathBottomNodesType::Type, fracType);
 
 				WriteItemEnd(nCurPos1);
-			}
-			virtual void EndFraction  ()
-			{
+            }*/
+            virtual void EndFraction  ();
+            /*{
 				PopCommand();
 
 				if (!m_aFractionStack.empty())
@@ -796,9 +806,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aFractionStack.pop();
 				}
-			}
-			virtual void BeginScript(MSCRIPTALIGN eAlign, bool bBase = false, bool bSup = false, bool bSub = false, bool bInline = true)
-			{
+            }*/
+            virtual void BeginScript(MSCRIPTALIGN eAlign, bool bBase = false, bool bSup = false, bool bSub = false, bool bInline = true);
+            /*{
 				bool bSaveLastRun = false;
 				if (!bBase && !oRManager.IsEmpty())
 					bSaveLastRun = true;
@@ -834,12 +844,12 @@ namespace MathEquation
 							nCurPos1 = WriteItemStart(BinDocxRW::c_oSer_OMathContentType::SSupPr);
 						}
 						break;					
-					/*case scriptalignLeft: можно сделать так, но выглядеть будет плохо
-					{
-						nCurPos = WriteItemStart(BinDocxRW::c_oSer_OMathContentType::SPre);
-						nCurPos1 = WriteItemStart(BinDocxRW::c_oSer_OMathContentType::SPrePr);
-					}
-					break;*/
+//					case scriptalignLeft: можно сделать так, но выглядеть будет плохо
+//					{
+//						nCurPos = WriteItemStart(BinDocxRW::c_oSer_OMathContentType::SPre);
+//						nCurPos1 = WriteItemStart(BinDocxRW::c_oSer_OMathContentType::SPrePr);
+//					}
+//					break;
 				}
 				if (bInline)
 					WriteItemVal(BinDocxRW::c_oSer_OMathBottomNodesType::AlnScr, true);
@@ -852,9 +862,9 @@ namespace MathEquation
 					WriteRun();
 					WriteItemEnd(nCurPos2);
 				}
-			}
-			virtual void EndScript  ()
-			{
+            }*/
+            virtual void EndScript  ();
+            /*{
 				PopCommand();
 
 				if (!m_aScriptStack.empty())
@@ -863,9 +873,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aScriptStack.pop();
 				}
-			}
-			virtual void BeginBar(MBARTYPE eType, bool bTop)
-			{
+            }*/
+            virtual void BeginBar(MBARTYPE eType, bool bTop);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -904,9 +914,9 @@ namespace MathEquation
 
 				WriteItemEnd(nCurPos1);
 
-			}
-			virtual void EndBar  ()
-			{
+            }*/
+            virtual void EndBar  ();
+            /*{
 				PopCommand();
 
 				if (!m_aGroupChrStack.empty())
@@ -915,9 +925,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aGroupChrStack.pop();
 				}
-			}
-			virtual void BeginArrow(MARROWTYPE eType, bool bTop)
-			{
+            }*/
+            virtual void BeginArrow(MARROWTYPE eType, bool bTop);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -953,9 +963,9 @@ namespace MathEquation
 				WriteItemValStr(BinDocxRW::c_oSer_OMathBottomNodesType::Chr, str);
 
 				WriteItemEnd(nCurPos1);
-			}
-			virtual void EndArrow  ()
-			{
+            }*/
+            virtual void EndArrow  ();
+            /*{
 				PopCommand();
 
 				if (!m_aGroupChrStack.empty())
@@ -964,9 +974,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aGroupChrStack.pop();
 				}
-			}
-			virtual void BeginIntegral(MINTEGRALTYPE eType)
-			{
+            }*/
+            virtual void BeginIntegral(MINTEGRALTYPE eType);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -1135,9 +1145,9 @@ namespace MathEquation
 
 				
 				WriteItemEnd(nCurPos1);
-			}
-			virtual void EndIntegral  ()
-			{
+            }*/
+            virtual void EndIntegral  ();
+            /*{
 				PopCommand();
 
 				if (!m_aNArrayCutStack.empty())
@@ -1154,9 +1164,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aNArrayStack.pop();
 				}
-			}
-			virtual void BeginVerticalBrace(bool bTop)
-			{
+            }*/
+            virtual void BeginVerticalBrace(bool bTop);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -1201,9 +1211,9 @@ namespace MathEquation
 
 				PushCommand(commandVerticalBrace);
 				
-			}
-			virtual void EndVerticalBrace  ()
-			{
+            }*/
+            virtual void EndVerticalBrace  ();
+            /*{
 				PopCommand();
 
 				if (!m_aLimitStack.empty())
@@ -1212,9 +1222,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aLimitStack.pop();
 				}
-			}
-			virtual void BeingNArray(MNARRAYTYPE eType)
-			{
+            }*/
+            virtual void BeingNArray(MNARRAYTYPE eType);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -1382,9 +1392,9 @@ namespace MathEquation
 				m_aNArrayCutStack.push(1);
 				
 				WriteItemEnd(nCurPos1);
-			}
-			virtual void EndNArray  ()
-			{
+            }*/
+            virtual void EndNArray  ();
+            /*{
 				CNArrayCommand* pCommand = (CNArrayCommand*)TopCommand();
 				MNARRAYTYPE eType = pCommand->GetType();
 				PopCommand();
@@ -1403,9 +1413,9 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aNArrayStack.pop();
 				}
-			}
-			virtual void BeginLongDivision(MLONGDIVISION eType)
-			{
+            }*/
+            virtual void BeginLongDivision(MLONGDIVISION eType);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 				if (eType == longdivisionWithResult)
@@ -1425,9 +1435,9 @@ namespace MathEquation
 				{
 					BeginBrackets(bracketsLine, true, false);
 				}
-			}
-			virtual void EndLongDivision  ()
-			{
+            }*/
+            virtual void EndLongDivision  ();
+            /*{
 				
 				ECommandType eType;
 				CBaseCommand* pCommand = TopCommand();
@@ -1441,9 +1451,9 @@ namespace MathEquation
 					MBRACKETSTYPE ebType = MBRACKETSTYPE::bracketsAngle; //???
 					EndBrackets(ebType, false, false);
 				}
-			}
-			virtual void BeginAngleBracketsWithSeparator(MANGLEBRACKETSWITHSEPARATORTYPE eType)
-			{
+            }*/
+            virtual void BeginAngleBracketsWithSeparator(MANGLEBRACKETSWITHSEPARATORTYPE eType);
+            /*{
 				if (!oRManager.IsEmpty())
 					WriteRun();
 
@@ -1479,9 +1489,9 @@ namespace MathEquation
 				}				
 				WriteItemEnd(nCurPos1);
 
-			}
-			virtual void EndAngleBracketsWithSeparator  ()
-			{
+            }*/
+            virtual void EndAngleBracketsWithSeparator  ();
+            /*{
 				PopCommand();
 
 				if (!m_aDelimiterStack.empty())
@@ -1490,18 +1500,18 @@ namespace MathEquation
 					WriteItemEnd(nCurPos);
 					m_aDelimiterStack.pop();
 				}
-			}
+            }*/
 
-            void AddFont(unsigned char nTypeFace, std::string sName, bool bBold, bool bItalic)
-			{
+            void AddFont(unsigned char nTypeFace, std::string sName, bool bBold, bool bItalic);
+            /*{
 				TMathFont aFont;
 				aFont.sName   = sName;
 				aFont.bBold   = bBold;
 				aFont.bItalic = bItalic;
 				m_mFonts[nTypeFace] = aFont;
-			}
-			void WriteItemVal(BYTE name, BYTE val)
-			{
+            }*/
+            void WriteItemVal(BYTE name, BYTE val);
+            /*{
 				int nCurPos = WriteItemStart(name);
 
 				m_oStream.WriteBYTE(BinDocxRW::c_oSer_OMathBottomNodesValType::Val);
@@ -1509,9 +1519,9 @@ namespace MathEquation
 				m_oStream.WriteBYTE(val);
 
 				WriteItemEnd(nCurPos);
-			}
-			void WriteItemValLong(BYTE name, LONG val)
-			{
+            }*/
+            void WriteItemValLong(BYTE name, LONG val);
+            /*{
 				int nCurPos = WriteItemStart(name);
 
 				m_oStream.WriteBYTE(BinDocxRW::c_oSer_OMathBottomNodesValType::Val);
@@ -1519,9 +1529,9 @@ namespace MathEquation
 				m_oStream.WriteLONG(val);
 
 				WriteItemEnd(nCurPos);
-			}
-            void WriteItemVal(BYTE name, bool val)
-			{
+            }*/
+            void WriteItemVal(BYTE name, bool val);
+            /*{
 				int nCurPos = WriteItemStart(name);
 
 				m_oStream.WriteBYTE(BinDocxRW::c_oSer_OMathBottomNodesValType::Val);
@@ -1529,9 +1539,9 @@ namespace MathEquation
 				m_oStream.WriteBOOL(val);
 
 				WriteItemEnd(nCurPos);
-			}
-            void WriteItemValStr(BYTE name, std::wstring val)
-			{
+            }*/
+            void WriteItemValStr(BYTE name, std::wstring val);
+            /*{
 				int nCurPos = WriteItemStart(name);
 
 				m_oStream.WriteBYTE(BinDocxRW::c_oSer_OMathBottomNodesValType::Val);
@@ -1539,7 +1549,7 @@ namespace MathEquation
 				m_oStream.WriteStringW(val);
 
 				WriteItemEnd(nCurPos);
-			}
+            }*/
 
 		private:
 		enum ECommandType
@@ -1564,47 +1574,47 @@ namespace MathEquation
 		{
 		public:
 
-			CBaseCommand() : nBlockNum(-1), bPile(false), bEqArrayStart(false), nCount(0), nHAlignPile(2)
-			{
-			}
+            CBaseCommand();// : nBlockNum(-1), bPile(false), bEqArrayStart(false), nCount(0), nHAlignPile(2)
+            /*{
+            }*/
 
-			virtual ~CBaseCommand() 
-			{
-			}
+            virtual ~CBaseCommand();
+            /*{
+            }*/
 
-			void Next() 
-			{
+            void Next();
+            /*{
                 bool bCurPile;
 				bCurPile = GetPile();
                 if (!bCurPile || (nBlockNum == -1))
 					nBlockNum++;
-			}
+            }*/
 
-            bool IsOpenNode()
-			{
+            bool IsOpenNode();
+            /*{
 				return bOpenNode;
-			}
-			int GetCount()
-			{
+            }*/
+            int GetCount();
+            /*{
 				return nCount;
-			}
-			void SetPile(bool bSetPile, BYTE nHPile)
-			{
+            }*/
+            void SetPile(bool bSetPile, BYTE nHPile);
+            /*{
 				nHAlignPile = nHPile;
 				bPile = bSetPile;
 				bEqArrayStart = !bSetPile;
-			}
-			bool GetPile()
-			{
+            }*/
+            bool GetPile();
+            /*{
 				return bPile;
-			}
+            }*/
 
-			int GetBlockNum()
-			{
+            int GetBlockNum();
+            /*{
 				return nBlockNum;
-			}
-			void WriteBeginNode(BinaryEquationWriter* pWriter, BYTE elem)
-			{
+            }*/
+            void WriteBeginNode(BinaryEquationWriter* pWriter, BYTE elem);
+            /*{
 				int nElemPos;
 				if (bEqArrayStart)
 				{
@@ -1643,9 +1653,9 @@ namespace MathEquation
 					nRows = 1;
 					m_aBaseStack.push(nElemPos);
 				}
-			}
-			void WriteBeginNode(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            void WriteBeginNode(BinaryEquationWriter* pWriter);
+            /*{
 				int nElemPos;
 				if (bEqArrayStart)
 				{
@@ -1678,10 +1688,10 @@ namespace MathEquation
 					nRows = 1;
 					m_aBaseStack.push(nElemPos);
 				}
-			}
+            }*/
 
-			void WriteEndNode(BinaryEquationWriter* pWriter)
-			{
+            void WriteEndNode(BinaryEquationWriter* pWriter);
+            /*{
 				int nCurPos = -1;
 				if (!m_aBaseStack.empty())
 				{
@@ -1718,7 +1728,7 @@ namespace MathEquation
 						pWriter->WriteItemEnd(nCurPos);
 					}					
 				}
-			}
+            }*/
 
 			virtual ECommandType GetCommand() = 0;
 			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter) = 0;
@@ -1738,21 +1748,21 @@ namespace MathEquation
 		class CMatrixCommand : public CBaseCommand
 		{
 		public:
-			CMatrixCommand() : nRows(0), nCols(0) {}
-			virtual ~CMatrixCommand() {}
-			virtual ECommandType GetCommand()
-			{
+            CMatrixCommand();// : nRows(0), nCols(0) {}
+            virtual ~CMatrixCommand();// {}
+            virtual ECommandType GetCommand();
+            /*{
 				return commandMatrix;
-			}
+            }*/
 
-			void SetProps(int nRows, int nCols)
-			{
+            void SetProps(int nRows, int nCols);
+            /*{
 				this->nRows = nRows;
 				this->nCols = nCols;
-			}
+            }*/
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				int nCurRow = nBlockNum / nCols;
 				int nCurCol = nBlockNum % nCols;
 				
@@ -1760,10 +1770,10 @@ namespace MathEquation
 					nRowPos = pWriter->WriteItemStart(BinDocxRW::c_oSer_OMathContentType::Mr);
 
 				nColPos = pWriter->WriteItemStart(BinDocxRW::c_oSer_OMathContentType::Element);
-			}
+            }*/
 
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				int nCurRow = nBlockNum / nCols;
 				int nCurCol = nBlockNum % nCols;
 
@@ -1775,30 +1785,32 @@ namespace MathEquation
 
 				if (nCols - 1 == nCurCol)
 					pWriter->WriteItemEnd(nRowPos);
-			}
+            }*/
+
 		private:
 			int nRowPos;
 			int nColPos;
 			int nRows;
 			int nCols;
 		};
-		class CBracketsCommand : public CBaseCommand
+
+        class CBracketsCommand : public CBaseCommand
 		{
 		public:
-			CBracketsCommand() {}
-			virtual ~CBracketsCommand() {}
-			virtual ECommandType GetCommand(){return commandBrackets;}
+            CBracketsCommand();// {}
+            virtual ~CBracketsCommand();// {}
+            virtual ECommandType GetCommand();//{return commandBrackets;}
 			
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            }*/
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (0 == nBlockNum)
 				{
@@ -1807,27 +1819,27 @@ namespace MathEquation
 					else
 						WriteEndNode(pWriter);
 				}
-			}
+            }*/
 		private:
 			int nElemPos;
 		};
 		class CRootCommand : public CBaseCommand
 		{
 		public:
-			CRootCommand() {}
-			virtual ~CRootCommand() {}
-			virtual ECommandType GetCommand(){return commandRoot;}
+            CRootCommand();// {}
+            virtual ~CRootCommand();// {}
+            virtual ECommandType GetCommand();//{return commandRoot;}
 			
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{									
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            }*/
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (0 == nBlockNum)
 				{
@@ -1843,7 +1855,7 @@ namespace MathEquation
 					else
 						WriteEndNode(pWriter);
 				}
-			}
+            }*/
 		private:
 			int nElemPos;
 			int nDegPos;
@@ -1851,20 +1863,20 @@ namespace MathEquation
 		class CFractionCommand : public CBaseCommand
 		{
 		public:
-			CFractionCommand() {}
-			virtual ~CFractionCommand() {}
-			virtual ECommandType GetCommand(){return commandFraction;}
+            CFractionCommand();// {}
+            virtual ~CFractionCommand();// {}
+            virtual ECommandType GetCommand();//{return commandFraction;}
 			
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{									
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            }*/
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (0 == nBlockNum)
 				{
@@ -1880,35 +1892,35 @@ namespace MathEquation
 					else
 						WriteEndNode(pWriter);
 				}
-			}
+            }*/
 		};
 		class CScriptCommand : public CBaseCommand
 		{
 		public:
-			CScriptCommand() {}
-			virtual ~CScriptCommand() {}
-			virtual ECommandType GetCommand(){return commandScript;}
+            CScriptCommand();// {}
+            virtual ~CScriptCommand();// {}
+            virtual ECommandType GetCommand();//{return commandScript;}
 
-			void SetProps(bool bInline, bool bBase, bool bSup, bool bSub)
-			{
+            void SetProps(bool bInline, bool bBase, bool bSup, bool bSub);
+            /*{
 				this->bBase   = bBase;
 				this->bInline = bInline;
 				this->bSub    = bSub;
 				this->bSup    = bSup;
-			}
+            }*/
 			
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{									
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
+            }*/
 		private:
 
-			void Write(BinaryEquationWriter* pWriter, bool bBegin)
-			{
+            void Write(BinaryEquationWriter* pWriter, bool bBegin);
+            /*{
 				bOpenNode = bBegin;
 				if (bInline)
 				{
@@ -2038,7 +2050,7 @@ namespace MathEquation
 						}
 					}
 				}
-			}
+            }*/
 
 		private:
 			bool bBase;
@@ -2049,97 +2061,97 @@ namespace MathEquation
 		class CBarCommand : public CBaseCommand
 		{
 		public:
-			CBarCommand() {}
-			virtual ~CBarCommand() {}
-			virtual ECommandType GetCommand(){return commandBar;}
+            CBarCommand();// {}
+            virtual ~CBarCommand();// {}
+            virtual ECommandType GetCommand();//{return commandBar;}
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{									
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
+            }*/
 
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (bBeginNode)
 					WriteBeginNode(pWriter, BinDocxRW::c_oSer_OMathContentType::Element);
 				else
 					WriteEndNode(pWriter);
-			}
+            }*/
 		private:
 			int nElemPos;
 		};
 		class CArrowCommand : public CBaseCommand
 		{
 		public:
-			CArrowCommand() {}
-			virtual ~CArrowCommand() {}
-			virtual ECommandType GetCommand(){return commandArrow;}
+            CArrowCommand();// {}
+            virtual ~CArrowCommand();// {}
+            virtual ECommandType GetCommand();//{return commandArrow;}
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				nElemPos = pWriter->WriteItemStart(BinDocxRW::c_oSer_OMathContentType::Element);
-			}
+            }*/
 
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				pWriter->WriteItemEnd(nElemPos);
-			}
+            }*/
 		private:
 			int nElemPos;
 		};
 		class CEqArrayCommand : public CBaseCommand
 		{
 		public:
-			CEqArrayCommand() {}
-			virtual ~CEqArrayCommand() {}
-			virtual ECommandType GetCommand(){ return commandEqArray; }
+            CEqArrayCommand();// {}
+            virtual ~CEqArrayCommand();// {}
+            virtual ECommandType GetCommand();//{ return commandEqArray; }
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
+            }*/
 
 		private:
 
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (bBeginNode)
 					WriteBeginNode(pWriter);
 				else
 					WriteEndNode(pWriter);
-			}
+            }*/
 		private:
 			int nElemPos;
 		};
 		class CIntegralCommand : public CBaseCommand
 		{
 		public:
-			CIntegralCommand() {}
-			virtual ~CIntegralCommand() {}
-			virtual ECommandType GetCommand(){return commandIntegral;}
+            CIntegralCommand();// {}
+            virtual ~CIntegralCommand();// {}
+            virtual ECommandType GetCommand();//{return commandIntegral;}
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{									
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
+            }*/
 		private:
 
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (0 == nBlockNum)
 				{
@@ -2162,26 +2174,26 @@ namespace MathEquation
 					else
 						WriteEndNode(pWriter);
 				}
-			}
+            }*/
 		};
 		class CVerticalBraceCommand : public CBaseCommand
 		{
 		public:
-			CVerticalBraceCommand() {}
-			virtual ~CVerticalBraceCommand() {}
-			virtual ECommandType GetCommand(){return commandVerticalBrace;}
+            CVerticalBraceCommand();// {}
+            virtual ~CVerticalBraceCommand();// {}
+            virtual ECommandType GetCommand();//{return commandVerticalBrace;}
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{									
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
+            }*/
 
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (0 == nBlockNum)
 				{
@@ -2209,7 +2221,7 @@ namespace MathEquation
 						}
 					}
 				}
-			}
+            }*/
 		private:
 			int nBasePos;
 			int nBraceBasePos;
@@ -2217,21 +2229,21 @@ namespace MathEquation
 		class CVerticalBraceLimCommand : public CBaseCommand
 		{
 		public:
-			CVerticalBraceLimCommand() {}
-			virtual ~CVerticalBraceLimCommand() {}
-			virtual ECommandType GetCommand(){return commandVerticalBraceLim;}
+            CVerticalBraceLimCommand();// {}
+            virtual ~CVerticalBraceLimCommand();// {}
+            virtual ECommandType GetCommand();//{return commandVerticalBraceLim;}
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{									
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
+            }*/
 
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (0 == nBlockNum)
 				{
@@ -2240,7 +2252,7 @@ namespace MathEquation
 					else
 						WriteEndNode(pWriter);
 				}
-			}
+            }*/
 		private:
 			int nBasePos;
 			int nBraceBasePos;
@@ -2248,33 +2260,33 @@ namespace MathEquation
 		class CNArrayCommand : public CBaseCommand
 		{
 		public:
-			CNArrayCommand() {}
-			virtual ~CNArrayCommand() {}
-			virtual ECommandType GetCommand(){return commandNArray;}
+            CNArrayCommand();// {}
+            virtual ~CNArrayCommand();// {}
+            virtual ECommandType GetCommand();//{return commandNArray;}
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{									
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
+            }*/
 
-			void SetType(MNARRAYTYPE eType)
-			{
+            void SetType(MNARRAYTYPE eType);
+            /*{
 				this->eType = eType;
-			}
+            }*/
 
-			MNARRAYTYPE GetType()
-			{
+            MNARRAYTYPE GetType();
+            /*{
 				return eType;
-			}
+            }*/
 			
 		private:
 
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (0 == nBlockNum)
 				{
@@ -2297,7 +2309,7 @@ namespace MathEquation
 					else 
 						WriteEndNode(pWriter);
 				}
-			}
+            }*/
 
 		private:			
 			MNARRAYTYPE eType;
@@ -2306,20 +2318,20 @@ namespace MathEquation
 		class CLongDivisionCommand : public CBaseCommand
 		{
 		public:
-			CLongDivisionCommand() {}
-			virtual ~CLongDivisionCommand() {}
-			virtual ECommandType GetCommand(){ return commandLongDivision; }
+            CLongDivisionCommand();// {}
+            virtual ~CLongDivisionCommand();// {}
+            virtual ECommandType GetCommand();//{ return commandLongDivision; }
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            }*/
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (1 == nBlockNum)
 				{
@@ -2335,34 +2347,34 @@ namespace MathEquation
 					else
 						WriteEndNode(pWriter);
 				}
-			}
+            }*/
 		};
 
 		class CBracketsWithSeparatorCommand : public CBaseCommand
 		{
 		public:
-			CBracketsWithSeparatorCommand() {}
-			virtual ~CBracketsWithSeparatorCommand() {}
-			virtual ECommandType GetCommand(){return commandBracketsSep;}
+            CBracketsWithSeparatorCommand();// {}
+            virtual ~CBracketsWithSeparatorCommand();// {}
+            virtual ECommandType GetCommand();//{return commandBracketsSep;}
 		
-			void SetType(MANGLEBRACKETSWITHSEPARATORTYPE eType)
-			{
+            void SetType(MANGLEBRACKETSWITHSEPARATORTYPE eType);
+            /*{
 				this->eType = eType;
-			}
+            }*/
 
-			virtual void WriteBeginBlock(BinaryEquationWriter* pWriter)
-			{									
+            virtual void WriteBeginBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, true);
-			}
-			virtual void WriteEndBlock(BinaryEquationWriter* pWriter)
-			{
+            }*/
+            virtual void WriteEndBlock(BinaryEquationWriter* pWriter);
+            /*{
 				Write(pWriter, false);
-			}
+            }*/
 
 		private:
 
-			void Write(BinaryEquationWriter* pWriter, bool bBeginNode)
-			{
+            void Write(BinaryEquationWriter* pWriter, bool bBeginNode);
+            /*{
 				bOpenNode = bBeginNode;
 				if (0 == nBlockNum)
 				{
@@ -2378,14 +2390,15 @@ namespace MathEquation
 					else 
 						WriteEndNode(pWriter);
 				}
-			}
+            }*/
 
 		private:
 			MANGLEBRACKETSWITHSEPARATORTYPE eType;
 
 		};
-		CBaseCommand* PushCommand(ECommandType eType)
-		{
+
+        CBaseCommand* PushCommand(ECommandType eType);
+        /*{
 			CBaseCommand* pCommand = NULL;
 			switch(eType)
 			{
@@ -2408,20 +2421,20 @@ namespace MathEquation
 			m_aCommandStack.push(pCommand);
 
 			return pCommand;
-		}
-		void PopCommand()
-		{
+        }*/
+        void PopCommand();
+        /*{
 			CBaseCommand* pCommand = m_aCommandStack.top();
 			if (pCommand)
 				delete pCommand;
 
 			m_aCommandStack.pop();
-		}
+        }*/
 
-		CBaseCommand* TopCommand()
-		{
+        CBaseCommand* TopCommand();
+        /*{
 			return m_aCommandStack.top();
-		}
+        }*/
 
 		private:
 

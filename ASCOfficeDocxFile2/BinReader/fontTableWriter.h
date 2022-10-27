@@ -35,6 +35,8 @@
 #include "../../DesktopEditor/graphics/pro/Fonts.h"
 #include <boost/unordered_map.hpp>
 
+#include "../../DesktopEditor/common/StringBuilder.h"
+
 namespace Writers
 {
 	static std::wstring g_string_ft_Start = _T("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><w:fonts xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:w14=\"http://schemas.microsoft.com/office/word/2010/wordml\" xmlns:w15=\"http://schemas.microsoft.com/office/word/2012/wordml\" mc:Ignorable=\"w14 w15\">");
@@ -46,11 +48,12 @@ namespace Writers
         std::wstring					m_sDir;
         NSFonts::IApplicationFonts*		m_pApplicationFonts;
         NSFonts::IFontManager*			m_pFontManager;
-	public:
+
+    public:
         boost::unordered_map<std::wstring, char> m_mapFonts;
 
-		FontTableWriter(std::wstring sDir, std::wstring sFontDir, bool bNoFontDir) : m_sDir(sDir)
-		{
+        FontTableWriter(std::wstring sDir, std::wstring sFontDir, bool bNoFontDir);// : m_sDir(sDir)
+        /*{
             m_pApplicationFonts = NSFonts::NSApplication::Create();
 			m_pFontManager = NULL;
 			if(!bNoFontDir)
@@ -61,18 +64,18 @@ namespace Writers
                     m_pApplicationFonts->InitializeFromFolder(sFontDir);
                 m_pFontManager = m_pApplicationFonts->GenerateFontManager();
 			}
-		}
-		~FontTableWriter()
-		{
+        }*/
+        ~FontTableWriter();
+        /*{
 			RELEASEOBJECT(m_pFontManager);
             RELEASEOBJECT(m_pApplicationFonts);
-		}
+        }*/
 
-		void Write(bool bGlossary = false)
-		{
+        void Write(bool bGlossary = false);
+        /*{
 			m_oWriter.WriteString(g_string_ft_Start);
 
-	//Те шрифты которые всегда пишем в FontTable
+            //Те шрифты которые всегда пишем в FontTable
 			bool bCalibri = false;
 			bool bTimes = false;
 			bool bCambria = false;
@@ -103,9 +106,9 @@ namespace Writers
 
 			oFile.WriteStringUTF8(m_oWriter.GetData());
 			oFile.CloseFile();
-		}
-        void WriteFont(std::wstring sFontName)
-		{
+        }*/
+        void WriteFont(std::wstring sFontName);
+        /*{
             std::wstring sPanose;
 			bool bUsePanose = false;
 			if(NULL != m_pFontManager)
@@ -133,7 +136,7 @@ namespace Writers
             if(bUsePanose && !sPanose.empty())
 				m_oWriter.WriteString(_T("<w:panose1 w:val=\"")+sPanose+_T("\"/>"));
             m_oWriter.WriteString(std::wstring(_T("</w:font>")));
-		}
+        }*/
 	};
 }
 

@@ -33,6 +33,8 @@
 
 #include "../../XlsxSerializerCom/Common/Common.h"
 
+#include "../../DesktopEditor/common/StringBuilder.h"
+
 namespace Writers
 {
 	static std::wstring g_string_st_Start = _T("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><w:styles xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:w14=\"http://schemas.microsoft.com/office/word/2010/wordml\" xmlns:w15=\"http://schemas.microsoft.com/office/word/2012/wordml\" mc:Ignorable=\"w14 w15\">");
@@ -45,16 +47,19 @@ namespace Writers
 	{
 		NSStringUtils::CStringBuilder	m_oWriter;
         std::wstring	m_sDir;
+
 	public:
 		NSStringUtils::CStringBuilder	m_Styles;
 		NSStringUtils::CStringBuilder	m_rPrDefault;
 		NSStringUtils::CStringBuilder	m_pPrDefault;
 		int m_nVersion;
-        StylesWriter(std::wstring sDir, int nVersion):m_sDir(sDir),m_nVersion(nVersion)
-		{
-		}
-		void Write(bool bGlossary = false)
-		{
+
+        StylesWriter(std::wstring sDir, int nVersion);//:m_sDir(sDir),m_nVersion(nVersion)
+        /*{
+        }*/
+
+        void Write(bool bGlossary = false);
+        /*{
 			m_oWriter.WriteString(g_string_st_Start);
             m_oWriter.WriteString(std::wstring(_T("<w:docDefaults>")));
             m_oWriter.WriteString(std::wstring(_T("<w:rPrDefault>")));
@@ -78,7 +83,7 @@ namespace Writers
 
 			oFile.WriteStringUTF8(m_oWriter.GetData());
 			oFile.CloseFile();
-		}
+        }*/
 	};
 }
 
