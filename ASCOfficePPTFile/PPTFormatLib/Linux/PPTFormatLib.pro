@@ -303,7 +303,6 @@ SOURCES += \
 SOURCES += \
     ../../../ASCOfficePPTXFile/Editor/Drawing/Elements.cpp \
     ../../../ASCOfficePPTXFile/Editor/Drawing/TextAttributesEx.cpp \
-    ../../../Common/3dParty/pole/pole.cpp \
-    ../../../Common/DocxFormat/Source/Base/Nullable.cpp \
+    ../../../Common/3dParty/pole/pole.cpp \    
     ../PPTXWriter/BulletsConverter.cpp
 

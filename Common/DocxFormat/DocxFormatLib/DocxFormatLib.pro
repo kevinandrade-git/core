@@ -103,14 +103,7 @@ SOURCES += \
     ../Source/XlsxFormat/Slicer/Slicer.cpp \
     ../Source/XlsxFormat/NamedSheetViews/NamedSheetViews.cpp \
     ../Source/XlsxFormat/Pivot/PivotCacheDefinitionExt.cpp \
-    ../Source/XlsxFormat/Workbook/Workbook.cpp
-}
-
-
-SOURCES += docxformatlib.cpp \
-    ../Source/Utility/codecvt.cpp \
-    ../Source/Utility/DateTime.cpp \
-    ../Source/Utility/TxtFile.cpp \
+    ../Source/XlsxFormat/Workbook/Workbook.cpp \
     ../Source/Base/Nullable.cpp \
     ../Source/Common/SimpleTypes_Base/SimpleType.cpp \
     ../Source/Common/SimpleTypes_Base/Double.cpp \
@@ -141,6 +134,16 @@ SOURCES += docxformatlib.cpp \
     ../Source/Common/SimpleTypes_Word/WmlColorSchemeIndex.cpp \
     ../Source/Common/SimpleTypes_Word/FtnEdn.cpp \
     ../Source/Common/SimpleTypes_Word/FtnPos.cpp \
+    ../Source/Common/SimpleTypes_Word/Cnf.cpp \
+    ../Source/Common/SimpleTypes_Word/CryptAlgoritmName.cpp \
+    ../Source/Common/SimpleTypes_Word/Jc.cpp \
+    ../Source/Common/SimpleTypes_Word/Ligatures.cpp \
+    ../Source/Common/SimpleTypes_Word/MailMergeSourceType.cpp \
+    ../Source/Common/SimpleTypes_Word/PitchFamily.cpp \
+    ../Source/Common/SimpleTypes_Word/Shd.cpp \
+    ../Source/Common/SimpleTypes_Word/TargetScreenSz.cpp \
+    ../Source/Common/SimpleTypes_Word/TblStyleOverrideType.cpp \
+    ../Source/Common/SimpleTypes_Word/Underline.cpp \
     ../Source/Common/SimpleTypes_Drawing/PresetColorVal.cpp \
     ../Source/Common/SimpleTypes_Drawing/ShapeType.cpp \
     ../Source/Common/SimpleTypes_Drawing/SystemColorVal.cpp \
@@ -152,6 +155,30 @@ SOURCES += docxformatlib.cpp \
     ../Source/Common/SimpleTypes_Drawing/PresetCameraType.cpp \
     ../Source/Common/SimpleTypes_Drawing/AlignH.cpp \
     ../Source/Common/SimpleTypes_Drawing/AlignV.cpp \
+    ../Source/Common/SimpleTypes_Drawing/ColorSchemeIndex.cpp \
+    ../Source/Common/SimpleTypes_Drawing/LightRigType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PresetLineDashVal.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PresetMaterialType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PresetShadowVal.cpp \
+    ../Source/Common/SimpleTypes_Drawing/ShemeColorVal.cpp \
+    ../Source/Common/SimpleTypes_Drawing/LineWidth.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PositionOffset.cpp \
+    ../Source/Common/SimpleTypes_Drawing/TextMargin.cpp \
+    ../Source/Common/SimpleTypes_Drawing/BoolOperator.cpp \
+    ../Source/Common/SimpleTypes_OMath/BreakBin.cpp \
+    ../Source/Common/SimpleTypes_OMath/BreakBinSub.cpp \
+    ../Source/Common/SimpleTypes_OMath/FType.cpp \
+    ../Source/Common/SimpleTypes_OMath/Integer2.cpp \
+    ../Source/Common/SimpleTypes_OMath/Integer255.cpp \
+    ../Source/Common/SimpleTypes_OMath/LimLoc.cpp \
+    ../Source/Common/SimpleTypes_OMath/MChar.cpp \
+    ../Source/Common/SimpleTypes_OMath/MJc.cpp \
+    ../Source/Common/SimpleTypes_OMath/Script.cpp \
+    ../Source/Common/SimpleTypes_OMath/Shp.cpp \
+    ../Source/Common/SimpleTypes_OMath/SpacingRule.cpp \
+    ../Source/Common/SimpleTypes_OMath/Style.cpp \
+    ../Source/Common/SimpleTypes_OMath/TopBot.cpp \
+    ../Source/Common/SimpleTypes_OMath/UnSignedInteger.cpp \
     ../Source/Common/ComplexTypes/OnOff.cpp \
     ../Source/Common/ComplexTypes/OnOff2.cpp \
     ../Source/Common/ComplexTypes/String.cpp \
@@ -160,7 +187,14 @@ SOURCES += docxformatlib.cpp \
     ../Source/Common/ComplexTypes/LongHexNumber.cpp \
     ../Source/Common/ComplexTypes/DecimalNumber.cpp \
     ../Source/Common/ComplexTypes/DecimalNumberWord.cpp \
-    ../Source/Common/ComplexTypes/UnsignedDecimalNumber.cpp \
+    ../Source/Common/ComplexTypes/UnsignedDecimalNumber.cpp
+}
+
+
+SOURCES += docxformatlib.cpp \
+    ../Source/Utility/codecvt.cpp \
+    ../Source/Utility/DateTime.cpp \
+    ../Source/Utility/TxtFile.cpp \    
     ../Source/Base/unicode_util.cpp \
     ../../3dParty/pole/pole.cpp \
 

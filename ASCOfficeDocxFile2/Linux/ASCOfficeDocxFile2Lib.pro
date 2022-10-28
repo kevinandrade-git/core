@@ -62,37 +62,7 @@ SOURCES += \
     ../BinReader/SettingWriter.cpp \
     ../BinReader/StylesWriter.cpp \
     ../BinReader/webSettingsWriter.cpp \
-    ../BinReader/fontTableWriter.cpp \
-    ../../Common/DocxFormat/Source/Base/Nullable.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Base/SimpleType.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Double.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Base/DecimalNumber.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Point.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Inch.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Emu.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Base/UniversalMeasure.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Base/UniversalMeasureOrPercent.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/TrueFalse.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/ColorType.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/OnOff.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/Bool.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/XAlign.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Shared/YAlign.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/Border.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/NumberFormat.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/DocPartGallery.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/HpsMeasure.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/SignedHpsMeasure.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/SignedTwipsMeasure.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/LongHexNumber.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/PointMeasure.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/DateTime.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/ThemeColor.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/HighlightColor.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/FontCharset.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/WmlColorSchemeIndex.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/FtnEdn.cpp \
-    ../../Common/DocxFormat/Source/Common/SimpleTypes_Word/FtnPos.cpp
+    ../BinReader/fontTableWriter.cpp
 
 HEADERS += ../DocWrapper/DocxSerializer.h \
     ../DocWrapper/FontProcessor.h \

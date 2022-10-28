@@ -107,27 +107,7 @@ SOURCES += pptxformatlib.cpp \
     ../../../Editor/Drawing/Elements.cpp \
     ../../../../HtmlRenderer/src/ASCSVGWriter.cpp \
     ../../../Editor/imagemanager.cpp \
-    ../../../Editor/Drawing/Shapes/BaseShape/PPTXShape/PptxShape.cpp \
-    ../../../../Common/DocxFormat/Source/Base/Nullable.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/SimpleType.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Double.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/DecimalNumber.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Point.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Inch.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/Emu.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/UniversalMeasure.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Base/UniversalMeasureOrPercent.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/PresetColorVal.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/ShapeType.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/SystemColorVal.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/ConstraintType.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/TextShapeType.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/ParameterId.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/Coordinate.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/PresetPatternVal.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/PresetCameraType.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/AlignH.cpp \
-    ../../../../Common/DocxFormat/Source/Common/SimpleTypes_Drawing/AlignV.cpp
+    ../../../Editor/Drawing/Shapes/BaseShape/PPTXShape/PptxShape.cpp
 
 HEADERS += \
     pptxformatlib.h \

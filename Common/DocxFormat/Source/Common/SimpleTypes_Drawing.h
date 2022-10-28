@@ -748,10 +748,10 @@ namespace SimpleTypes
 	class CColorSchemeIndex : public CSimpleType<EColorSchemeIndex, eDefValue>
 	{
 	public:
-		CColorSchemeIndex() {}
+        CColorSchemeIndex();// {}
 
-        virtual EColorSchemeIndex FromString(std::wstring &sValue)
-		{
+        virtual EColorSchemeIndex FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -785,10 +785,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring           ToString  () const
-		{
+        virtual std::wstring           ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case colorschemeindexAccent1 : return (L"accent1");			
@@ -805,7 +805,7 @@ namespace SimpleTypes
 			case colorschemeindexLt2     : return (L"lt2");			
 			default                      : return (L"accent1");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EColorSchemeIndex)
 		SimpleType_Operator_Equal (CColorSchemeIndex)
@@ -1378,10 +1378,10 @@ namespace SimpleTypes
 	class CLightRigType : public CSimpleType<ELightRigType, eDefValue>
 	{
 	public:
-		CLightRigType() {}
+        CLightRigType();// {}
 
-        virtual ELightRigType FromString(std::wstring &sValue)
-		{
+        virtual ELightRigType FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1438,10 +1438,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring       ToString  () const
-		{
+        virtual std::wstring       ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case lightrigtypeBalanced      : return (L"balanced");
@@ -1473,7 +1473,7 @@ namespace SimpleTypes
 			case lightrigtypeTwoPt         : return (L"twoPt");			
 			default                        : return (L"balanced");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ELightRigType)
 		SimpleType_Operator_Equal (CLightRigType)
@@ -1722,10 +1722,10 @@ namespace SimpleTypes
     class CLineWidth : public CSimpleType<__int64, nDefValue>
     {
     public:
-        CLineWidth() {}
+        CLineWidth();// {}
 
-        virtual __int64 FromString(std::wstring &sValue)
-        {
+        virtual __int64 FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = _wtoi64( sValue.c_str() );
             if (this->m_eValue < 0)
                 this->m_eValue = 0;
@@ -1733,33 +1733,33 @@ namespace SimpleTypes
                 this->m_eValue = 20116800;
 
             return this->m_eValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
             std::wstring sResult = std::to_wstring( this->m_eValue);
 
             return sResult;
-        }
+        }*/
 
         SimpleType_FromString     (__int64)
         SimpleType_Operator_Equal (CLineWidth)
 
-        double ToPoints()
-        {
+        double ToPoints();
+        /*{
             return Emu_To_Pt( this->m_eValue );
-        }
+        }*/
 
-        double ToInches()
-        {
+        double ToInches();
+        /*{
             return Emu_To_Inch( this->m_eValue );
-        }
+        }*/
 
-		double FromEmu(const __int64 nEmu)
-		{
+        double FromEmu(const __int64 nEmu);
+        /*{
             this->m_eValue = nEmu;
             return Emu_To_Pt( this->m_eValue );
-		}
+        }*/
     };
 	//--------------------------------------------------------------------------------
 	// PathFillMode 20.1.10.37 (Part 1)
@@ -3392,10 +3392,10 @@ namespace SimpleTypes
 	class CPresetLineDashVal : public CSimpleType<EPresetLineDashVal, eDefValue>
 	{
 	public:
-		CPresetLineDashVal() {}
+        CPresetLineDashVal();// {}
 
-        virtual EPresetLineDashVal FromString(std::wstring &sValue)
-		{
+        virtual EPresetLineDashVal FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -3424,10 +3424,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring            ToString  () const
-		{
+        virtual std::wstring            ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case presetlinedashvalDash:          return (L"dash");			
@@ -3443,7 +3443,7 @@ namespace SimpleTypes
 			case presetlinedashvalSysDot:        return (L"sysDot");		
 			default :                            return (L"solid");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EPresetLineDashVal)
 		SimpleType_Operator_Equal (CPresetLineDashVal)
@@ -3476,10 +3476,10 @@ namespace SimpleTypes
 	class CPresetMaterialType : public CSimpleType<EPresetMaterialType, eDefValue>
 	{
 	public:
-		CPresetMaterialType() {}
+        CPresetMaterialType();// {}
 
-        virtual EPresetMaterialType FromString(std::wstring &sValue)
-		{
+        virtual EPresetMaterialType FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -3524,10 +3524,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring             ToString  () const
-		{
+        virtual std::wstring             ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case presetmaterialtypeClear             : return (L"clear");
@@ -3547,7 +3547,7 @@ namespace SimpleTypes
 			case presetmaterialtypeWarmMatte         : return (L"warmMatte");
 			default                                  : return (L"clear");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EPresetMaterialType)
 		SimpleType_Operator_Equal (CPresetMaterialType)
@@ -3812,9 +3812,10 @@ namespace SimpleTypes
 	class CPresetShadowVal : public CSimpleType<EPresetShadowVal, eDefValue>
 	{
 	public:
-		CPresetShadowVal() {}
-        virtual EPresetShadowVal FromString(std::wstring &sValue)
-		{
+        CPresetShadowVal();// {}
+
+        virtual EPresetShadowVal FromString(std::wstring &sValue);
+        /*{
             if      ( (L"shdw1")  == sValue ) this->m_eValue = presetshadowvalShdw1;
             else if ( (L"shdw10") == sValue ) this->m_eValue = presetshadowvalShdw10;
             else if ( (L"shdw11") == sValue ) this->m_eValue = presetshadowvalShdw11;
@@ -3838,10 +3839,10 @@ namespace SimpleTypes
             else                               this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring          ToString  () const
-		{
+        virtual std::wstring          ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case presetshadowvalShdw1:  return (L"shdw1");			
@@ -3866,7 +3867,7 @@ namespace SimpleTypes
 			case presetshadowvalShdw20: return (L"shdw20");			
 			default :                   return (L"shdw14");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EPresetShadowVal)
 		SimpleType_Operator_Equal (CPresetShadowVal)
@@ -3961,10 +3962,10 @@ namespace SimpleTypes
 	class CShemeColorVal : public CSimpleType<EShemeColorVal, eDefValue>
 	{
 	public:
-		CShemeColorVal() {}
+        CShemeColorVal();// {}
 
-        virtual EShemeColorVal FromString(std::wstring &sValue)
-		{
+        virtual EShemeColorVal FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
             if ( sValue.empty() )
                 return this->m_eValue;
@@ -4008,10 +4009,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring        ToString  () const
-		{
+        virtual std::wstring        ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case shemecolorvalAccent1:  return (L"accent1");			
@@ -4033,7 +4034,7 @@ namespace SimpleTypes
 			case shemecolorvalTx2:      return (L"tx2");				
 			default :                   return (L"accent1");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EShemeColorVal)
 		SimpleType_Operator_Equal (CShemeColorVal)
@@ -5383,10 +5384,10 @@ namespace SimpleTypes
     class CTextMargin : public CSimpleType<__int64, nDefValue>
     {
     public:
-        CTextMargin() {}
+        CTextMargin();// {}
 
-        virtual __int64 FromString(std::wstring &sValue)
-        {
+        virtual __int64 FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = _wtoi64( sValue.c_str() );
             if (this->m_eValue < 0)
                 this->m_eValue = 0;
@@ -5394,31 +5395,31 @@ namespace SimpleTypes
                 this->m_eValue = 51206400;
 
             return this->m_eValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
             std::wstring sResult = std::to_wstring( this->m_eValue);
 
             return sResult;
-        }
+        }*/
 
         SimpleType_FromString     (__int64)
         SimpleType_Operator_Equal (CTextMargin)
 
-        double ToPoints()
-        {
+        double ToPoints();
+        /*{
             return  Emu_To_Pt(this->m_eValue);
-        }
+        }*/
 
-        double ToInches()
-        {
+        double ToInches();
+        /*{
             return Emu_To_Inch( this->m_eValue );
-        }
-        double ToCm()
-        {
+        }*/
+        double ToCm();
+        /*{
             return Emu_To_Cm( this->m_eValue );
-        }
+        }*/
     };
 //	//--------------------------------------------------------------------------------
 //    // 20.1.10.74 ST_TextPoint (Text Point)
@@ -6149,42 +6150,41 @@ namespace SimpleTypes
 	class CPositionOffset : public CSimpleType<__int64, nDefValue>
 	{
 	public:
-		CPositionOffset() {}
+        CPositionOffset();// {}
 
-        virtual __int64 FromString(std::wstring &sValue)
-		{
+        virtual __int64 FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = _wtoi64( sValue.c_str() );
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             std::wstring sResult = std::to_wstring( this->m_eValue);
 
 			return sResult;
-		}
-
+        }*/
 
 		SimpleType_FromString     (__int64)
 		SimpleType_Operator_Equal (CPositionOffset)
 
-		double ToPoints()
-		{
+        double ToPoints();
+        /*{
             return Emu_To_Pt( this->m_eValue );
-		}
-		double ToMM() const
-		{
+        }*/
+        double ToMM() const;
+        /*{
             return Emu_To_Mm( (double)this->m_eValue );
-		}
-		double ToInches()
-		{
+        }*/
+        double ToInches();
+        /*{
             return Emu_To_Inch( this->m_eValue );
-		}
-		double ToTwips()
-		{
+        }*/
+        double ToTwips();
+        /*{
             return Emu_To_Twips((double) this->m_eValue );
-		}	
+        }*/
 	};
 
 	//--------------------------------------------------------------------------------
@@ -7143,9 +7143,10 @@ namespace SimpleTypes
 	class CBoolOperator : public CSimpleType<EBoolOperator, eDefValue>
 	{
 	public:
-		CBoolOperator() {}
-		virtual EBoolOperator FromString(std::wstring &sValue)
-		{
+        CBoolOperator();// {}
+
+        virtual EBoolOperator FromString(std::wstring &sValue);
+        /*{
 				 if (L"none" == sValue) this->m_eValue = boolOperator_none;
 			else if (L"equ" == sValue) this->m_eValue = boolOperator_equ;
 			else if (L"gte" == sValue) this->m_eValue = boolOperator_gte;
@@ -7153,9 +7154,10 @@ namespace SimpleTypes
 			else this->m_eValue = eDefValue;
 
 			return this->m_eValue;
-		}
-		virtual std::wstring ToString() const
-		{
+        }*/
+
+        virtual std::wstring ToString() const;
+        /*{
 			switch (this->m_eValue)
 			{
 			case boolOperator_equ: return L"equ";
@@ -7164,7 +7166,8 @@ namespace SimpleTypes
 			case boolOperator_none:
 			default: return L"none";
 			}
-		}
+        }*/
+
 		SimpleType_FromString(EBoolOperator)
 		SimpleType_Operator_Equal(CBoolOperator)
 	};

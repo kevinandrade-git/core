@@ -3212,10 +3212,10 @@ namespace SimpleTypes
 	class CJc : public CSimpleType<EJc, eDefValue>
 	{
 	public:
-		CJc() {}
+        CJc();// {}
 
-        virtual EJc     FromString(std::wstring &sValue)
-		{
+        virtual EJc     FromString(std::wstring &sValue);
+        /*{
             if      ( (L"both")           == sValue ) this->m_eValue = jcBoth;
             else if ( (L"center")         == sValue ) this->m_eValue = jcCenter;
             else if ( (L"distribute")     == sValue ) this->m_eValue = jcDistribute;
@@ -3231,10 +3231,10 @@ namespace SimpleTypes
             else                                       this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case jcBoth            : return (L"both");
@@ -3251,7 +3251,7 @@ namespace SimpleTypes
 			case jcRight           : return (L"right");
 			default                : return (L"left");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EJc)
 		SimpleType_Operator_Equal (CJc)
@@ -3803,10 +3803,10 @@ namespace SimpleTypes
 	class CMailMergeSourceType : public CSimpleType<EMailMergeSourceType, eDefValue>
 	{
 	public:
-		CMailMergeSourceType() {}
+        CMailMergeSourceType();// {}
 
-        virtual EMailMergeSourceType FromString(std::wstring &sValue)
-		{
+        virtual EMailMergeSourceType FromString(std::wstring &sValue);
+        /*{
             if      ( (L"addressBook") == sValue ) this->m_eValue = mailmergesourcetypeAddressBook;
             else if ( (L"database")    == sValue ) this->m_eValue = mailmergesourcetypeDatabase;
             else if ( (L"document1")   == sValue ) this->m_eValue = mailmergesourcetypeDocument1;
@@ -3819,10 +3819,10 @@ namespace SimpleTypes
             else                                    this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring              ToString  () const
-		{
+        virtual std::wstring              ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case mailmergesourcetypeAddressBook : return (L"addressBook");
@@ -3836,7 +3836,7 @@ namespace SimpleTypes
 			case mailmergesourcetypeText        : return (L"text");
 			default                             : return (L"text");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EMailMergeSourceType)
 		SimpleType_Operator_Equal (CMailMergeSourceType)
@@ -4985,10 +4985,10 @@ namespace SimpleTypes
 	class CShd : public CSimpleType<EShd, eDefValue>
 	{
 	public:
-		CShd() {}
+        CShd();// {}
 
-        virtual EShd    FromString(std::wstring &sValue)
-		{
+        virtual EShd    FromString(std::wstring &sValue);
+        /*{
             if      ( (L"clear")                 == sValue ) this->m_eValue = shdClear;
             else if ( (L"diagCross")             == sValue ) this->m_eValue = shdDiagCross;
             else if ( (L"diagStripe")            == sValue ) this->m_eValue = shdDiagStripe;
@@ -5030,10 +5030,10 @@ namespace SimpleTypes
             else                                              this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case shdClear                 : return (L"clear");
@@ -5076,7 +5076,7 @@ namespace SimpleTypes
 			case shdVertStripe            : return (L"vertStripe");
 			default                       : return (L"solid");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EShd)
 		SimpleType_Operator_Equal (CShd)
@@ -5491,10 +5491,10 @@ namespace SimpleTypes
 	class CTargetScreenSz : public CSimpleType<ETargetScreenSz, eDefValue>
 	{
 	public:
-		CTargetScreenSz() {}
+        CTargetScreenSz();// {}
 
-        virtual ETargetScreenSz FromString(std::wstring &sValue)
-		{
+        virtual ETargetScreenSz FromString(std::wstring &sValue);
+        /*{
             if      ( (L"1024x768")  == sValue ) this->m_eValue = targetscreensz1024x768;
             else if ( (L"1152x882")  == sValue ) this->m_eValue = targetscreensz1152x882;
             else if ( (L"1152x900")  == sValue ) this->m_eValue = targetscreensz1152x900;
@@ -5509,10 +5509,10 @@ namespace SimpleTypes
             else                                  this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring         ToString  () const
-		{
+        virtual std::wstring         ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case targetscreensz1024x768  : return (L"1024x768");
@@ -5528,7 +5528,7 @@ namespace SimpleTypes
 			case targetscreensz800x600   : return (L"800x600");
 			default                      : return (L"1280x1024");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ETargetScreenSz)
 		SimpleType_Operator_Equal (CTargetScreenSz)
@@ -5639,10 +5639,10 @@ namespace SimpleTypes
 	class CTblStyleOverrideType : public CSimpleType<ETblStyleOverrideType, eDefValue>
 	{
 	public:
-		CTblStyleOverrideType() {}
+        CTblStyleOverrideType();// {}
 
-        virtual ETblStyleOverrideType FromString(std::wstring &sValue)
-		{
+        virtual ETblStyleOverrideType FromString(std::wstring &sValue);
+        /*{
             if      ( (L"band1Horz")  == sValue ) this->m_eValue = tblstyleoverridetypeBand1Horz;
             else if ( (L"band1Vert")  == sValue ) this->m_eValue = tblstyleoverridetypeBand1Vert;
             else if ( (L"band2Horz")  == sValue ) this->m_eValue = tblstyleoverridetypeBand2Horz;
@@ -5659,10 +5659,10 @@ namespace SimpleTypes
             else                                   this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring               ToString  () const
-		{
+        virtual std::wstring               ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case tblstyleoverridetypeBand1Horz  : return (L"band1Horz");
@@ -5680,7 +5680,7 @@ namespace SimpleTypes
 			case tblstyleoverridetypeWholeTable : return (L"wholeTable");
 			default                             : return (L"wholeTable");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ETblStyleOverrideType)
 		SimpleType_Operator_Equal (CTblStyleOverrideType)
@@ -6207,10 +6207,10 @@ namespace SimpleTypes
 	class CUnderline : public CSimpleType<EUnderline, eDefValue>
 	{
 	public:
-		CUnderline() {}
+        CUnderline();// {}
 
-        virtual EUnderline FromString(std::wstring &sValue)
-		{
+        virtual EUnderline FromString(std::wstring &sValue);
+        /*{
             if      ( (L"dash")            == sValue ) this->m_eValue = underlineDash;
             else if ( (L"dashDotDotHeavy") == sValue ) this->m_eValue = underlineDashDotDotHeavy;
             else if ( (L"dashDotHeavy")    == sValue ) this->m_eValue = underlineDashDotHeavy;
@@ -6232,10 +6232,10 @@ namespace SimpleTypes
             else                                        this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring    ToString  () const
-		{
+        virtual std::wstring    ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case underlineDash            : return (L"dash");
@@ -6258,7 +6258,7 @@ namespace SimpleTypes
 			case underlineWords           : return (L"words");
 			default                       : return (L"none");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EUnderline)
 		SimpleType_Operator_Equal (CUnderline)
@@ -6695,17 +6695,17 @@ namespace SimpleTypes
 	class CCnf : public CSimpleType<unsigned short, eDefValue>
 	{
 	public:
-		CCnf() {}
+        CCnf();// {}
 
-        virtual unsigned short FromString(std::wstring &sValue)
-		{
+        virtual unsigned short FromString(std::wstring &sValue);
+        /*{
 			Parse( sValue );     
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring        ToString  () const
-		{
+        virtual std::wstring        ToString  () const;
+        /*{
             std::wstring sResult;
 
 			for( int nIndex = 0, nMult = 1; nIndex < 12; nIndex++, nMult <<= 1 )
@@ -6717,7 +6717,7 @@ namespace SimpleTypes
 			}
 
 			return sResult;
-		}
+        }*/
 
 		SimpleType_FromString     (unsigned short)
 		SimpleType_Operator_Equal (CCnf)
@@ -6773,8 +6773,8 @@ namespace SimpleTypes
 
 	private:
 
-        void Parse(std::wstring &sValue)
-		{
+        void Parse(std::wstring &sValue);
+        /*{
             int nLen = (std::min)( (int)sValue.length(), 12 );
 
 			for ( int nIndex = 0, nMult = 1; nIndex < nLen; nIndex++, nMult <<= 1 )
@@ -6792,7 +6792,7 @@ namespace SimpleTypes
 				else // Неправильный формат
 					break;
 			}
-		}
+        }*/
 	};
 
 
@@ -6981,10 +6981,10 @@ namespace SimpleTypes
 	class CCryptAlgoritmName : public CSimpleType<ECryptAlgoritmName, eDefValue>
 	{
 	public:
-		CCryptAlgoritmName() {}
+        CCryptAlgoritmName();// {}
 
-        virtual ECryptAlgoritmName FromString(std::wstring &sValue)
-		{
+        virtual ECryptAlgoritmName FromString(std::wstring &sValue);
+        /*{
             if       ( L"MD2"        == sValue || L"1"	== sValue ) this->m_eValue = cryptalgoritmnameMD2;
             else if  ( L"MD4"        == sValue || L"2"	== sValue ) this->m_eValue = cryptalgoritmnameMD4;
             else if  ( L"MD5"        == sValue || L"3"	== sValue ) this->m_eValue = cryptalgoritmnameMD5;
@@ -6999,9 +6999,10 @@ namespace SimpleTypes
 				this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
-        virtual std::wstring ToString() const
-		{
+        }*/
+
+        virtual std::wstring ToString() const;
+        /*{
             switch(this->m_eValue)
 			{
 			case cryptalgoritmnameMD2       : return (L"MD2");
@@ -7016,7 +7017,8 @@ namespace SimpleTypes
 			case cryptalgoritmnameWHIRLPOOL : return (L"WHIRLPOOL");
 			default                         : return (L"");
 			}
-		}
+        }*/
+
 		SimpleType_FromString     (ECryptAlgoritmName)
 		SimpleType_Operator_Equal (CCryptAlgoritmName)
 	};
@@ -7050,10 +7052,10 @@ namespace SimpleTypes
 	class CPitchFamily : public CSimpleType<EPitchFamily, eDefValue>
 	{
 	public:
-		CPitchFamily() {}
+        CPitchFamily();// {}
 
-        virtual EPitchFamily FromString(std::wstring &sValue)
-		{
+        virtual EPitchFamily FromString(std::wstring &sValue);
+        /*{
 			CUcharHexNumber<> oHex = sValue;
 			int nValue = oHex.GetValue();
 
@@ -7071,9 +7073,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
-        virtual std::wstring ToString  () const
-		{
+        }*/
+
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case pitchfamilyDefUnk: return (L"00");
@@ -7096,20 +7099,21 @@ namespace SimpleTypes
 			case pitchfamilyVarDec: return (L"52");
 			default               : return (L"00");
 			}
-		}
+        }*/
+
 		SimpleType_FromString     (EPitchFamily)
 		SimpleType_Operator_Equal (CPitchFamily)
 
-		unsigned char GetPitch()
-		{
+        unsigned char GetPitch();
+        /*{
             int nValue = (int)this->m_eValue;
 			return nValue & 0x0F;
-		}
-		unsigned char GetFamily()
-		{
+        }*/
+        unsigned char GetFamily();
+        /*{
             int nValue = (int)this->m_eValue;
 			return nValue >> 4;
-		}
+        }*/
 	};
 	//--------------------------------------------------------------------------------
 	// CryptAlgoritmName
@@ -7177,9 +7181,10 @@ namespace SimpleTypes
 	class CLigatures : public CSimpleType<ELigatures, eDefValue>
 	{
 	public:
-		CLigatures() {}
-		virtual ELigatures FromString(std::wstring &sValue)
-		{
+        CLigatures();// {}
+
+        virtual ELigatures FromString(std::wstring &sValue);
+        /*{
 			if (L"none" == sValue)									this->m_eValue = ligatureNone;
 			else if (L"standard" == sValue)							this->m_eValue = ligatureStandard;
 			else if (L"contextual" == sValue)						this->m_eValue = ligatureContextual;
@@ -7197,9 +7202,10 @@ namespace SimpleTypes
 			else if (L"contextualHistoricalDiscretional" == sValue)	this->m_eValue = ligatureContextualHistoricalDiscretional;
 			else if (L"all" == sValue)								this->m_eValue = ligatureAll;
 			return this->m_eValue;
-		}
-		virtual std::wstring ToString() const
-		{
+        }*/
+
+        virtual std::wstring ToString() const;
+        /*{
 			switch (this->m_eValue)
 			{
 				case ligatureNone: return (L"none");
@@ -7220,7 +7226,8 @@ namespace SimpleTypes
 				case ligatureAll: return (L"all");
 				default: return (L"standard");
 			}
-		}
+        }*/
+
 		SimpleType_FromString(ELigatures)
 		SimpleType_Operator_Equal(CLigatures)
 	};

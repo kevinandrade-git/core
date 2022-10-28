@@ -318,8 +318,7 @@ SOURCES += \
     ../src/common/CPColorUtils.cpp \
     ../src/common/CPString.cpp \
     ../src/common/readdocelement.cpp \
-    ../src/ConvertOO2OOX.cpp \
-    ../../Common/DocxFormat/Source/Base/Nullable.cpp
+    ../src/ConvertOO2OOX.cpp
 
 HEADERS += \
     ../formulasconvert/formulasconvert.h \
