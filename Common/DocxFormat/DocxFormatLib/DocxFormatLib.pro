@@ -148,6 +148,12 @@ SOURCES += \
     ../Source/Common/SimpleTypes_Word/TargetScreenSz.cpp \
     ../Source/Common/SimpleTypes_Word/TblStyleOverrideType.cpp \
     ../Source/Common/SimpleTypes_Word/Underline.cpp \
+    ../Source/Common/SimpleTypes_Word/DecimalNumberOrPercent.cpp \
+    ../Source/Common/SimpleTypes_Word/Direction.cpp \
+    ../Source/Common/SimpleTypes_Word/FFHelpTextVal.cpp \
+    ../Source/Common/SimpleTypes_Word/FFName.cpp \
+    ../Source/Common/SimpleTypes_Word/FFStatusTextVal.cpp \
+    ../Source/Common/SimpleTypes_Word/MacroName.cpp \
     ../Source/Common/SimpleTypes_Drawing/PresetColorVal.cpp \
     ../Source/Common/SimpleTypes_Drawing/ShapeType.cpp \
     ../Source/Common/SimpleTypes_Drawing/SystemColorVal.cpp \
@@ -178,6 +184,7 @@ SOURCES += \
     ../Source/Common/SimpleTypes_Drawing/TextFontScalePercentOrPercentString.cpp \
     ../Source/Common/SimpleTypes_Drawing/TextSpacingPercentOrPercentString.cpp \
     ../Source/Common/SimpleTypes_Drawing/TextTypeface.cpp \
+    ../Source/Common/SimpleTypes_Drawing/AdjCoordinate.cpp \
     ../Source/Common/SimpleTypes_OMath/BreakBin.cpp \
     ../Source/Common/SimpleTypes_OMath/BreakBinSub.cpp \
     ../Source/Common/SimpleTypes_OMath/FType.cpp \

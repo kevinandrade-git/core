@@ -1156,19 +1156,19 @@ namespace SimpleTypes
 	class CDecimalNumberOrPercent
 	{
 	public:
-		CDecimalNumberOrPercent() 
-		{
+        CDecimalNumberOrPercent();
+        /*{
 			m_dValue = 0;
 			m_bTrailingPercentSign = false;
-		}
+        }*/
 
-		double GetValue() const
-		{
+        double GetValue() const;
+        /*{
 			return m_dValue;
-		}
+        }*/
 
-		int GetValueIntegerPercent() const
-		{
+        int GetValueIntegerPercent() const;
+        /*{
 			if(m_bTrailingPercentSign)
 			{
 				return (int)((m_dValue / 2) * 100);
@@ -1177,15 +1177,15 @@ namespace SimpleTypes
 			{
 				return (int)m_dValue;
 			}
-		}
+        }*/
 
-		void   SetValue(double dValue)
-		{
+        void   SetValue(double dValue);
+        /*{
 			m_dValue = dValue;
-		}
+        }*/
 
-        double  FromString(std::wstring &sValue, double dDefValue = 0)
-		{
+        double  FromString(std::wstring &sValue, double dDefValue = 0);
+        /*{
             if ( sValue.empty() )
 			{
 				m_dValue = dDefValue;
@@ -1205,10 +1205,10 @@ namespace SimpleTypes
             m_dValue = XmlUtils::GetDouble( sValue.substr(0, nLen));
 
 			return m_dValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
             std::wstring sResult;
 
 			if ( !m_bTrailingPercentSign )
@@ -1217,22 +1217,22 @@ namespace SimpleTypes
 				sResult = boost::lexical_cast<std::wstring>(m_dValue) + L"%";
 
 			return sResult;
-		}
+        }*/
 
 
 
 		SimpleType_FromString2    (double)
 		SimpleType_Operator_Equal (CDecimalNumberOrPercent)
 
-		bool IsPercent() const
-		{
+        bool IsPercent() const;
+        /*{
 			return m_bTrailingPercentSign;
-		}
+        }*/
 
-		void SetPercent(bool bPercent)
-		{
+        void SetPercent(bool bPercent);
+        /*{
 			m_bTrailingPercentSign = bPercent;
-		}
+        }*/
 
 	private:
 
@@ -1255,26 +1255,26 @@ namespace SimpleTypes
 	class CDirection : public CSimpleType<EDirection, eDefValue>
 	{
 	public:
-		CDirection() {}
+        CDirection();// {}
 
-        virtual EDirection FromString(std::wstring &sValue)
-		{
+        virtual EDirection FromString(std::wstring &sValue);
+        /*{
             if      ( (L"ltr")  == sValue ) this->m_eValue = directionLTR;
             else if ( (L"rtl")  == sValue ) this->m_eValue = directionRTL;
             else                             this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring    ToString  () const
-		{
+        virtual std::wstring    ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case directionLTR : return (L"ltr");
 			case directionRTL : return (L"rtl");
 			default           : return (L"ltr");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EDirection)
 		SimpleType_Operator_Equal (CDirection)
@@ -1956,40 +1956,40 @@ namespace SimpleTypes
 	class CFFHelpTextVal
 	{
 	public:
-		CFFHelpTextVal() {}
+        CFFHelpTextVal();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void    SetValue(std::wstring &sValue)
-		{
+        void    SetValue(std::wstring &sValue);
+        /*{
             if ( sValue.length() <= 256 )
 				m_sValue = sValue;
 			else
                 m_sValue = sValue.substr( 0, 256 );
-		}
+        }*/
 
 
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
             if ( sValue.length() <= 256 )
 				m_sValue = sValue;
 			else
                 m_sValue = sValue.substr( 0, 256 );
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
-		std::wstring ToXmlString() const
-		{
+        }*/
+        std::wstring ToXmlString() const;
+        /*{
 			return XmlUtils::EncodeXmlString(m_sValue);
-		}
+        }*/
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CFFHelpTextVal)
 	private:
@@ -2004,40 +2004,40 @@ namespace SimpleTypes
 	class CFFName
 	{
 	public:
-		CFFName() {}
+        CFFName();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void    SetValue(std::wstring &sValue)
-		{
+        void    SetValue(std::wstring &sValue);
+        /*{
             if ( sValue.length() <= 65 )
 				m_sValue = sValue;
 			else
                 m_sValue = sValue.substr( 0, 65 );
-		}
+        }*/
 
 
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
             if ( sValue.length() <= 65 )
 				m_sValue = sValue;
 			else
                 m_sValue = sValue.substr( 0, 65 );
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
-		std::wstring ToXmlString() const
-		{
+        }*/
+        std::wstring ToXmlString() const;
+        /*{
 			return XmlUtils::EncodeXmlString(m_sValue);
-		}
+        }*/
 		
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CFFName)
@@ -2053,40 +2053,41 @@ namespace SimpleTypes
 	class CFFStatusTextVal
 	{
 	public:
-		CFFStatusTextVal() {}
+        CFFStatusTextVal();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void SetValue(std::wstring &sValue)
-		{
+        void SetValue(std::wstring &sValue);
+        /*{
             if ( sValue.length() <= 140 )
 				m_sValue = sValue;
 			else
                 m_sValue = sValue.substr( 0, 140 );
-		}
+        }*/
 
-
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
             if ( sValue.length() <= 140 )
 				m_sValue = sValue;
 			else
                 m_sValue = sValue.substr( 0, 140 );
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString () const
-		{
+        std::wstring ToString () const;
+        /*{
 			return m_sValue;
-		}
-		std::wstring ToXmlString() const
-		{
+        }*/
+
+        std::wstring ToXmlString() const;
+        /*{
 			return XmlUtils::EncodeXmlString(m_sValue);
-		}
+        }*/
+
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CFFStatusTextVal)
 	private:
@@ -3545,36 +3546,36 @@ namespace SimpleTypes
 	class CMacroName
 	{
 	public:
-		CMacroName() {}
+        CMacroName();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void    SetValue(std::wstring &sValue)
-		{
+        void    SetValue(std::wstring &sValue);
+        /*{
             if ( sValue.length() <= 33 )
 				m_sValue = sValue;
 			else
                 m_sValue = sValue.substr( 0, 33 );
-		}
+        }*/
 
 
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
             if ( sValue.length() <= 33 )
 				m_sValue = sValue;
 			else
                 m_sValue = sValue.substr( 0, 33 );
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CMacroName)
@@ -4158,11 +4159,6 @@ namespace SimpleTypes
             return this->m_eValue;
         }*/
 	};
-
-
-
-
-
 
 	//--------------------------------------------------------------------------------
 	// ObjectDrawAspect 17.18.60 (Part 1)

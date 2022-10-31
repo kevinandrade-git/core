@@ -140,26 +140,28 @@ namespace SimpleTypes
 	{
 	public:
 
-		CAdjCoordinate() 
-		{
+        CAdjCoordinate();
+        /*{
             this->m_eValue = eDefValue;
-		} 
-		virtual void SetValue(double dValue)
-		{
+        }*/
+
+        virtual void SetValue(double dValue);
+        /*{
 			m_bUnit = false;
 			m_dValue = FromEmu(dValue);
-		}
-        virtual double  FromString(std::wstring &sValue)
-		{
+        }*/
+
+        virtual double  FromString(std::wstring &sValue);
+        /*{
             m_sGuide.clear();
 
 			Parse2( sValue );
 
 			return m_dValue;
-		}
+        }*/
 
-        virtual std::wstring ToString() const
-		{
+        virtual std::wstring ToString() const;
+        /*{
             if ( adjcoordinateCoord == this->m_eValue )
 			{
 				if ( m_bUnit )
@@ -175,24 +177,24 @@ namespace SimpleTypes
 			{
 				return m_sGuide;
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (double)
 		SimpleType_Operator_Equal (CAdjCoordinate)
 
-        std::wstring GetGuide() const
-		{
+        std::wstring GetGuide() const;
+        /*{
 			return m_sGuide;
-		}
+        }*/
 			
-		double GetValue() const
-		{
+        double GetValue() const;
+        /*{
 			return m_dValue;
-		}
-	private:
+        }*/
 
-        void Parse2(std::wstring &sValue)
-		{
+	private:
+        void Parse2(std::wstring &sValue);
+        /*{
 			Parse( sValue, 12700 );
 
 			bool bGuide = false;
@@ -231,7 +233,7 @@ namespace SimpleTypes
                 this->m_eValue = adjcoordinateCoord;
 				// Значение хранится в m_dValue
 			}
-		}
+        }*/
 
 	private:
 
