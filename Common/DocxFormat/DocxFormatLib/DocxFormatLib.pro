@@ -207,6 +207,13 @@ SOURCES += \
     ../Source/Common/SimpleTypes_Vml/Vml_Vector2D_1_65536.cpp \
     ../Source/Common/SimpleTypes_Vml/Vml_TableLimits.cpp \
     ../Source/Common/SimpleTypes_Vml/CssStyle.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Polygon2D_Units.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_1_65536_Or_Percentage.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Matrix.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Vector2D_Units_Or_Percentage.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_TextBoxInset.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Vector2D_Position.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_TableProperties.cpp \
     ../Source/Common/ComplexTypes/OnOff.cpp \
     ../Source/Common/ComplexTypes/OnOff2.cpp \
     ../Source/Common/ComplexTypes/String.cpp \

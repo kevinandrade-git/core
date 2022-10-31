@@ -4689,36 +4689,36 @@ namespace SimpleTypes
 		class CVml_TableProperties : public CSimpleType<int, nDefValue>
 		{
 		public:
-			CVml_TableProperties() {}
+            CVml_TableProperties();// {}
 
-			virtual int     FromString(std::wstring &sValue)
-			{
+            virtual int     FromString(std::wstring &sValue);
+            /*{
                 this->m_eValue = _wtoi( sValue.c_str() );
 
                 return this->m_eValue;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
                 std::wstring sResult = std::to_wstring( this->m_eValue);
 
 				return sResult;
-			}
+            }*/
 
-			bool IsTable() const
-			{
+            bool IsTable() const;
+            /*{
                     return ( this->m_eValue & 1 ? true : false );
-			}
+            }*/
 
-			bool IsPlaceholder() const
-			{
+            bool IsPlaceholder() const;
+            /*{
                     return ( this->m_eValue & 2 ? true : false );
-			}
+            }*/
 
-			bool IsBiDirectionalText() const
-			{
+            bool IsBiDirectionalText() const;
+            /*{
                     return ( this->m_eValue & 4 ? true : false );
-			}
+            }*/
 
 			SimpleType_FromString           (int)
 			SimpleType_Operator_Equal       (CVml_TableProperties)
@@ -4741,49 +4741,48 @@ namespace SimpleTypes
 		class CVml_Vector2D_Position
 		{
 		public:
-			CVml_Vector2D_Position() 
-			{
+            CVml_Vector2D_Position();
+            /*{
+            }*/
 
-			}
-
-			EVml_Vector2D_Position GetTypeX() const
-			{
+            EVml_Vector2D_Position GetTypeX() const;
+            /*{
 				return m_eTypeX;
-			}
-			EVml_Vector2D_Position GetTypeY() const
-			{
+            }*/
+            EVml_Vector2D_Position GetTypeY() const;
+            /*{
 				return m_eTypeY;
-			}
-			std::wstring GetIdX() const
-			{
+            }*/
+            std::wstring GetIdX() const;
+            /*{
 				return m_sIdX;
-			}
-			std::wstring GetIdY() const
-			{
+            }*/
+            std::wstring GetIdY() const;
+            /*{
 				return m_sIdY;
-			}
-			double					GetX() const
-			{
+            }*/
+            double					GetX() const;
+            /*{
 				return m_dX;
-			}
-			double					GetY() const
-			{
+            }*/
+            double					GetY() const;
+            /*{
 				return m_dY;
-			}
-			void   SetConstantX(double dX)
-			{
+            }*/
+            void   SetConstantX(double dX);
+            /*{
 				m_eTypeX = vmlvector2dposConstant;
 				m_dX     = dX;
-			}
+            }*/
 
-			void   SetConstantY(double dY)
-			{
+            void   SetConstantY(double dY);
+            /*{
 				m_eTypeY = vmlvector2dposConstant;
 				m_dY     = dY;
-			}
+            }*/
 
-			double FromString(std::wstring &sValue)
-			{
+            double FromString(std::wstring &sValue);
+            /*{
 				int nLen = (int)sValue.length();
 				if ( nLen <= 0 )
 					return 0;
@@ -4799,10 +4798,10 @@ namespace SimpleTypes
 				Parse( sSecond, false );
 
 				return 0;
-			}
+            }*/
 
-			std::wstring ToString  () const 
-			{
+            std::wstring ToString  () const;
+            /*{
 				std::wstring sResult;
 
 				switch ( m_eTypeX )
@@ -4833,15 +4832,15 @@ namespace SimpleTypes
 				};
 
 				return sResult;
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Vector2D_Position)
 
 		private:
 
-			void Parse(std::wstring &sValue, bool bFirst)
-			{
+            void Parse(std::wstring &sValue, bool bFirst);
+            /*{
 				EVml_Vector2D_Position eValue = vmlvector2dposConstant;
 				double dValue = 0.0;
 				std::wstring sId;
@@ -4919,7 +4918,7 @@ namespace SimpleTypes
 					m_sIdY   = sId;
 					m_dY     = dValue;
 				}
-			}
+            }*/
 
 		private:
 
@@ -4938,73 +4937,73 @@ namespace SimpleTypes
 		class CVml_Polygon2D_Units
 		{
 		public:
-			CVml_Polygon2D_Units() 
-			{
+            CVml_Polygon2D_Units();
+            /*{
 				m_wcDelimiter = 0x20;
-			}
-			CVml_Polygon2D_Units(const CVml_Polygon2D_Units &oOther)\
-			{
+            }*/
+            CVml_Polygon2D_Units(const CVml_Polygon2D_Units &oOther);
+            /*{
 				m_wcDelimiter = 0x20;
 				FromString( oOther.ToString() );
-			}
-			CVml_Polygon2D_Units(std::wstring &sValue)
-			{
+            }*/
+            CVml_Polygon2D_Units(std::wstring &sValue);
+            /*{
 				m_wcDelimiter = 0x20;
 				FromString( sValue );
-			}
-			CVml_Polygon2D_Units(const wchar_t* cwsValue)
-			{
+            }*/
+            CVml_Polygon2D_Units(const wchar_t* cwsValue);
+            /*{
 				m_wcDelimiter = 0x20;
 				FromString( cwsValue );
-			}
-			CVml_Polygon2D_Units(const std::wstring& wsStr)
-			{
+            }*/
+            CVml_Polygon2D_Units(const std::wstring& wsStr);
+            /*{
 				m_wcDelimiter = 0x20;
 				FromString( wsStr );
-			}
-			const CVml_Polygon2D_Units &operator =(std::wstring &sValue)
-			{
+            }*/
+            const CVml_Polygon2D_Units &operator =(std::wstring &sValue);
+            /*{
 				FromString( sValue );
 				return *this;
-			}
-			const CVml_Polygon2D_Units &operator =(const wchar_t* cwsString)
-			{
+            }*/
+            const CVml_Polygon2D_Units &operator =(const wchar_t* cwsString);
+            /*{
 				FromString( cwsString );
 				return *this;
-			}
-			const CVml_Polygon2D_Units &operator =(const std::wstring& wsStr)
-			{
+            }*/
+            const CVml_Polygon2D_Units &operator =(const std::wstring& wsStr);
+            /*{
 				FromString( wsStr );
 				return *this;
-			}
+            }*/
 
-			void SetDelimiter(wchar_t wcNew) 
-			{
+            void SetDelimiter(wchar_t wcNew);
+            /*{
 				m_wcDelimiter = wcNew;
-			}
-			double GetX(int nIndex) const
-			{
+            }*/
+            double GetX(int nIndex) const;
+            /*{
 				if ( nIndex < 0 || nIndex >= (int)m_arrPoints.size()  )
 					return 0;
 
 				return m_arrPoints[nIndex].dX;
-			}
-			double GetY(int nIndex) const
-			{
+            }*/
+            double GetY(int nIndex) const;
+            /*{
 				if ( nIndex < 0 || nIndex >= (int)m_arrPoints.size()  )
 					return 0;
 
 				return m_arrPoints[nIndex].dY;
-			}
+            }*/
 
-			void   AddPoint(double dX, double dY)
-			{
+            void   AddPoint(double dX, double dY);
+            /*{
 				TPoint oPt( dX, dY );
 				m_arrPoints.push_back( oPt );
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_arrPoints.clear();
 
 				int nLen = (int)sValue.length();
@@ -5039,10 +5038,10 @@ namespace SimpleTypes
 
 
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
 				std::wstring sResult;
 
 				for ( size_t nIndex = 0; nIndex < m_arrPoints.size(); nIndex++ )
@@ -5053,7 +5052,7 @@ namespace SimpleTypes
 				}
 
 				return sResult;
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 
@@ -5080,32 +5079,32 @@ namespace SimpleTypes
 		class CVml_1_65536_Or_Percentage
 		{
 		public:
-			CVml_1_65536_Or_Percentage() 
-			{
+            CVml_1_65536_Or_Percentage();
+            /*{
 				m_dValue = 0;
-			}
+            }*/
 
-			double GetValue() const
-			{
+            double GetValue() const;
+            /*{
 				return m_dValue;
-			}
+            }*/
 
-			void   SetValue(double dValue)
-			{
+            void   SetValue(double dValue);
+            /*{
 					m_dValue = (std::max)( 0.0, (std::min)( 1.0, dValue) );
-			}
+            }*/
 
-			void   SetValue(int nValue)
-			{
+            void   SetValue(int nValue);
+            /*{
 					m_dValue = (std::max)( 0.0, (std::min)( 65536.0, (double) nValue) ) / 65536.0;
-			}
-			void   SetPercentage(double dValue)
-			{
+            }*/
+            void   SetPercentage(double dValue);
+            /*{
 					m_dValue = (std::max)( 0.0, (std::min)( 100.0, dValue ) ) / 100.0;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				int nLen = (int)sValue.length();
 				if ( nLen <= 0 )
 					return 0;
@@ -5134,14 +5133,14 @@ namespace SimpleTypes
 				}
 
 				return m_dValue;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
                 std::wstring sResult = boost::lexical_cast<std::wstring>( m_dValue );
 
 				return sResult;
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_1_65536_Or_Percentage)
@@ -5156,87 +5155,87 @@ namespace SimpleTypes
 		class CVml_Matrix
 		{
 		public:
-			CVml_Matrix() 
-			{
+            CVml_Matrix();
+            /*{
 				ResetMatrix();
-			}
-			CVml_Matrix(const CVml_Matrix &oOther)\
-			{
+            }*/
+            CVml_Matrix(const CVml_Matrix &oOther);
+            /*{
 				ResetMatrix();
 				FromString( oOther.ToString() );
-			}
-			CVml_Matrix(std::wstring &sValue)
-			{
+            }*/
+            CVml_Matrix(std::wstring &sValue);
+            /*{
 				ResetMatrix();
 				FromString( sValue );
-			}
-			CVml_Matrix(const wchar_t* cwsValue)
-			{
+            }*/
+            CVml_Matrix(const wchar_t* cwsValue);
+            /*{
 				ResetMatrix();
 				FromString( cwsValue );
-			}
-			CVml_Matrix(const std::wstring& wsStr)
-			{
+            }*/
+            CVml_Matrix(const std::wstring& wsStr);
+            /*{
 				ResetMatrix();
 				FromString( wsStr );
-			}
-			const CVml_Matrix &operator =(std::wstring &sValue)
-			{
+            }*/
+            const CVml_Matrix &operator =(std::wstring &sValue);
+            /*{
 				FromString( sValue );
 				return *this;
-			}
-			const CVml_Matrix &operator =(const wchar_t* cwsString)
-			{
+            }*/
+            const CVml_Matrix &operator =(const wchar_t* cwsString);
+            /*{
 				FromString( cwsString );
 				return *this;
-			}
-			const CVml_Matrix &operator =(const std::wstring& wsStr)
-			{
+            }*/
+            const CVml_Matrix &operator =(const std::wstring& wsStr);
+            /*{
 				FromString( wsStr );
 				return *this;
-			}
+            }*/
 
-			void ResetMatrix() 
-			{
+            void ResetMatrix();
+            /*{
 				m_dSxx = 1; m_dSxy = 0;
 				m_dSyx = 0; m_dSyy = 1;
 				m_dPx  = 0; m_dPy  = 0;
-			}
-			void SetMatrix(double dSxx, double dSxy, double dSyx, double dSyy, double dPx, double dPy) 
-			{
+            }*/
+            void SetMatrix(double dSxx, double dSxy, double dSyx, double dSyy, double dPx, double dPy);
+            /*{
 				m_dSxx = dSxx; m_dSxy = dSxy;
 				m_dSyx = dSyx; m_dSyy = dSyy;
 				m_dPx  =  dPx; m_dPy  =  dPy;
-			}
+            }*/
 
-			double Get_Sxx() const
-			{
+            double Get_Sxx() const;
+            /*{
 				return m_dSxx;
-			}
-			double Get_Sxy() const
-			{
+            }*/
+            double Get_Sxy() const;
+            /*{
 				return m_dSxy;
-			}
-			double Get_Syx() const
-			{
+            }*/
+            double Get_Syx() const;
+            /*{
 				return m_dSyx;
-			}
-			double Get_Syy() const
-			{
+            }*/
+            double Get_Syy() const;
+            /*{
 				return m_dSyy;
-			}
+            }*/
 
-			double Get_Px() const
-			{
+            double Get_Px() const;
+            /*{
 				return m_dPx;
-			}
-			double Get_Py() const
-			{
+            }*/
+            double Get_Py() const;
+            /*{
 				return m_dPy;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				ResetMatrix();
 
 				int nLen = (int)sValue.length();
@@ -5317,14 +5316,14 @@ namespace SimpleTypes
 
 				nStartPos = nEndPos + 1;		
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
 				return	boost::lexical_cast<std::wstring>(m_dSxx) + L"," + boost::lexical_cast<std::wstring>(m_dSxy) + L"," +
 						boost::lexical_cast<std::wstring>(m_dSyx) + L"," + boost::lexical_cast<std::wstring>(m_dSyy) + L"," +
 						boost::lexical_cast<std::wstring>(m_dPx)	+ L"," + boost::lexical_cast<std::wstring>(m_dPy);
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 
@@ -5344,41 +5343,41 @@ namespace SimpleTypes
 		class CVml_Vector2D_Units_Or_Percentage
 		{
 		public:
-			CVml_Vector2D_Units_Or_Percentage() 
-			{
+            CVml_Vector2D_Units_Or_Percentage();
+            /*{
 				m_dX = 0;
 				m_dY = 0;
 				m_bUnitsX = true;
 				m_bUnitsY = true;
-			}
+            }*/
 
-			double GetX() const
-			{
+            double GetX() const;
+            /*{
 				return m_dX;
-			}
-			double GetY() const
-			{
+            }*/
+            double GetY() const;
+            /*{
 				return m_dY;
-			}
-			bool IsXinPoints() const
-			{
+            }*/
+            bool IsXinPoints() const;
+            /*{
 				return m_bUnitsX;
-			}
-			bool IsYinPoints() const
-			{
+            }*/
+            bool IsYinPoints() const;
+            /*{
 				return m_bUnitsY;
-			}
-			void SetValue_Points(double dX, double dY)
-			{
+            }*/
+            void SetValue_Points(double dX, double dY);
+            /*{
 				m_dX = dX;
 				m_dY = dY;
 
 				m_bUnitsX = true;
 				m_bUnitsY = true;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_dX = 0;
 				m_dY = 0;
 				m_bUnitsX = true;
@@ -5421,10 +5420,10 @@ namespace SimpleTypes
 				}
 
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
 				std::wstring sResult = boost::lexical_cast<std::wstring>(m_dX);
 
 				if ( m_bUnitsX )	sResult += L"pt,";
@@ -5436,7 +5435,7 @@ namespace SimpleTypes
 				else				sResult += L"%";
 
 				return sResult;
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Vector2D_Units_Or_Percentage)
@@ -5455,38 +5454,38 @@ namespace SimpleTypes
 		class CVml_TextBoxInset
 		{
 		public:
-			CVml_TextBoxInset() 
-			{
+            CVml_TextBoxInset();
+            /*{
 				Set( 0, 0, 0, 0 );
-			}
+            }*/
 
-			double GetLeft(int nIndex) const
-			{
+            double GetLeft(int nIndex) const;
+            /*{
 				return m_dLeft;
-			}
-			double GetTop(int nIndex) const
-			{
+            }*/
+            double GetTop(int nIndex) const;
+            /*{
 				return m_dTop;
-			}
-			double GetRight(int nIndex) const
-			{
+            }*/
+            double GetRight(int nIndex) const;
+            /*{
 				return m_dRight;
-			}
-			double GetBottom(int nIndex) const
-			{
+            }*/
+            double GetBottom(int nIndex) const;
+            /*{
 				return m_dBottom;
-			}
+            }*/
 
-			void Set(double dL, double dT, double dR, double dB)
-			{
+            void Set(double dL, double dT, double dR, double dB);
+            /*{
 				m_dLeft   = dL;
 				m_dTop    = dT;
 				m_dRight  = dR;
 				m_dBottom = dB;
-			}
+            }*/
 
-			double FromString(std::wstring &sValue)
-			{
+            double FromString(std::wstring &sValue);
+            /*{
 				Set( 0, 0, 0, 0 );
 
 				if ( sValue.empty())
@@ -5523,12 +5522,12 @@ namespace SimpleTypes
 				}
 
 				return 0;
-			}
+            }*/
 
-			std::wstring ToString  () const 
-			{
+            std::wstring ToString  () const;
+            /*{
 				return boost::lexical_cast<std::wstring>(m_dLeft) + L"pt," + boost::lexical_cast<std::wstring>(m_dTop) + L"pt," + boost::lexical_cast<std::wstring>(m_dRight) + L"pt,"+ boost::lexical_cast<std::wstring>(m_dBottom) + L"pt";
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_TextBoxInset)
