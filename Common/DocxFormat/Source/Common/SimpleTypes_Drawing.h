@@ -1045,23 +1045,23 @@ namespace SimpleTypes
     class CFixedPercentage 
     {
     public:
-        CFixedPercentage() 
-		{
+        CFixedPercentage();
+        /*{
 			m_dValue = 0;
-		}
+        }*/
 
-		double GetValue() const
-		{
+        double GetValue() const;
+        /*{
 			return m_dValue;
-		}
+        }*/
 
-		void   SetValue(double dValue)
-		{
+        void   SetValue(double dValue);
+        /*{
             m_dValue = (std::min)( 100.0, (std::max)( -100.0, dValue ) );
-		}
+        }*/
 
-        virtual double FromString(std::wstring &sValue)
-        {
+        virtual double FromString(std::wstring &sValue);
+        /*{
             int nPos = (int)sValue.find( '%' );
             int nLen = (int)sValue.length();
             if ( -1 == nPos || nPos != (int)sValue.length() - 1 || nLen <= 0  )
@@ -1079,12 +1079,12 @@ namespace SimpleTypes
                 m_dValue = (std::min)( 100.0, (std::max)( -100.0, XmlUtils::GetDouble( sValue.substr( 0, nLen - 1 ) ) ) );
 
             return m_dValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
 			return boost::lexical_cast<std::wstring>(m_dValue) + L"%";
-        }
+        }*/
 
         SimpleType_FromString2    (double)
         SimpleType_Operator_Equal (CFixedPercentage)
@@ -1191,30 +1191,30 @@ namespace SimpleTypes
 	class CGeomGuideFormula
 	{
 	public:
-		CGeomGuideFormula() {}
+        CGeomGuideFormula();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void    SetValue(std::wstring &sValue)
-		{
+        void    SetValue(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
-		}
+        }*/
 
 
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CGeomGuideFormula)
@@ -1236,30 +1236,30 @@ namespace SimpleTypes
 	class CGeomGuideName
 	{
 	public:
-		CGeomGuideName() {}
+        CGeomGuideName();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void    SetValue(std::wstring &sValue)
-		{
+        void    SetValue(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
-		}
+        }*/
 
 
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CGeomGuideName)
@@ -1937,23 +1937,23 @@ namespace SimpleTypes
     class CPercentage 
     {
     public:
-        CPercentage() 
-		{
+        CPercentage();
+        /*{
 			m_dValue = 0;
-		}
+        }*/
 
-		double GetValue() const
-		{
+        double GetValue() const;
+        /*{
 			return m_dValue;
-		}
+        }*/
 
-		void   SetValue(double dValue)
-		{
+        void   SetValue(double dValue);
+        /*{
 			m_dValue = dValue;
-		}
+        }*/
 
-        virtual double FromString(std::wstring &sValue)
-        {
+        virtual double FromString(std::wstring &sValue);
+        /*{
             //todo странно что если пришло значение от 0 до 1, то m_dValue от 0 до 1. В других случаях от 0 до 100
             int nPos = (int)sValue.find( '%' );
             int nLen = (int)sValue.length();
@@ -1983,18 +1983,18 @@ namespace SimpleTypes
             }
 
             return m_dValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
             return boost::lexical_cast<std::wstring>(m_dValue) + L"%";
-        }
-        virtual std::wstring ToStringDecimalNumber  () const
-		{
+        }*/
+        virtual std::wstring ToStringDecimalNumber  () const;
+        /*{
             std::wstring sResult = std::to_wstring( int(m_dValue * 1000.0) );
 
 			return sResult;
-		}
+        }*/
 
         SimpleType_FromString2    (double)
         SimpleType_Operator_Equal (CPercentage)
@@ -2105,20 +2105,20 @@ namespace SimpleTypes
     class CPositiveFixedPercentage 
     {
     public:
-        CPositiveFixedPercentage() {}
+        CPositiveFixedPercentage();// {}
 
-		double GetValue() const
-		{
+        double GetValue() const;
+        /*{
 			return m_dValue;
-		}
+        }*/
 
-		void   SetValue(double dValue)
-		{
+        void   SetValue(double dValue);
+        /*{
             m_dValue = (std::min)( 100.0, (std::max)( 0.0, dValue ) );
-		}
+        }*/
 
-        virtual double FromString(std::wstring &sValue)
-        {
+        virtual double FromString(std::wstring &sValue);
+        /*{
             int nPos = (int)sValue.find( '%' );
             int nLen = (int)sValue.length();
             if ( -1 == nPos || nPos != (int)sValue.length() - 1 || nLen <= 0  )
@@ -2136,12 +2136,12 @@ namespace SimpleTypes
                 m_dValue = (std::min)( 100.0, (std::max)( 0.0, XmlUtils::GetDouble( sValue.substr( 0, nLen - 1 )) ) );
 
             return m_dValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
 			return boost::lexical_cast<std::wstring>(m_dValue) + L"%";
-        }
+        }*/
 
         SimpleType_FromString2    (double)
         SimpleType_Operator_Equal (CPositiveFixedPercentage)
@@ -2156,20 +2156,20 @@ namespace SimpleTypes
     class CPositivePercentage 
     {
     public:
-        CPositivePercentage() {}
+        CPositivePercentage();// {}
 
-		double GetValue() const
-		{
+        double GetValue() const;
+        /*{
 			return m_dValue;
-		}
+        }*/
 
-		void   SetValue(double dValue)
-		{
+        void   SetValue(double dValue);
+        /*{
             m_dValue = (std::max)( 0.0, dValue );
-		}
+        }*/
 
-        virtual double FromString(std::wstring &sValue)
-        {
+        virtual double FromString(std::wstring &sValue);
+        /*{
             int nPos = (int)sValue.find( '%' );
             int nLen = (int)sValue.length();
             if ( -1 == nPos || nPos != (int)sValue.length() - 1 || nLen <= 0  )
@@ -2187,12 +2187,12 @@ namespace SimpleTypes
                 m_dValue = (std::max)( 0.0, XmlUtils::GetDouble( sValue.substr( 0, nLen - 1 ) ) );
 
             return m_dValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
 			return boost::lexical_cast<std::wstring>(m_dValue) + L"%";
-        }
+        }*/
 
         SimpleType_FromString2    (double)
         SimpleType_Operator_Equal (CPositivePercentage)
@@ -5231,26 +5231,26 @@ namespace SimpleTypes
 	//--------------------------------------------------------------------------------
     // TextFontScalePercentOrPercentString 20.1.10.67 (Part 1) + 12.1.2.5 (Part4)
 	//--------------------------------------------------------------------------------
-    class CTextFontScalePercentOrPercentString 
+    class CTextFontScalePercentOrPercentString
     {
     public:
-        CTextFontScalePercentOrPercentString() 
-		{
+        CTextFontScalePercentOrPercentString();
+        /*{
 			m_dValue = 0;
-		}
+        }*/
 
-		double GetValue() const
-		{
+        double GetValue() const;
+        /*{
 			return m_dValue;
-		}
+        }*/
 
-		void   SetValue(double dValue)
-		{
+        void   SetValue(double dValue);
+        /*{
 			m_dValue = dValue;
-		}
+        }*/
 
-        virtual double FromString(std::wstring &sValue)
-        {
+        virtual double FromString(std::wstring &sValue);
+        /*{
             int nPos = (int)sValue.find( '%' );
             int nLen = (int)sValue.length();
             if ( -1 == nPos || nPos != (int)sValue.length() - 1 || nLen <= 0  )
@@ -5268,12 +5268,12 @@ namespace SimpleTypes
                 m_dValue = XmlUtils::GetDouble( sValue.substr( 0, nLen - 1) );
 
             return m_dValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
 			return boost::lexical_cast<std::wstring>(m_dValue) + L"%";
-        }
+        }*/
 
         SimpleType_FromString2    (double)
         SimpleType_Operator_Equal (CTextFontScalePercentOrPercentString)
@@ -5681,23 +5681,23 @@ namespace SimpleTypes
     class CTextSpacingPercentOrPercentString
     {
     public:
-        CTextSpacingPercentOrPercentString() 
-		{
+        CTextSpacingPercentOrPercentString();
+        /*{
 			m_dValue = 0;
-		}
+        }*/
 
-		double GetValue() const
-		{
+        double GetValue() const;
+        /*{
 			return m_dValue;
-		}
+        }*/
 
-		void   SetValue(double dValue)
-		{
+        void   SetValue(double dValue);
+        /*{
 			m_dValue = dValue;
-		}
+        }*/
 
-        virtual double FromString(std::wstring &sValue)
-        {
+        virtual double FromString(std::wstring &sValue);
+        /*{
             int nPos = (int)sValue.find( '%' );
             int nLen = (int)sValue.length();
             if ( -1 == nPos || nPos != (int)sValue.length() - 1 || nLen <= 0  )
@@ -5714,12 +5714,12 @@ namespace SimpleTypes
                 m_dValue = XmlUtils::GetDouble( sValue.substr( 0, nLen - 1 ));
 
             return m_dValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
 			return boost::lexical_cast<std::wstring>(m_dValue) + L"%";
-        }
+        }*/
 
         SimpleType_FromString2    (double)
         SimpleType_Operator_Equal (CTextSpacingPercentOrPercentString)
@@ -5778,30 +5778,30 @@ namespace SimpleTypes
 	class CTextTypeface
 	{
 	public:
-		CTextTypeface() {}
+        CTextTypeface();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void    SetValue(std::wstring &sValue)
-		{
+        void    SetValue(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
-		}
+        }*/
 
 
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CTextTypeface)

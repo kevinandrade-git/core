@@ -75,30 +75,29 @@ namespace SimpleTypes
 	class CRelationshipId
 	{
 	public:
-		CRelationshipId() {}
+        CRelationshipId();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void    SetValue(const std::wstring &sValue)
-		{
+        void    SetValue(const std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
-		}
+        }*/
 
-
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CRelationshipId)
@@ -232,10 +231,10 @@ namespace SimpleTypes
 	class CGuid
 	{
 	public:
-		CGuid() {}
+        CGuid();// {}
 
-        bool    FromString(std::wstring &sValue)
-		{
+        bool    FromString(std::wstring &sValue);
+        /*{
 			// GUID "{00000000-5BD2-4BC8-9F70-7020E1357FB2}"
 
 			TGuid oZeroGUID = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -316,36 +315,36 @@ namespace SimpleTypes
 			m_oGUID.k = (unsigned char)unTemp;
 
 			return true;
-		}
+        }*/
 
-		bool    FromString(const std::wstring& wsStr)
-		{
+        bool    FromString(const std::wstring& wsStr);
+        /*{
 			// TO DO: переделать
             std::wstring sTemp( wsStr.c_str() );
             return FromString( (std::wstring &)sTemp );
-		}
-        bool    FromString(const wchar_t* cwsStr)
-        {
+        }*/
+        bool    FromString(const wchar_t* cwsStr);
+        /*{
             std::wstring wsStr = cwsStr;
             return FromString( (const std::wstring&)wsStr );
-        }
-        std::wstring ToString  () const
-		{
+        }*/
+        std::wstring ToString  () const;
+        /*{
 			std::wstringstream sstream;
 			sstream << boost::wformat( L"{%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}" ) % m_oGUID.a % m_oGUID.b % m_oGUID.c % m_oGUID.d % m_oGUID.e % m_oGUID.f % m_oGUID.g % m_oGUID.h % m_oGUID.i % m_oGUID.j % m_oGUID.k;
 			return sstream.str();
-		}
+        }*/
 
 		SimpleType_Operator_Equal (CGuid)
 
-		bool IsZero()
-		{
+        bool IsZero();
+        /*{
 			return 0 == m_oGUID.a && 0 == m_oGUID.b && 0 == m_oGUID.c && 0 == m_oGUID.d && 0 == m_oGUID.e && 0 == m_oGUID.f && 0 == m_oGUID.g && 0 == m_oGUID.h && 0 == m_oGUID.i && 0 == m_oGUID.j && 0 == m_oGUID.k;
-		}
+        }*/
 	private:
 
-        bool HexToInt(std::wstring& sValue, T_ULONG64& unResult)
-		{
+        bool HexToInt(std::wstring& sValue, T_ULONG64& unResult);
+        /*{
 			bool bResult = true;
 
 			unResult = 0;
@@ -355,10 +354,10 @@ namespace SimpleTypes
 			}
 
 			return bResult;
-		}
+        }*/
 
-		int	 HexToInt(int nHex, bool &bResult)
-		{
+        int	 HexToInt(int nHex, bool &bResult);
+        /*{
 			if ( nHex >= '0' && nHex <= '9' ) return (nHex - '0');
 			if ( nHex >= 'a' && nHex <= 'f' ) return (nHex - 'a' + 10);
 			if ( nHex >= 'A' && nHex <= 'F' ) return (nHex - 'A' + 10);
@@ -366,7 +365,7 @@ namespace SimpleTypes
 			bResult = false;
 
 			return 0;
-		}
+        }*/
 
 
 	public:
@@ -728,21 +727,20 @@ namespace SimpleTypes
 	class CPanose
 	{
 	public:
-		CPanose() {}
+        CPanose();// {}
 
-        std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-        void    SetValue(std::wstring &sValue)
-		{
+        void    SetValue(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
-		}
+        }*/
 
-
-        std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
             if ( 20 > sValue.length() )
 			{
 				m_sValue = sValue;
@@ -759,18 +757,18 @@ namespace SimpleTypes
 			}
 
 			return m_sValue;
-		}
+        }*/
 
-        std::wstring ToString  () const
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
         SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CPanose)
 
-		unsigned char Get_Number(int nIndex)
-		{
+        unsigned char Get_Number(int nIndex);
+        /*{
             if ( m_sValue.length() < 20 )
 				return 0;
 
@@ -780,7 +778,7 @@ namespace SimpleTypes
 			unsigned int unChar2 = XmlUtils::GetDigit( m_sValue[2 * nIndex + 1] );
 
 			return (unChar2 + (unsigned char)(unChar1 << 4));
-		}
+        }*/
 
 	private:
 
@@ -801,24 +799,24 @@ namespace SimpleTypes
 	class CTwipsMeasure : public CUniversalMeasure
 	{
 	public:
-		CTwipsMeasure() {}
+        CTwipsMeasure();// {}
 
-        virtual double  FromString(std::wstring &sValue)
-		{
+        virtual double  FromString(std::wstring &sValue);
+        /*{
 			Parse(sValue, 20);
 
 			// В данном типе только положительные числа
 			m_dValue = fabs( m_dValue );
 
 			return m_dValue;
-		}
-		virtual void SetValue(double dValue)
-		{
+        }*/
+        virtual void SetValue(double dValue);
+        /*{
 			m_bUnit = false;
 			m_dValue = FromTwips(dValue);
-		}
-        virtual std::wstring ToString() const
-		{
+        }*/
+        virtual std::wstring ToString() const;
+        /*{
             std::wstring sResult;
 
 			if ( m_bUnit )
@@ -827,18 +825,18 @@ namespace SimpleTypes
                 sResult = std::to_wstring( (int)(m_dValue * 20) );
 
 			return sResult;
-		}
+        }*/
 
-		virtual double FromPoints(double dValue)
-		{
+        virtual double FromPoints(double dValue);
+        /*{
 			m_dValue = fabs( dValue );
 			return m_dValue;
-		}
-		virtual double FromInches(double dValue)
-		{
+        }*/
+        virtual double FromInches(double dValue);
+        /*{
 			m_dValue = fabs( dValue ) * 72;
 			return m_dValue;
-		}
+        }*/
 
 
   

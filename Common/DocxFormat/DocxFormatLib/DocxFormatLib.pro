@@ -119,6 +119,10 @@ SOURCES += \
     ../Source/Common/SimpleTypes_Shared/Bool.cpp \
     ../Source/Common/SimpleTypes_Shared/XAlign.cpp \
     ../Source/Common/SimpleTypes_Shared/YAlign.cpp \
+    ../Source/Common/SimpleTypes_Shared/RelationshipId.cpp \
+    ../Source/Common/SimpleTypes_Shared/Guid.cpp \
+    ../Source/Common/SimpleTypes_Shared/Panose.cpp \
+    ../Source/Common/SimpleTypes_Shared/TwipsMeasure.cpp \
     ../Source/Common/SimpleTypes_Word/Border.cpp \
     ../Source/Common/SimpleTypes_Word/NumberFormat.cpp \
     ../Source/Common/SimpleTypes_Word/DocPartGallery.cpp \
@@ -165,6 +169,15 @@ SOURCES += \
     ../Source/Common/SimpleTypes_Drawing/PositionOffset.cpp \
     ../Source/Common/SimpleTypes_Drawing/TextMargin.cpp \
     ../Source/Common/SimpleTypes_Drawing/BoolOperator.cpp \
+    ../Source/Common/SimpleTypes_Drawing/FixedPercentage.cpp \
+    ../Source/Common/SimpleTypes_Drawing/GeomGuideFormula.cpp \
+    ../Source/Common/SimpleTypes_Drawing/CGeomGuideName.cpp \
+    ../Source/Common/SimpleTypes_Drawing/Percentage.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PositiveFixedPercentage.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PositivePercentage.cpp \
+    ../Source/Common/SimpleTypes_Drawing/TextFontScalePercentOrPercentString.cpp \
+    ../Source/Common/SimpleTypes_Drawing/TextSpacingPercentOrPercentString.cpp \
+    ../Source/Common/SimpleTypes_Drawing/TextTypeface.cpp \
     ../Source/Common/SimpleTypes_OMath/BreakBin.cpp \
     ../Source/Common/SimpleTypes_OMath/BreakBinSub.cpp \
     ../Source/Common/SimpleTypes_OMath/FType.cpp \
@@ -179,6 +192,21 @@ SOURCES += \
     ../Source/Common/SimpleTypes_OMath/Style.cpp \
     ../Source/Common/SimpleTypes_OMath/TopBot.cpp \
     ../Source/Common/SimpleTypes_OMath/UnSignedInteger.cpp \
+    ../Source/Common/SimpleTypes_Vml/CalloutDrop.cpp \
+    ../Source/Common/SimpleTypes_Vml/ContentType.cpp \
+    ../Source/Common/SimpleTypes_Vml/VmlPath.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_1_65536.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Vector3D_65536.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Vector3D.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Vector2D.cpp \
+    ../Source/Common/SimpleTypes_Vml/CssProperty.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Polygon2D.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Vector2D_F.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Vector2D_Units.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Vector2D_Percentage.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_Vector2D_1_65536.cpp \
+    ../Source/Common/SimpleTypes_Vml/Vml_TableLimits.cpp \
+    ../Source/Common/SimpleTypes_Vml/CssStyle.cpp \
     ../Source/Common/ComplexTypes/OnOff.cpp \
     ../Source/Common/ComplexTypes/OnOff2.cpp \
     ../Source/Common/ComplexTypes/String.cpp \

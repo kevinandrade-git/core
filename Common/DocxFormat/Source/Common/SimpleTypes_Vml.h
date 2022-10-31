@@ -1186,30 +1186,30 @@ namespace SimpleTypes
 	class CCalloutDrop
 	{
 	public:
-		CCalloutDrop() {}
+        CCalloutDrop();// {}
 
-		std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-		void    SetValue(std::wstring &sValue)
-		{
+        void    SetValue(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
-		}
+        }*/
 
 
-		std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
 
 			return m_sValue;
-		}
+        }*/
 
-		std::wstring ToString  () const 
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
 		SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CCalloutDrop)
@@ -1398,30 +1398,30 @@ namespace SimpleTypes
 	class CContentType
 	{
 	public:
-		CContentType() {}
+        CContentType();// {}
 
-		std::wstring GetValue() const
-		{
+        std::wstring GetValue() const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
-		void    SetValue(std::wstring &sValue)
-		{
+        void    SetValue(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
-		}
+        }*/
 
 
-		std::wstring FromString(std::wstring &sValue)
-		{
+        std::wstring FromString(std::wstring &sValue);
+        /*{
 			m_sValue = sValue;
 
 			return m_sValue;
-		}
+        }*/
 
-		std::wstring ToString  () const 
-		{
+        std::wstring ToString  () const;
+        /*{
 			return m_sValue;
-		}
+        }*/
 
 		SimpleType_FromString2    (std::wstring)
 		SimpleType_Operator_Equal (CContentType)
@@ -2731,31 +2731,31 @@ namespace SimpleTypes
 		class CVmlPath
 		{
 		public:
-			CVmlPath() {}
+            CVmlPath();// {}
 
-			std::wstring GetValue() const
-			{
+            std::wstring GetValue() const;
+            /*{
 				return m_sValue;
-			}
+            }*/
 
-			void SetValue(std::wstring &sValue)
-			{
+            void SetValue(std::wstring &sValue);
+            /*{
 				m_sValue = sValue;
-			}
+            }*/
 
 
-			std::wstring FromString(std::wstring &sValue)
-			{
+            std::wstring FromString(std::wstring &sValue);
+            /*{
 				// TO DO: Сделать парсер пата Part4. 14.2.2.3
 				m_sValue = sValue;
 
 				return m_sValue;
-			}
+            }*/
 
-			std::wstring ToString  () const 
-			{
+            std::wstring ToString  () const;
+            /*{
 				return m_sValue;
-			}
+            }*/
 
 			SimpleType_FromString2    (std::wstring)
 			SimpleType_Operator_Equal (CVmlPath)
@@ -2909,28 +2909,28 @@ namespace SimpleTypes
 		class CVml_1_65536
 		{
 		public:
-			CVml_1_65536() 
-			{
+            CVml_1_65536();
+            /*{
 				m_dValue = 0;
-			}
+            }*/
 
-			double GetValue() const
-			{
+            double GetValue() const;
+            /*{
 				return m_dValue;
-			}
+            }*/
 
-			void SetValue(double dValue)
-			{
+            void SetValue(double dValue);
+            /*{
 					m_dValue = (std::max)( 0.0, (std::min)( 1.0, dValue) );
-			}
+            }*/
 
-			void SetValue(int nValue)
-			{
+            void SetValue(int nValue);
+            /*{
 					m_dValue = (std::max)( 0.0, (std::min)( 65536.0, (double) nValue) ) / 65536.0;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				int nLen = (int)sValue.length();
 				if ( nLen <= 0 )
 					return 0;
@@ -2951,14 +2951,14 @@ namespace SimpleTypes
 				}
 
 				return m_dValue;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
                 std::wstring sResult = boost::lexical_cast<std::wstring>( m_dValue );
 
 				return sResult;
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_1_65536)
@@ -2973,42 +2973,42 @@ namespace SimpleTypes
 		class CVml_Vector3D_65536
 		{
 		public:
-			CVml_Vector3D_65536() 
-			{
+            CVml_Vector3D_65536();
+            /*{
 				m_nX = 0;
 				m_nY = 0;
 				m_nZ = 0;
-			}
+            }*/
 
-			double GetX() const
-			{
+            double GetX() const;
+            /*{
 				return (double)(m_nX / 65536.0);
-			}
-			double GetY() const
-			{
+            }*/
+            double GetY() const;
+            /*{
 				return (double)(m_nY / 65536.0);
-			}
-			double GetZ() const
-			{
+            }*/
+            double GetZ() const;
+            /*{
 				return (double)(m_nZ / 65536.0);
-			}
+            }*/
 
-			void   SetValue(int nX, int nY, int nZ)
-			{
+            void   SetValue(int nX, int nY, int nZ);
+            /*{
 				m_nX = nX;
 				m_nY = nY;
 				m_nZ = nZ;
-			}
+            }*/
 
-			void   SetValue(double dX, double dY, double dZ)
-			{
+            void   SetValue(double dX, double dY, double dZ);
+            /*{
 				m_nX = (int)(dX * 65536);
 				m_nY = (int)(dY * 65536);
 				m_nZ = (int)(dZ * 65536);
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_nX = 0;
 				m_nY = 0;
 				m_nZ = 0;
@@ -3040,12 +3040,12 @@ namespace SimpleTypes
                     m_nZ = strZ.empty() ? 0 : _wtoi(strZ.c_str() );
 
 					return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
                 return std::to_wstring(m_nX) + L"," + std::to_wstring(m_nX) + std::to_wstring(m_nY) + L"," + std::to_wstring(m_nZ);
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Vector3D_65536)
@@ -3062,35 +3062,35 @@ namespace SimpleTypes
 		class CVml_Vector3D
 		{
 		public:
-			CVml_Vector3D() 
-			{
+            CVml_Vector3D();
+            /*{
 				m_nX = 0;
 				m_nY = 0;
 				m_nZ = 0;
-			}
+            }*/
 
-			int GetX() const
-			{
+            int GetX() const;
+            /*{
 				return m_nX;
-			}
-			int GetY() const
-			{
+            }*/
+            int GetY() const;
+            /*{
 				return m_nY;
-			}
-			int GetZ() const
-			{
+            }*/
+            int GetZ() const;
+            /*{
 				return m_nZ;
-			}
+            }*/
 
-			void   SetValue(int nX, int nY, int nZ)
-			{
+            void   SetValue(int nX, int nY, int nZ);
+            /*{
 				m_nX = nX;
 				m_nY = nY;
 				m_nZ = nZ;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_nX = 0;
 				m_nY = 0;
 				m_nZ = 0;
@@ -3132,12 +3132,12 @@ namespace SimpleTypes
                 m_nZ = strZ.empty() ? 0 : _wtoi(strZ.c_str() );
 
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
                 return std::to_wstring(m_nX) + L"," + std::to_wstring(m_nY) + L"," + std::to_wstring(m_nZ);
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Vector3D)
@@ -3154,29 +3154,29 @@ namespace SimpleTypes
 		class CVml_Vector2D
 		{
 		public:
-			CVml_Vector2D() 
-			{
+            CVml_Vector2D();
+            /*{
 				m_nX = 0;
 				m_nY = 0;
-			}
+            }*/
 
-			int GetX() const
-			{
+            int GetX() const;
+            /*{
 				return m_nX;
-			}
-			int GetY() const
-			{
+            }*/
+            int GetY() const;
+            /*{
 				return m_nY;
-			}
+            }*/
 
-			void   SetValue(int nX, int nY)
-			{
+            void   SetValue(int nX, int nY);
+            /*{
 				m_nX = nX;
 				m_nY = nY;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_nX = 0;
 				m_nY = 0;
 
@@ -3203,12 +3203,12 @@ namespace SimpleTypes
                 m_nY = strY.empty() ? 0 : _wtoi(strY.c_str() );
 
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
                 return std::to_wstring(m_nX) + L"," + std::to_wstring(m_nY);
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Vector2D)
@@ -3224,29 +3224,29 @@ namespace SimpleTypes
 		class CVml_Vector2D_F
 		{
 		public:
-			CVml_Vector2D_F() 
-			{
+            CVml_Vector2D_F();
+            /*{
 				m_dX = 0;
 				m_dY = 0;
-			}
+            }*/
 
-			double GetX() const
-			{
+            double GetX() const;
+            /*{
 				return m_dX;
-			}
-			double GetY() const
-			{
+            }*/
+            double GetY() const;
+            /*{
 				return m_dY;
-			}
+            }*/
 
-			void   SetValue(double dX, double dY)
-			{
+            void   SetValue(double dX, double dY);
+            /*{
 				m_dX = dX;
 				m_dY = dY;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_dX = 0;
 				m_dY = 0;
 
@@ -3271,12 +3271,12 @@ namespace SimpleTypes
                 m_dY = XmlUtils::GetDouble(strY);
 
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
 				return boost::lexical_cast<std::wstring>(m_dX) + L"," + boost::lexical_cast<std::wstring>(m_dY);
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Vector2D_F)
@@ -3292,37 +3292,39 @@ namespace SimpleTypes
 		class CVml_Polygon2D
 		{
 		public:
-			CVml_Polygon2D() 
-			{
-			}
-			int GetSize() const
-			{
-				return (int)m_arrPoints.size();
-			}
+            CVml_Polygon2D();
+            /*{
+            }*/
 
-			int GetX(int nIndex) const
-			{
+            int GetSize() const;
+            /*{
+				return (int)m_arrPoints.size();
+            }*/
+
+            int GetX(int nIndex) const;
+            /*{
 				if ( nIndex < 0 || nIndex >= (int)m_arrPoints.size()  )
 					return 0;
 
 				return m_arrPoints[nIndex].nX;
-			}
-			int GetY(int nIndex) const
-			{
+            }*/
+
+            int GetY(int nIndex) const;
+            /*{
 				if ( nIndex < 0 || nIndex >= (int)m_arrPoints.size()  )
 					return 0;
 
 				return m_arrPoints[nIndex].nY;
-			}
+            }*/
 
-			void   AddPoint(int nX, int nY)
-			{
+            void   AddPoint(int nX, int nY);
+            /*{
 				TPoint oPt( nX, nY );
 				m_arrPoints.push_back( oPt );
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_arrPoints.clear();
 
 				int nLen = (int)sValue.length();
@@ -3357,10 +3359,10 @@ namespace SimpleTypes
 
 
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
 				std::wstring sResult;
 
 				for ( size_t nIndex = 0; nIndex < m_arrPoints.size(); nIndex++ )
@@ -3371,7 +3373,7 @@ namespace SimpleTypes
 				}
 
 				return sResult;
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Polygon2D)
@@ -3676,38 +3678,38 @@ namespace SimpleTypes
 			ECssVTextSpacingMode eVTextSpacingMode;
 			ECssVTextAlign       eHTextAlign;
 		};
+
 		class CCssProperty
 		{
 		public:
 
-			CCssProperty()
-			{
+            CCssProperty();
+            /*{
 				m_eType = cssptUnknown;
-			}
+            }*/
 
-			CCssProperty(std::wstring sBuffer)
-			{
+            CCssProperty(std::wstring sBuffer);
+            /*{
 				Parse(sBuffer);
-			}
-			~CCssProperty()
-			{
-			}
+            }*/
+            ~CCssProperty();
+            /*{
+            }*/
 
-
-			const UCssValue &get_Value() const
-			{
+            const UCssValue &get_Value() const;
+            /*{
 				return m_oValue;
-			}
+            }*/
 
-			const ECssPropertyType &get_Type() const
-			{
+            const ECssPropertyType &get_Type() const;
+            /*{
 				return m_eType;
-			}
+            }*/
 
 		private:
 
-			void Parse(std::wstring &sBuffer)
-			{
+            void Parse(std::wstring &sBuffer);
+            /*{
                 int nPos = (int)sBuffer.find( ':' );
 				std::wstring sValue;
 
@@ -3958,25 +3960,25 @@ namespace SimpleTypes
 				case csspctMsoTopPercent				: ReadValue_Units( sValue); break;
 				case cssptHTextAlign					: ReadValue_VTextAlign( sValue ); break;
 				};
-			}
+            }*/
 
 		private:
 
-			void ReadValue_Unknown(std::wstring& sValue)
-			{
+            void ReadValue_Unknown(std::wstring& sValue);
+            /*{
 				// Ничего не делаем
-			}
-			void ReadValue_Flip(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_Flip(std::wstring& sValue);
+            /*{
 				if      ( _T("x")  == sValue ) m_oValue.eFlip = cssflipX;
 				else if ( _T("y")  == sValue ) m_oValue.eFlip = cssflipY;
 				else if ( _T("xy") == sValue ) m_oValue.eFlip = cssflipXY;
 				else if ( _T("yx") == sValue ) m_oValue.eFlip = cssflipYX;
 				else 
 					m_eType = cssptUnknown;
-			}
-			void ReadValue_Units(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_Units(std::wstring& sValue);
+            /*{
 				int nPos = -1;
 				if ( -1 != ( nPos = (int)sValue.find(_T("auto" ) ) ) )
 				{
@@ -4063,10 +4065,10 @@ namespace SimpleTypes
 						m_oValue.oValue.dValue = 0;
 					}
 					}
-			}
+            }*/
 
-			void ReadValue_MsoPosHor(std::wstring& sValue)
-			{
+            void ReadValue_MsoPosHor(std::wstring& sValue);
+            /*{
 				if      ( _T("absolute") == sValue ) m_oValue.eMsoPosHor = cssmsoposhorAbsolute;
 				else if ( _T("left")     == sValue ) m_oValue.eMsoPosHor = cssmsoposhorLeft;
 				else if ( _T("center")   == sValue ) m_oValue.eMsoPosHor = cssmsoposhorCenter;
@@ -4075,9 +4077,9 @@ namespace SimpleTypes
 				else if ( _T("outside")  == sValue ) m_oValue.eMsoPosHor = cssmsoposhorOutside;
 				else 
 					m_oValue.eMsoPosHor = cssmsoposhorAbsolute;
-			}
-			void ReadValue_MsoPosHorRel(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_MsoPosHorRel(std::wstring& sValue);
+            /*{
 				if      ( _T("left-margin-area")	== sValue )	m_oValue.eMsoPosHorRel = cssmsoposhorrelLeftMargin;
 				else if ( _T("right-margin-area")	== sValue )	m_oValue.eMsoPosHorRel = cssmsoposhorrelRightMargin;
 				else if ( _T("margin")				== sValue ) m_oValue.eMsoPosHorRel = cssmsoposhorrelMargin;
@@ -4086,9 +4088,9 @@ namespace SimpleTypes
 				else if ( _T("char")				== sValue ) m_oValue.eMsoPosHorRel = cssmsoposhorrelChar;
 				else 
 					m_oValue.eMsoPosHorRel = cssmsoposhorrelText;
-			}
-			void ReadValue_MsoPosVer(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_MsoPosVer(std::wstring& sValue);
+            /*{
 				if      ( _T("absolute") == sValue ) m_oValue.eMsoPosVer = cssmsoposverAbsolute;
 				else if ( _T("top")      == sValue ) m_oValue.eMsoPosVer = cssmsoposverTop;
 				else if ( _T("center")   == sValue ) m_oValue.eMsoPosVer = cssmsoposverCenter;
@@ -4097,9 +4099,9 @@ namespace SimpleTypes
 				else if ( _T("outside")  == sValue ) m_oValue.eMsoPosVer = cssmsoposverOutside;
 				else 
 					m_oValue.eMsoPosVer = cssmsoposverAbsolute;
-			}
-			void ReadValue_MsoPosVerRel(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_MsoPosVerRel(std::wstring& sValue);
+            /*{
 				if      ( _T("bottom-margin-area") == sValue )	m_oValue.eMsoPosVerRel = cssmsoposverrelBottomMargin;
 				else if ( _T("top-margin-area") == sValue )		m_oValue.eMsoPosVerRel = cssmsoposverrelTopMargin;
 				else if ( _T("margin") == sValue )				m_oValue.eMsoPosVerRel = cssmsoposverrelMargin;
@@ -4108,10 +4110,10 @@ namespace SimpleTypes
 				else if ( _T("line")   == sValue )				m_oValue.eMsoPosVerRel = cssmsoposverrelLine;
 				else 
 					m_oValue.eMsoPosVerRel = cssmsoposverrelText;
-			}
+            }*/
 
-            void ReadValue_Rotation(std::wstring& sValue)
-            {
+            void ReadValue_Rotation(std::wstring& sValue);
+            /*{
 				m_oValue.oValue.eType = cssunitstypeAbsolute;
 				m_oValue.oValue.dValue = XmlUtils::GetDouble( sValue );
 
@@ -4123,38 +4125,38 @@ namespace SimpleTypes
 				{
 					m_oValue.oValue.dValue /= 65536.;
 				}
-			}
-			void ReadValue_Boolean(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_Boolean(std::wstring& sValue);
+            /*{
 				if ( _T("true") == sValue || _T("t") == sValue || _T("1") == sValue ) 
 					m_oValue.bValue = true;
 				else
 					m_oValue.bValue = false;
-			}
-			void ReadValue_MsoWrapStyle(std::wstring& sValue)
-			{
-				if      ( _T("square") == sValue ) m_oValue.eMsoWrapStyle = cssmsowrapstyleSqaure;
+            }*/
+            void ReadValue_MsoWrapStyle(std::wstring& sValue);
+            /*{
+                if      ( _T("square") == sValue ) m_oValue.eMsoWrapStyle = cssmsowrapstyleSqaure;
 				else if ( _T("none")   == sValue ) m_oValue.eMsoWrapStyle = cssmsowrapstyleNone;
 				else 
 					m_oValue.eMsoWrapStyle = cssmsowrapstyleSqaure;
-			}
-			void ReadValue_Position(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_Position(std::wstring& sValue);
+            /*{
 				if      ( _T("static")   == sValue ) m_oValue.ePosition = csspositionStatic;
 				else if ( _T("absolute") == sValue ) m_oValue.ePosition = csspositionAbsolute;
 				else if ( _T("relative") == sValue ) m_oValue.ePosition = csspositionRelative;
 				else 
 					m_oValue.ePosition = csspositionAbsolute;
-			}
-			void ReadValue_Visibility(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_Visibility(std::wstring& sValue);
+            /*{
 				if      ( _T("hidden")  == sValue ) m_oValue.eVisibility = cssvisibilityHidden;
 				else if ( _T("inherit") == sValue ) m_oValue.eVisibility = cssvisibilityInherit;
 				else 
 					m_oValue.eVisibility = cssvisibilityInherit;
-			}
-			void ReadValue_ZIndex(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_ZIndex(std::wstring& sValue);
+            /*{
 				if      ( _T("auto")  == sValue ) m_oValue.oZIndex.eType = csszindextypeAuto;
 				else
 				{
@@ -4162,52 +4164,52 @@ namespace SimpleTypes
                     m_oValue.oZIndex.nOrder = _wtoi( sValue.c_str() );
 
 				}
-			}
-			void ReadValue_Direction(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_Direction(std::wstring& sValue);
+            /*{
 				if      ( _T("ltr") == sValue ) m_oValue.eDirection = cssdirectionLTR;
 				else if ( _T("rtl") == sValue ) m_oValue.eDirection = cssdirectionRTL;
 				else 
 					m_oValue.eDirection = cssdirectionLTR;
-			}
-			void ReadValue_LayoutFlow(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_LayoutFlow(std::wstring& sValue);
+            /*{
 				if      ( _T("horizontal")             == sValue ) m_oValue.eLayoutFlow = csslayoutflowHorizontal;
 				else if ( _T("vertical")					== sValue ) m_oValue.eLayoutFlow = csslayoutflowVertical;
 				else if ( _T("vertical-ideographic")   == sValue ) m_oValue.eLayoutFlow = csslayoutflowVerticalIdeographic;
 				else if ( _T("horizontal-ideographic") == sValue ) m_oValue.eLayoutFlow = csslayoutflowHorizontalIdeographic;
 				else 
 					m_oValue.eLayoutFlow = csslayoutflowHorizontal;
-			}
-			void ReadValue_DirectionAlt(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_DirectionAlt(std::wstring& sValue);
+            /*{
 				m_oValue.eDirectionAlt = cssdirectionaltContext;
-			}
-			void ReadValue_LayoutFlowAlt(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_LayoutFlowAlt(std::wstring& sValue);
+            /*{
 				m_oValue.eLayoutFlowAlt = csslayoutflowaltBottomToTop;
-			}
-			void ReadValue_String(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_String(std::wstring& sValue);
+            /*{
 				int nLen = (int)sValue.length();
 				if ( nLen > 127 )
 					return;
 
                 ::memcpy( m_oValue.wsValue, sValue.c_str(), nLen * sizeof( wchar_t ) );
 				m_oValue.wsValue[nLen] = '\0';
-			}
+            }*/
 
-			void ReadValue_MsoRotate(std::wstring& sValue)
-			{
+            void ReadValue_MsoRotate(std::wstring& sValue);
+            /*{
 				if      ( _T("0")   == sValue ) m_oValue.eRotate = cssmsorotate0;
 				else if ( _T("90")  == sValue ) m_oValue.eRotate = cssmsorotate90;
 				else if ( _T("180") == sValue ) m_oValue.eRotate = cssmsorotate180;
 				else if ( _T("-90") == sValue ) m_oValue.eRotate = cssmsorotate270;
 				else 
 					m_oValue.eRotate = cssmsorotate0;
-			}
-			void ReadValue_VTextAnchor(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_VTextAnchor(std::wstring& sValue);
+            /*{
 				if      ( _T("top")					   == sValue ) m_oValue.eVTextAnchor = cssvtextanchorTop;
 				else if ( _T("middle")					== sValue ) m_oValue.eVTextAnchor = cssvtextanchorMiddle;
 				else if ( _T("bottom")					== sValue ) m_oValue.eVTextAnchor = cssvtextanchorBottom;
@@ -4220,24 +4222,24 @@ namespace SimpleTypes
 				else if ( _T("bottom-center-baseline") == sValue ) m_oValue.eVTextAnchor = cssvtextanchorBottomCenterBaseline;
 				else 
 					m_oValue.eVTextAnchor = cssvtextanchorTop;
-			}
-			void ReadValue_FontStyle(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_FontStyle(std::wstring& sValue);
+            /*{
 				if      ( _T("normal")  == sValue ) m_oValue.eFontStyle = cssfontstyleNormal;
 				else if ( _T("italic")  == sValue ) m_oValue.eFontStyle = cssfontstyleItalic;
 				else if ( _T("oblique") == sValue ) m_oValue.eFontStyle = cssfontstyleOblique;
 				else 
 					m_oValue.eFontStyle = cssfontstyleNormal;
-			}
-			void ReadValue_FontVariant(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_FontVariant(std::wstring& sValue);
+            /*{
 				if      ( _T("normal")     == sValue ) m_oValue.eFontVariant = cssfontvariantNormal;
 				else if ( _T("small-caps") == sValue ) m_oValue.eFontVariant = cssfontvariantSmallCaps;
 				else 
 					m_oValue.eFontVariant = cssfontvariantNormal;
-			}
-			void ReadValue_FontWeight(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_FontWeight(std::wstring& sValue);
+            /*{
 				if      ( _T("normal")  == sValue ) m_oValue.eFontWeight = cssfontweightNormal;
 				else if ( _T("lighter") == sValue ) m_oValue.eFontWeight = cssfontweightLighter;
 				else if ( _T("100")     == sValue ) m_oValue.eFontWeight = cssfontweight100;
@@ -4253,9 +4255,9 @@ namespace SimpleTypes
 				else if ( _T("900")     == sValue ) m_oValue.eFontWeight = cssfontweight900;
 				else 
 					m_oValue.eFontWeight = cssfontweightNormal;
-			}
-			void ReadValue_TextDecoration(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_TextDecoration(std::wstring& sValue);
+            /*{
 				if      ( _T("none")         == sValue ) m_oValue.eTextDecoration = csstextdecorationNone;
 				else if ( _T("underline")    == sValue ) m_oValue.eTextDecoration = csstextdecorationUnderline;
 				else if ( _T("overline")     == sValue ) m_oValue.eTextDecoration = csstextdecorationOverline;
@@ -4263,9 +4265,9 @@ namespace SimpleTypes
 				else if ( _T("blink")        == sValue ) m_oValue.eTextDecoration = csstextdecorationBlink;
 				else 
 					m_oValue.eTextDecoration = csstextdecorationNone;
-			}
-			void ReadValue_VTextAlign(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_VTextAlign(std::wstring& sValue);
+            /*{
 				if      ( _T("left")            == sValue ) m_oValue.eVTextAlign = cssvtextalignLeft;
 				else if ( _T("right")           == sValue ) m_oValue.eVTextAlign = cssvtextalignRight;
 				else if ( _T("center")          == sValue ) m_oValue.eVTextAlign = cssvtextalignCenter;
@@ -4274,14 +4276,14 @@ namespace SimpleTypes
 				else if ( _T("stretch-justify") == sValue ) m_oValue.eVTextAlign = cssvtextalignStretchJustify;
 				else 
 					m_oValue.eVTextAlign = cssvtextalignLeft;
-			}
-			void ReadValue_VTextSpacingMode(std::wstring& sValue)
-			{
+            }*/
+            void ReadValue_VTextSpacingMode(std::wstring& sValue);
+            /*{
 				if      ( _T("tightening") == sValue ) m_oValue.eVTextSpacingMode = cssvtextspacingmodeTightening;
 				else if ( _T("tracking")   == sValue ) m_oValue.eVTextSpacingMode = cssvtextspacingmodeTracking;
 				else 
 					m_oValue.eVTextSpacingMode = cssvtextspacingmodeTightening;
-			}
+            }*/
 		private:
 
 
@@ -4301,35 +4303,37 @@ namespace SimpleTypes
 		class CCssStyle
 		{
 		public:
-			CCssStyle() 
-			{
-			}
-			~CCssStyle()
-			{
-				Clear();
-			}
-			void Clear()
-			{
-				m_arrProperties.clear();
-			}
+            CCssStyle();
+            /*{
+            }*/
 
-			std::wstring FromString(std::wstring &sValue)
-			{
+            ~CCssStyle();
+            /*{
+				Clear();
+            }*/
+
+            void Clear();
+            /*{
+				m_arrProperties.clear();
+            }*/
+
+            std::wstring FromString(std::wstring &sValue);
+            /*{
 				Clear();
 
 				m_sCss = sValue;
 				ParseProperties();
 
 				return m_sCss;
-			}
+            }*/
 
-			std::wstring ToString  () const 
-			{
+            std::wstring ToString  () const;
+            /*{
 				return m_sCss;
-			}
+            }*/
 
-			void mergeFrom(CCssStyle* parent)
-			{
+            void mergeFrom(CCssStyle* parent);
+            /*{
 				if (!parent) return;
 
 				for (std::map<ECssPropertyType, size_t>::iterator it = parent->m_mapProperties.begin(); it != parent->m_mapProperties.end(); ++it)
@@ -4341,15 +4345,15 @@ namespace SimpleTypes
 						m_mapProperties.insert(std::make_pair(it->first, m_arrProperties.size() - 1));
 					}
 				}
-			}
+            }*/
 
 			SimpleType_FromString2(std::wstring)
 			SimpleType_Operator_Equal(CCssStyle)
 
 		private:
 
-			bool ParseProperties()
-			{
+            bool ParseProperties();
+            /*{
 				std::wstring sTemp = m_sCss;
 				while ( false == sTemp.empty() )
 				{
@@ -4397,7 +4401,7 @@ namespace SimpleTypes
 				}
 
 				return true;
-			}
+            }*/
 
 		public:
 			std::map<ECssPropertyType, size_t>	m_mapProperties;
@@ -4410,29 +4414,29 @@ namespace SimpleTypes
 		class CVml_Vector2D_Units
 		{
 		public:
-			CVml_Vector2D_Units() 
-			{
+            CVml_Vector2D_Units();
+            /*{
 				m_dX = 0;
 				m_dY = 0;
-			}
+            }*/
 
-			double GetX() const
-			{
+            double GetX() const;
+            /*{
 				return m_dX;
-			}
-			double GetY() const
-			{
+            }*/
+            double GetY() const;
+            /*{
 				return m_dY;
-			}
+            }*/
 
-			void   SetValue(double dX, double dY)
-			{
+            void   SetValue(double dX, double dY);
+            /*{
 				m_dX = dX;
 				m_dY = dY;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_dX = 0;
 				m_dY = 0;
 
@@ -4455,12 +4459,12 @@ namespace SimpleTypes
 				m_dY = oPt2.GetValue();
 
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
 				return boost::lexical_cast<std::wstring>(m_dX) + L"," + boost::lexical_cast<std::wstring>(m_dY);
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Vector2D_Units)
@@ -4476,29 +4480,29 @@ namespace SimpleTypes
 		class CVml_Vector2D_Percentage
 		{
 		public:
-			CVml_Vector2D_Percentage() 
-			{
+            CVml_Vector2D_Percentage();
+            /*{
 				m_dX = 0;
 				m_dY = 0;
-			}
+            }*/
 
-			double GetX() const
-			{
+            double GetX() const;
+            /*{
 				return m_dX;
-			}
-			double GetY() const
-			{
+            }*/
+            double GetY() const;
+            /*{
 				return m_dY;
-			}
+            }*/
 
-			void   SetValue(double dX, double dY)
-			{
+            void   SetValue(double dX, double dY);
+            /*{
 				m_dX = dX;
 				m_dY = dY;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_dX = 0;
 				m_dY = 0;
 
@@ -4521,12 +4525,12 @@ namespace SimpleTypes
 				m_dY = oPerc2.GetValue();
 
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
 				return boost::lexical_cast<std::wstring>(m_dX) + L"%," + boost::lexical_cast<std::wstring>(m_dY) + L"%";
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Vector2D_Percentage)
@@ -4542,29 +4546,29 @@ namespace SimpleTypes
 		class CVml_Vector2D_1_65536
 		{
 		public:
-			CVml_Vector2D_1_65536() 
-			{
+            CVml_Vector2D_1_65536();
+            /*{
 				m_dX = 0;
 				m_dY = 0;
-			}
+            }*/
 
-			double GetX() const
-			{
+            double GetX() const;
+            /*{
 				return m_dX;
-			}
-			double GetY() const
-			{
+            }*/
+            double GetY() const;
+            /*{
 				return m_dY;
-			}
+            }*/
 
-			void   SetValue(double dX, double dY)
-			{
+            void   SetValue(double dX, double dY);
+            /*{
 				m_dX = dX;
 				m_dY = dY;
-			}
+            }*/
 
-			virtual double FromString(std::wstring &sValue)
-			{
+            virtual double FromString(std::wstring &sValue);
+            /*{
 				m_dX = 0;
 				m_dY = 0;
 
@@ -4587,12 +4591,12 @@ namespace SimpleTypes
 				m_dY = oFraction2.GetValue();
 
 				return 0;
-			}
+            }*/
 
-			virtual std::wstring ToString  () const 
-			{
+            virtual std::wstring ToString  () const;
+            /*{
 				return boost::lexical_cast<std::wstring>(m_dX) + L"," + boost::lexical_cast<std::wstring>(m_dY);
-			}
+            }*/
 
 			SimpleType_FromString2    (double)
 			SimpleType_Operator_Equal (CVml_Vector2D_1_65536)
@@ -4608,29 +4612,29 @@ namespace SimpleTypes
 		class CVml_TableLimits
 		{
 		public:
-			CVml_TableLimits() 
-			{
-			}
+            CVml_TableLimits();
+            /*{
+            }*/
 
-			unsigned int GetSize() const
-			{
+            unsigned int GetSize() const;
+            /*{
 				return (unsigned int)m_arrLimits.size();
-			}
-			double GetAt(int nIndex) const
-			{
+            }*/
+            double GetAt(int nIndex) const;
+            /*{
 				if ( nIndex < 0 || nIndex >= (int)m_arrLimits.size() )
 					return 0;
 
 				return m_arrLimits[nIndex];
-			}
+            }*/
 
-			void AddValue(double dValue)
-			{
+            void AddValue(double dValue);
+            /*{
 				m_arrLimits.push_back( dValue );
-			}
+            }*/
 
-			int FromString(std::wstring &sValue)
-			{
+            int FromString(std::wstring &sValue);
+            /*{
 				int nPos = 0;
 				int nLen = (int)sValue.length();
 
@@ -4656,10 +4660,10 @@ namespace SimpleTypes
 				}
 
 				return 0;
-			}
+            }*/
 
-			std::wstring ToString  () const 
-			{
+            std::wstring ToString  () const;
+            /*{
 				std::wstring sResult;
 
 				for ( unsigned int nIndex = 0; nIndex < m_arrLimits.size(); nIndex++ )
@@ -4668,7 +4672,7 @@ namespace SimpleTypes
 				}
 
 				return sResult;
-			}
+            }*/
 
 			SimpleType_FromString2    (int)
 			SimpleType_Operator_Equal (CVml_TableLimits)
