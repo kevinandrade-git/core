@@ -185,6 +185,31 @@ SOURCES += \
     ../Source/Common/SimpleTypes_Drawing/TextSpacingPercentOrPercentString.cpp \
     ../Source/Common/SimpleTypes_Drawing/TextTypeface.cpp \
     ../Source/Common/SimpleTypes_Drawing/AdjCoordinate.cpp \
+    ../Source/Common/SimpleTypes_Drawing/AdjAngle.cpp \
+    ../Source/Common/SimpleTypes_Drawing/Angle.cpp \
+    ../Source/Common/SimpleTypes_Drawing/AnimationBuildType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/AnimationChartBuildType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/AnimationChartOnlyBuildType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/AnimationDgmBuildType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/AnimationDgmOnlyBuildType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/BevelPresetType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/BlackWhiteMode.cpp \
+    ../Source/Common/SimpleTypes_Drawing/BlendMode.cpp \
+    ../Source/Common/SimpleTypes_Drawing/BlipCompression.cpp \
+    ../Source/Common/SimpleTypes_Drawing/CompoundLine.cpp \
+    ../Source/Common/SimpleTypes_Drawing/DrawingElementId.cpp \
+    ../Source/Common/SimpleTypes_Drawing/EffectContainerType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/FixedAngle.cpp \
+    ../Source/Common/SimpleTypes_Drawing/FontCollectionIndex.cpp \
+    ../Source/Common/SimpleTypes_Drawing/FOVAngle.cpp \
+    ../Source/Common/SimpleTypes_Drawing/LightRigDirection.cpp \
+    ../Source/Common/SimpleTypes_Drawing/LineCap.cpp \
+    ../Source/Common/SimpleTypes_Drawing/LineEndLength.cpp \
+    ../Source/Common/SimpleTypes_Drawing/LineEndType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/LineEndWidth.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PathFillMode.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PathShadeType.cpp \
+    ../Source/Common/SimpleTypes_Drawing/PenAlignment.cpp \
     ../Source/Common/SimpleTypes_OMath/BreakBin.cpp \
     ../Source/Common/SimpleTypes_OMath/BreakBinSub.cpp \
     ../Source/Common/SimpleTypes_OMath/FType.cpp \

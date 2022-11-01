@@ -53,23 +53,23 @@ namespace SimpleTypes
 	{
 	public:
 
-		CAdjAngle() 
-		{
+        CAdjAngle();
+        /*{
 			m_nAngle = 0;
-		} 
+        }*/
 
-        virtual EAdjAngle FromString(std::wstring &sValue)
-		{
+        virtual EAdjAngle FromString(std::wstring &sValue);
+        /*{
 			m_nAngle = 0;
             m_sGuide.clear();
 
 			Parse( sValue );
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring   ToString() const
-		{
+        virtual std::wstring   ToString() const;
+        /*{
             if ( adjangleAngle == this->m_eValue )
 			{
                 return std::to_wstring( m_nAngle );
@@ -78,25 +78,25 @@ namespace SimpleTypes
 			{
 				return m_sGuide;
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EAdjAngle)
 		SimpleType_Operator_Equal (CAdjAngle)
 
-		double  GetAngle() const
-		{
+        double  GetAngle() const;
+        /*{
 			return m_nAngle / 60000.0;
-		}
+        }*/
 
-        std::wstring GetGuide() const
-		{
+        std::wstring GetGuide() const;
+        /*{
 			return m_sGuide;
-		}
+        }*/
 
 	private:
 
-        void Parse(std::wstring &sValue)
-		{
+        void Parse(std::wstring &sValue);
+        /*{
 			bool bAngleValue = true;
 
             for ( size_t nIndex = 0; nIndex < sValue.length(); nIndex++ )
@@ -118,7 +118,7 @@ namespace SimpleTypes
                 this->m_eValue = adjangleGuide;
 				m_sGuide = sValue;
 			}
-		}
+        }*/
 
 
 		int				m_nAngle;
@@ -253,27 +253,27 @@ namespace SimpleTypes
 	{
 	public:
 
-		CAngle() {}
+        CAngle();// {}
 
-        virtual int     FromString(std::wstring &sValue)
-		{
+        virtual int     FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = _wtoi( sValue.c_str() );
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString() const
-		{
+        virtual std::wstring ToString() const;
+        /*{
             return std::to_wstring( this->m_eValue );
-		}
+        }*/
 
 		SimpleType_FromString     (int)
 		SimpleType_Operator_Equal (CAngle)
 
-		double  GetAngle() const
-		{
+        double  GetAngle() const;
+        /*{
             return this->m_eValue / 60000.0;
-		}
+        }*/
 
 	};
 
@@ -290,24 +290,24 @@ namespace SimpleTypes
 	class CAnimationBuildType : public CSimpleType<EAnimationBuildType, eDefValue>
 	{
 	public:
-		CAnimationBuildType() {}
+        CAnimationBuildType();// {}
 
-        virtual EAnimationBuildType FromString(std::wstring &sValue)
-		{
+        virtual EAnimationBuildType FromString(std::wstring &sValue);
+        /*{
             if      ( (L"allAtOnce") == sValue ) this->m_eValue = animationbuildtypeAllAtOnce;
             else                                  this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring             ToString  () const
-		{
+        virtual std::wstring             ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case animationbuildtypeAllAtOnce : return (L"allAtOnce");
 			default                          : return (L"allAtOnce");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EAnimationBuildType)
 		SimpleType_Operator_Equal (CAnimationBuildType)
@@ -330,10 +330,10 @@ namespace SimpleTypes
 	class CAnimationChartBuildType : public CSimpleType<EAnimationChartBuildType, eDefValue>
 	{
 	public:
-		CAnimationChartBuildType() {}
+        CAnimationChartBuildType();// {}
 
-        virtual EAnimationChartBuildType FromString(std::wstring &sValue)
-		{
+        virtual EAnimationChartBuildType FromString(std::wstring &sValue);
+        /*{
             if      ( (L"allAtOnce")  == sValue ) this->m_eValue = animationchartbuildtypeAllAtOnce;
             else if ( (L"category")   == sValue ) this->m_eValue = animationchartbuildtypeCategory;
             else if ( (L"categoryEl") == sValue ) this->m_eValue = animationchartbuildtypeCategoryEl;
@@ -342,10 +342,10 @@ namespace SimpleTypes
             else                                   this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring                  ToString  () const
-		{
+        virtual std::wstring                  ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case animationchartbuildtypeAllAtOnce  : return (L"allAtOnce");
@@ -355,7 +355,7 @@ namespace SimpleTypes
 			case animationchartbuildtypeSeriesEl   : return (L"seriesEl");
 			default                                : return (L"allAtOnce");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EAnimationChartBuildType)
 		SimpleType_Operator_Equal (CAnimationChartBuildType)
@@ -376,10 +376,10 @@ namespace SimpleTypes
 	class CAnimationChartOnlyBuildType : public CSimpleType<EAnimationChartOnlyBuildType, eDefValue>
 	{
 	public:
-		CAnimationChartOnlyBuildType() {}
+        CAnimationChartOnlyBuildType();// {}
 
-        virtual EAnimationChartOnlyBuildType FromString(std::wstring &sValue)
-		{
+        virtual EAnimationChartOnlyBuildType FromString(std::wstring &sValue);
+        /*{
             if      ( (L"category")   == sValue ) this->m_eValue = animationchartonlybuildtypeCategory;
             else if ( (L"categoryEl") == sValue ) this->m_eValue = animationchartonlybuildtypeCategoryEl;
             else if ( (L"series")     == sValue ) this->m_eValue = animationchartonlybuildtypeSeries;
@@ -387,10 +387,10 @@ namespace SimpleTypes
             else                                   this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring                      ToString  () const
-		{
+        virtual std::wstring                      ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case animationchartonlybuildtypeCategory   : return (L"category");
@@ -399,7 +399,7 @@ namespace SimpleTypes
 			case animationchartonlybuildtypeSeriesEl   : return (L"seriesEl");
 			default                                    : return (L"category");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EAnimationChartOnlyBuildType)
 		SimpleType_Operator_Equal (CAnimationChartOnlyBuildType)
@@ -423,10 +423,10 @@ namespace SimpleTypes
 	class CAnimationDgmBuildType : public CSimpleType<EAnimationDgmBuildType, eDefValue>
 	{
 	public:
-		CAnimationDgmBuildType() {}
+        CAnimationDgmBuildType();// {}
 
-        virtual EAnimationDgmBuildType FromString(std::wstring &sValue)
-		{
+        virtual EAnimationDgmBuildType FromString(std::wstring &sValue);
+        /*{
             if      ( (L"allAtOnce") == sValue ) this->m_eValue = animationdgmbuildtypeAllAtOnce;
             else if ( (L"lvlAtOnce") == sValue ) this->m_eValue = animationdgmbuildtypeLvlAtOnce;
             else if ( (L"lvlOne")    == sValue ) this->m_eValue = animationdgmbuildtypeLvlOne;
@@ -434,10 +434,10 @@ namespace SimpleTypes
             else                                  this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring                ToString  () const
-		{
+        virtual std::wstring                ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case animationdgmbuildtypeAllAtOnce : return (L"allAtOnce");
@@ -446,7 +446,7 @@ namespace SimpleTypes
 			case animationdgmbuildtypeOne       : return (L"one");
 			default                             : return (L"allAtOnce");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EAnimationDgmBuildType)
 		SimpleType_Operator_Equal (CAnimationDgmBuildType)
@@ -470,20 +470,20 @@ namespace SimpleTypes
 	class CAnimationDgmOnlyBuildType : public CSimpleType<EAnimationDgmOnlyBuildType, eDefValue>
 	{
 	public:
-		CAnimationDgmOnlyBuildType() {}
+        CAnimationDgmOnlyBuildType();// {}
 
-        virtual EAnimationDgmOnlyBuildType FromString(std::wstring &sValue)
-		{
+        virtual EAnimationDgmOnlyBuildType FromString(std::wstring &sValue);
+        /*{
             if      ( (L"lvlAtOnce") == sValue ) this->m_eValue = animationdgmonlybuildtypeLvlAtOnce;
             else if ( (L"lvlOne")    == sValue ) this->m_eValue = animationdgmonlybuildtypeLvlOne;
             else if ( (L"one")       == sValue ) this->m_eValue = animationdgmonlybuildtypeOne;
             else                                  this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring                    ToString  () const
-		{
+        virtual std::wstring                    ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case animationdgmonlybuildtypeLvlAtOnce : return (L"lvlAtOnce");
@@ -491,7 +491,7 @@ namespace SimpleTypes
 			case animationdgmonlybuildtypeOne       : return (L"one");
 			default                                 : return (L"lvlAtOnce");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EAnimationDgmOnlyBuildType)
 		SimpleType_Operator_Equal (CAnimationDgmOnlyBuildType)
@@ -520,10 +520,10 @@ namespace SimpleTypes
 	class CBevelPresetType : public CSimpleType<EBevelPresetType, eDefValue>
 	{
 	public:
-		CBevelPresetType() {}
+        CBevelPresetType();// {}
 
-        virtual EBevelPresetType FromString(std::wstring &sValue)
-		{
+        virtual EBevelPresetType FromString(std::wstring &sValue);
+        /*{
             if      ( (L"angle")        == sValue ) this->m_eValue = bevelpresettypeAngle;
             else if ( (L"artDeco")      == sValue ) this->m_eValue = bevelpresettypeArtDeco;
             else if ( (L"circle")       == sValue ) this->m_eValue = bevelpresettypeCircle;
@@ -539,10 +539,10 @@ namespace SimpleTypes
             else                                     this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring          ToString  () const
-		{
+        virtual std::wstring          ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case bevelpresettypeAngle        : return (L"angle");
@@ -559,7 +559,7 @@ namespace SimpleTypes
 			case bevelpresettypeSoftRound    : return (L"softRound");
 			default                          : return (L"angle");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EBevelPresetType)
 		SimpleType_Operator_Equal (CBevelPresetType)
@@ -588,10 +588,10 @@ namespace SimpleTypes
 	class CBlackWhiteMode : public CSimpleType<EBlackWhiteMode, eDefValue>
 	{
 	public:
-		CBlackWhiteMode() {}
+        CBlackWhiteMode();// {}
 
-        virtual EBlackWhiteMode FromString(std::wstring &sValue)
-		{
+        virtual EBlackWhiteMode FromString(std::wstring &sValue);
+        /*{
             if      ( (L"auto")       == sValue ) this->m_eValue = blackwhitemodeAuto;
             else if ( (L"black")      == sValue ) this->m_eValue = blackwhitemodeBlack;
             else if ( (L"blackGray")  == sValue ) this->m_eValue = blackwhitemodeBlackGray;
@@ -606,10 +606,10 @@ namespace SimpleTypes
             else                                   this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring         ToString  () const
-		{
+        virtual std::wstring         ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case blackwhitemodeAuto       : return (L"auto");
@@ -625,7 +625,7 @@ namespace SimpleTypes
 			case blackwhitemodeWhite      : return (L"white");
 			default                       : return (L"auto");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EBlackWhiteMode)
 		SimpleType_Operator_Equal (CBlackWhiteMode)
@@ -648,10 +648,10 @@ namespace SimpleTypes
 	class CBlendMode : public CSimpleType<EBlendMode, eDefValue>
 	{
 	public:
-		CBlendMode() {}
+        CBlendMode();// {}
 
-        virtual EBlendMode FromString(std::wstring &sValue)
-		{
+        virtual EBlendMode FromString(std::wstring &sValue);
+        /*{
             if      ( (L"darken")  == sValue ) this->m_eValue = blendmodeDarken;
             else if ( (L"lighten") == sValue ) this->m_eValue = blendmodeLighten;
             else if ( (L"mult")    == sValue ) this->m_eValue = blendmodeMult;
@@ -660,10 +660,10 @@ namespace SimpleTypes
             else                                this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring    ToString  () const
-		{
+        virtual std::wstring    ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case blendmodeDarken  : return (L"darken");
@@ -673,7 +673,7 @@ namespace SimpleTypes
 			case blendmodeScreen  : return (L"screen");
 			default               : return (L"mult");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EBlendMode)
 		SimpleType_Operator_Equal (CBlendMode)
@@ -696,10 +696,10 @@ namespace SimpleTypes
 	class CBlipCompression : public CSimpleType<EBlipCompression, eDefValue>
 	{
 	public:
-		CBlipCompression() {}
+        CBlipCompression();// {}
 
-        virtual EBlipCompression FromString(std::wstring &sValue)
-		{
+        virtual EBlipCompression FromString(std::wstring &sValue);
+        /*{
             if      ( (L"email")   == sValue ) this->m_eValue = blipcompressionEmail;
             else if ( (L"hqprint") == sValue ) this->m_eValue = blipcompressionHQPrint;
             else if ( (L"none")    == sValue ) this->m_eValue = blipcompressionNone;
@@ -708,10 +708,10 @@ namespace SimpleTypes
             else                                this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring          ToString  () const
-		{
+        virtual std::wstring          ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case blipcompressionEmail   : return (L"email");
@@ -721,7 +721,7 @@ namespace SimpleTypes
 			case blipcompressionScreen  : return (L"screen");
 			default                     : return (L"none");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EBlipCompression)
 		SimpleType_Operator_Equal (CBlipCompression)
@@ -828,10 +828,10 @@ namespace SimpleTypes
 	class CCompoundLine : public CSimpleType<ECompoundLine, eDefValue>
 	{
 	public:
-		CCompoundLine() {}
+        CCompoundLine();// {}
 
-        virtual ECompoundLine FromString(std::wstring &sValue)
-		{
+        virtual ECompoundLine FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -854,10 +854,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring       ToString  () const
-		{
+        virtual std::wstring       ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case compoundlineDbl:       return (L"dbl");			
@@ -867,7 +867,7 @@ namespace SimpleTypes
 			case compoundlineTri:       return (L"tri");			
 			default :                   return (L"sng");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ECompoundLine)
 		SimpleType_Operator_Equal (CCompoundLine)
@@ -932,21 +932,21 @@ namespace SimpleTypes
 	class CDrawingElementId : public CSimpleType<int, nDefValue>
     {
     public:
-        CDrawingElementId() {}
+        CDrawingElementId();// {}
 
-        virtual int     FromString(std::wstring &sValue)
-        {
+        virtual int     FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = _wtoi( sValue.c_str() );
 
             return this->m_eValue;
-        }
+        }*/
 
-        virtual std::wstring ToString  () const
-        {
+        virtual std::wstring ToString  () const;
+        /*{
             std::wstring sResult = std::to_wstring( this->m_eValue);
 
             return sResult;
-        }
+        }*/
 
         SimpleType_FromString2      (int)
             SimpleType_Operator_Equal   (CDrawingElementId)
@@ -965,10 +965,10 @@ namespace SimpleTypes
 	class CEffectContainerType : public CSimpleType<EEffectContainerType, eDefValue>
 	{
 	public:
-		CEffectContainerType() {}
+        CEffectContainerType();// {}
 
-        virtual EEffectContainerType FromString(std::wstring &sValue)
-		{
+        virtual EEffectContainerType FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -986,17 +986,17 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring              ToString  () const
-		{
+        virtual std::wstring              ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case effectcontainertypeSib:  return (L"sib");			
 			case effectcontainertypeTree: return (L"tree");		
 			default :                     return (L"sib");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EEffectContainerType)
 		SimpleType_Operator_Equal (CEffectContainerType)
@@ -1011,33 +1011,33 @@ namespace SimpleTypes
 	{
 	public:
 
-		CFixedAngle() {}
+        CFixedAngle();// {}
 
-		void SetValue(int nValue)
-		{
+        void SetValue(int nValue);
+        /*{
             this->m_eValue = (std::min)( 5400000, (std::max)( -5400000, nValue ) );
-		}
+        }*/
 
-        virtual int     FromString(std::wstring &sValue)
-		{
+        virtual int     FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = (std::min)( 5400000, (std::max)( -5400000, _wtoi( sValue.c_str() ) ) );
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString() const
-		{
+        virtual std::wstring ToString() const;
+        /*{
             std::wstring sResult = std::to_wstring( this->m_eValue );
 			return sResult;
-		}
+        }*/
 
 		SimpleType_FromString     (int)
 		SimpleType_Operator_Equal (CFixedAngle)
 
-		double  GetAngle() const
-		{
+        double  GetAngle() const;
+        /*{
             return this->m_eValue / 60000.0;
-		}
+        }*/
 
 	};
 
@@ -1109,10 +1109,10 @@ namespace SimpleTypes
 	class CFontCollectionIndex : public CSimpleType<EFontCollectionIndex, eDefValue>
 	{
 	public:
-		CFontCollectionIndex() {}
+        CFontCollectionIndex();// {}
 
-        virtual EFontCollectionIndex FromString(std::wstring &sValue)
-		{
+        virtual EFontCollectionIndex FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1131,10 +1131,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring              ToString  () const
-		{
+        virtual std::wstring              ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case fontcollectionindexMajor: return (L"major");			
@@ -1142,7 +1142,7 @@ namespace SimpleTypes
 			case fontcollectionindexNone : return (L"none");		
 			default                      : return (L"none");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EFontCollectionIndex)
 		SimpleType_Operator_Equal (CFontCollectionIndex)
@@ -1157,33 +1157,33 @@ namespace SimpleTypes
 	{
 	public:
 
-		CFOVAngle() {}
+        CFOVAngle();// {}
 
-		void SetValue(int nValue)
-		{
+        void SetValue(int nValue);
+        /*{
             this->m_eValue = (std::min)( 10800000, (std::max)( 0, nValue ) );
-		}
+        }*/
 
-        virtual int     FromString(std::wstring &sValue)
-		{
+        virtual int     FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = (std::min)( 10800000, (std::max)( 0, _wtoi( sValue.c_str() ) ) );
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString() const
-		{
+        virtual std::wstring ToString() const;
+        /*{
             std::wstring sResult = std::to_wstring( this->m_eValue );
 			return sResult;
-		}
+        }*/
 
 		SimpleType_FromString     (int)
 		SimpleType_Operator_Equal (CFOVAngle)
 
-		double  GetAngle() const
-		{
+        double  GetAngle() const;
+        /*{
             return this->m_eValue / 60000.0;
-		}
+        }*/
 
 	};
 
@@ -1290,10 +1290,10 @@ namespace SimpleTypes
 	class CLightRigDirection : public CSimpleType<ELightRigDirection, eDefValue>
 	{
 	public:
-		CLightRigDirection() {}
+        CLightRigDirection();// {}
 
-        virtual ELightRigDirection FromString(std::wstring &sValue)
-		{
+        virtual ELightRigDirection FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1321,10 +1321,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring            ToString  () const
-		{
+        virtual std::wstring            ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case lightrigdirectionB:  return (L"b");			
@@ -1337,7 +1337,7 @@ namespace SimpleTypes
 			case lightrigdirectionTR: return (L"tr");			
 			default :                 return (L"tr");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ELightRigDirection)
 		SimpleType_Operator_Equal (CLightRigDirection)
@@ -1494,10 +1494,10 @@ namespace SimpleTypes
 	class CLineCap : public CSimpleType<ELineCap, eDefValue>
 	{
 	public:
-		CLineCap() {}
+        CLineCap();// {}
 
-        virtual ELineCap FromString(std::wstring &sValue)
-		{
+        virtual ELineCap FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1518,10 +1518,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring  ToString  () const
-		{
+        virtual std::wstring  ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case linecapFlat: return (L"flat");			
@@ -1529,7 +1529,7 @@ namespace SimpleTypes
 			case linecapSq:   return (L"sq");			
 			default :         return (L"rnd");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ELineCap)
 		SimpleType_Operator_Equal (CLineCap)
@@ -1548,10 +1548,10 @@ namespace SimpleTypes
 	class CLineEndLength : public CSimpleType<ELineEndLength, eDefValue>
 	{
 	public:
-		CLineEndLength() {}
+        CLineEndLength();// {}
 
-        virtual ELineEndLength FromString(std::wstring &sValue)
-		{
+        virtual ELineEndLength FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1572,10 +1572,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring        ToString  () const
-		{
+        virtual std::wstring        ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case lineendlengthLarge:  return (L"lg");			
@@ -1583,7 +1583,7 @@ namespace SimpleTypes
 			case lineendlengthSmall:  return (L"sm");		
 			default :                 return (L"med");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ELineEndLength)
 		SimpleType_Operator_Equal (CLineEndLength)
@@ -1607,10 +1607,10 @@ namespace SimpleTypes
 	class CLineEndType : public CSimpleType<ELineEndType, eDefValue>
 	{
 	public:
-		CLineEndType() {}
+        CLineEndType();// {}
 
-        virtual ELineEndType FromString(std::wstring &sValue)
-		{
+        virtual ELineEndType FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1640,10 +1640,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring      ToString  () const
-		{
+        virtual std::wstring      ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case lineendtypeArrow:    return (L"arrow");			
@@ -1654,7 +1654,7 @@ namespace SimpleTypes
 			case lineendtypeTriangle: return (L"triangle");		
 			default :                 return (L"none");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ELineEndType)
 		SimpleType_Operator_Equal (CLineEndType)
@@ -1675,10 +1675,10 @@ namespace SimpleTypes
 	class CLineEndWidth : public CSimpleType<ELineEndWidth, eDefValue>
 	{
 	public:
-		CLineEndWidth() {}
+        CLineEndWidth();// {}
 
-        virtual ELineEndWidth FromString(std::wstring &sValue)
-		{
+        virtual ELineEndWidth FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1699,10 +1699,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring       ToString  () const
-		{
+        virtual std::wstring       ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case lineendwidthLarge:  return (L"lg");			
@@ -1710,7 +1710,7 @@ namespace SimpleTypes
 			case lineendwidthSmall:  return (L"sm");		
 			default :                return (L"med");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ELineEndWidth)
 		SimpleType_Operator_Equal (CLineEndWidth)
@@ -1780,10 +1780,10 @@ namespace SimpleTypes
 	class CPathFillMode : public CSimpleType<EPathFillMode, eDefValue>
 	{
 	public:
-		CPathFillMode() {}
+        CPathFillMode();// {}
 
-        virtual EPathFillMode FromString(std::wstring &sValue)
-		{
+        virtual EPathFillMode FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1807,10 +1807,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring       ToString  () const
-		{
+        virtual std::wstring       ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case pathfillmodeDarken:      return (L"darken");			
@@ -1821,7 +1821,7 @@ namespace SimpleTypes
 			case pathfillmodeNorm:        return (L"norm");		
 			default :                     return (L"none");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EPathFillMode)
 		SimpleType_Operator_Equal (CPathFillMode)
@@ -1842,10 +1842,10 @@ namespace SimpleTypes
 	class CPathShadeType : public CSimpleType<EPathShadeType, eDefValue>
 	{
 	public:
-		CPathShadeType() {}
+        CPathShadeType();// {}
 
-        virtual EPathShadeType FromString(std::wstring &sValue)
-		{
+        virtual EPathShadeType FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1866,10 +1866,10 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring        ToString  () const
-		{
+        virtual std::wstring        ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case pathshadetypeCircle: return (L"circle");			
@@ -1877,7 +1877,7 @@ namespace SimpleTypes
 			case pathshadetypeShape:  return (L"shape");		
 			default :                 return (L"rect");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EPathShadeType)
 		SimpleType_Operator_Equal (CPathShadeType)
@@ -1897,10 +1897,10 @@ namespace SimpleTypes
 	class CPenAlignment : public CSimpleType<EPenAlignment, eDefValue>
 	{
 	public:
-		CPenAlignment() {}
+        CPenAlignment();// {}
 
-        virtual EPenAlignment FromString(std::wstring &sValue)
-		{
+        virtual EPenAlignment FromString(std::wstring &sValue);
+        /*{
             this->m_eValue = eDefValue;
 
             if ( sValue.empty() )
@@ -1918,17 +1918,17 @@ namespace SimpleTypes
 			}
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring       ToString  () const
-		{
+        virtual std::wstring       ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case penalignmentCtr: return (L"ctr");			
 			case penalignmentIn:  return (L"in");			
 			default :             return (L"ctr");
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EPenAlignment)
 		SimpleType_Operator_Equal (CPenAlignment)
@@ -2005,6 +2005,7 @@ namespace SimpleTypes
 
 		double m_dValue;
     };
+
 	//--------------------------------------------------------------------------------
     // PositiveCoordinate 20.1.10.42 (Part 1)
 	//--------------------------------------------------------------------------------  
