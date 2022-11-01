@@ -49,7 +49,7 @@ SOURCES += \
     ../Source/DocxFormat/Logic/Sdt.cpp \
     ../Source/DocxFormat/Logic/SectionProperty.cpp \
     ../Source/DocxFormat/Logic/SmartTag.cpp \
-     ../Source/DocxFormat/Logic/Table.cpp \
+    ../Source/DocxFormat/Logic/Table.cpp \
     ../Source/DocxFormat/Logic/TableProperty.cpp \
     ../Source/DocxFormat/Logic/Vml.cpp \
     ../Source/DocxFormat/Logic/DocParts.cpp \
@@ -123,6 +123,12 @@ SOURCES += \
     ../Source/Common/SimpleTypes_Shared/Guid.cpp \
     ../Source/Common/SimpleTypes_Shared/Panose.cpp \
     ../Source/Common/SimpleTypes_Shared/TwipsMeasure.cpp \
+    ../Source/Common/SimpleTypes_Shared/CalendarType.cpp \
+    ../Source/Common/SimpleTypes_Shared/ConformanceClass.cpp \
+    ../Source/Common/SimpleTypes_Shared/HexColorRGB.cpp \
+    ../Source/Common/SimpleTypes_Shared/SdtAppearance.cpp \
+    ../Source/Common/SimpleTypes_Shared/UnsignedDecimalNumber.cpp \
+    ../Source/Common/SimpleTypes_Shared/VerticalAlignRun.cpp \
     ../Source/Common/SimpleTypes_Word/Border.cpp \
     ../Source/Common/SimpleTypes_Word/NumberFormat.cpp \
     ../Source/Common/SimpleTypes_Word/DocPartGallery.cpp \

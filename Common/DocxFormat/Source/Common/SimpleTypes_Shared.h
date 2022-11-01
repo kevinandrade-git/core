@@ -138,10 +138,10 @@ namespace SimpleTypes
 	class CCalendarType : public CSimpleType<ECalendarType, eDefValue>
 	{
 	public:
-		CCalendarType() {}
+        CCalendarType();// {}
 
-        virtual ECalendarType FromString(std::wstring &sValue)
-		{
+        virtual ECalendarType FromString(std::wstring &sValue);
+        /*{
             if      ( L"gregorian"            == sValue ) this->m_eValue = calendartypeGregorian;
             else if ( L"gregorianArabic"      == sValue ) this->m_eValue = calendartypeGregorianArabic;
             else if ( L"gregorianMeFrench"    == sValue ) this->m_eValue = calendartypeGregorianMeFrench;
@@ -159,10 +159,10 @@ namespace SimpleTypes
             else											this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring       ToString  () const
-		{
+        virtual std::wstring       ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case calendartypeGregorian            : return L"gregorian";
@@ -181,7 +181,7 @@ namespace SimpleTypes
 			case calendartypeThai                 : return L"thai";
 			default                               : return L"none";
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ECalendarType)
 		SimpleType_Operator_Equal (CCalendarType)
@@ -200,26 +200,26 @@ namespace SimpleTypes
 	class CConformanceClass : public CSimpleType<EConformanceClass, conformanceclassTransitional>
 	{
 	public:
-		CConformanceClass() {}
+        CConformanceClass();// {}
 
-        virtual EConformanceClass FromString(std::wstring &sValue)
-		{
+        virtual EConformanceClass FromString(std::wstring &sValue);
+        /*{
             if      ( L"strict"       == sValue )	this->m_eValue = conformanceclassStrict;
             else if ( L"transitional" == sValue )	this->m_eValue = conformanceclassTransitional;
             else									this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring           ToString  () const
-		{
+        virtual std::wstring           ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 			case conformanceclassStrict       : return L"strict";
 			case conformanceclassTransitional : return L"transitional";
 			default                           : return L"strict";
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EConformanceClass)
 		SimpleType_Operator_Equal (CConformanceClass)
@@ -393,16 +393,16 @@ namespace SimpleTypes
 	class CHexColorRGB : public CSimpleType<int, nDefValue>
 	{
 	public:
-		CHexColorRGB() 
-		{
+        CHexColorRGB();
+        /*{
 			m_unR = 0;
 			m_unG = 0;
 			m_unB = 0;
 			m_unA = 255;
-		}
+        }*/
 
-        virtual int     FromString(std::wstring &sValue)
-		{
+        virtual int     FromString(std::wstring &sValue);
+        /*{
             if ( 6 <= sValue.length() )
             {
                 std::wstring midString = sValue.substr( 0, 6 );
@@ -412,47 +412,48 @@ namespace SimpleTypes
                 this->m_eValue = nDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             return XmlUtils::IntToString(this->m_eValue, L"%06X");
-		}
+        }*/
 
 		SimpleType_FromString     (int)
 		SimpleType_Operator_Equal (CHexColorRGB)
-		unsigned char Get_R() const
-		{
+
+        unsigned char Get_R() const;
+        /*{
 			return m_unR;
-		}
-		unsigned char Get_G() const
-		{
+        }*/
+        unsigned char Get_G() const;
+        /*{
 			return m_unG;
-		}
+        }*/
 
-		unsigned char Get_B() const
-		{
+        unsigned char Get_B() const;
+        /*{
 			return m_unB;
-		}
-		unsigned char Get_A() const
-		{
+        }*/
+        unsigned char Get_A() const;
+        /*{
 			return m_unA;
-		}
+        }*/
 
-		void          Set_RGBA(unsigned char unR, unsigned char unG, unsigned char unB, unsigned char unA = 255)
-		{
+        void          Set_RGBA(unsigned char unR, unsigned char unG, unsigned char unB, unsigned char unA = 255);
+        /*{
 			m_unR = unR;
 			m_unG = unG;
 			m_unB = unB;
 			m_unA = unA;
 
             this->m_eValue = ((int)m_unR << 16) + ((int)m_unG << 8) + m_unB;
-		}
+        }*/
 
 	private:
 
-        void Parse(std::wstring& sValue)
-		{
+        void Parse(std::wstring& sValue);
+        /*{
             if ( sValue.length() < 6 )
 				return;
 
@@ -462,16 +463,16 @@ namespace SimpleTypes
 			m_unA = 255;
 
             this->m_eValue = ((int)m_unR << 16) + ((int)m_unG << 8) + m_unB;
-		}
+        }*/
 
-		int	HexToInt(int nHex)
-		{
+        int	HexToInt(int nHex);
+        /*{
 			if ( nHex >= '0' && nHex <= '9' ) return (nHex - '0');
 			if ( nHex >= 'a' && nHex <= 'f' ) return (nHex - 'a' + 10);
 			if ( nHex >= 'A' && nHex <= 'F' ) return (nHex - 'A' + 10);
 
 			return 0;
-		}
+        }*/
 
 	private:
 
@@ -845,9 +846,6 @@ namespace SimpleTypes
 		UniversalMeasure_AdditionalOpearators(CTwipsMeasure)
 	};
 
-
-
-
 	//--------------------------------------------------------------------------------
 	// UnsignedDecimalNumber 22.9.2.16 (Part 1)
 	//--------------------------------------------------------------------------------		
@@ -856,22 +854,22 @@ namespace SimpleTypes
 	class CUnsignedDecimalNumber : public CSimpleType<unsigned int, unDefValue>
 	{
 	public:
-		CUnsignedDecimalNumber() {}
+        CUnsignedDecimalNumber();// {}
 
-        CUnsignedDecimalNumber(const CUnsignedDecimalNumber& obj)
-        {
+        CUnsignedDecimalNumber(const CUnsignedDecimalNumber& obj);
+        /*{
             this->m_eValue = obj.m_eValue;
-        }
-        CUnsignedDecimalNumber(const unsigned int& val)
-        {
+        }*/
+        CUnsignedDecimalNumber(const unsigned int& val);
+        /*{
             this->m_eValue = val;
-        }
-        CUnsignedDecimalNumber(const _INT32& val)
-        {
+        }*/
+        CUnsignedDecimalNumber(const _INT32& val);
+        /*{
             this->m_eValue = (unsigned int)val;
-        }
-        virtual unsigned int FromString(std::wstring &sValue)
-		{
+        }*/
+        virtual unsigned int FromString(std::wstring &sValue);
+        /*{
 
             try
             {
@@ -892,12 +890,12 @@ namespace SimpleTypes
             }
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             return std::to_wstring( this->m_eValue);
-		}
+        }*/
 
 
         SimpleType_FromString     (unsigned int)
@@ -919,20 +917,20 @@ namespace SimpleTypes
 	class CVerticalAlignRun : public CSimpleType<EVerticalAlignRun, eDefValue>
 	{
 	public:
-		CVerticalAlignRun() {}
+        CVerticalAlignRun();// {}
 
-        virtual EVerticalAlignRun FromString(std::wstring &sValue)
-		{
+        virtual EVerticalAlignRun FromString(std::wstring &sValue);
+        /*{
 			if      ( L"baseline"    == sValue || L"None" == sValue)		this->m_eValue = verticalalignrunBaseline;
             else if ( L"subscript"   == sValue || L"Subscript" == sValue)	this->m_eValue = verticalalignrunSubscript;
             else if ( L"superscript" == sValue || L"Superscript" == sValue)	this->m_eValue = verticalalignrunSuperscript;
             else this->m_eValue = eDefValue;
 
             return this->m_eValue;
-		}
+        }*/
 
-        virtual std::wstring ToString  () const
-		{
+        virtual std::wstring ToString  () const;
+        /*{
             switch(this->m_eValue)
 			{
 				case verticalalignrunBaseline    : return L"baseline";
@@ -940,12 +938,11 @@ namespace SimpleTypes
 				case verticalalignrunSuperscript : return L"superscript";
 				default                          : return L"baseline";
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (EVerticalAlignRun)
 		SimpleType_Operator_Equal (CVerticalAlignRun)
 	};
-
 
 	//--------------------------------------------------------------------------------
 	// XAlign 22.9.2.18 (Part 1)
@@ -994,9 +991,6 @@ namespace SimpleTypes
 		SimpleType_FromString     (EXAlign)
 		SimpleType_Operator_Equal (CXAlign)
 	};
-
-
-
 
 	//--------------------------------------------------------------------------------
 	// YAlign 22.9.2.20 (Part 1)
@@ -1049,11 +1043,6 @@ namespace SimpleTypes
 		SimpleType_FromString     (EYAlign)
 		SimpleType_Operator_Equal (CYAlign)
 	};
-
-
-
-
-
 } // SimpleTypes
 
 // Здесь представлены все простые типы SharedML из спецификации Office Open Xml (15.1.2 - part 4)
@@ -1391,26 +1380,26 @@ namespace SimpleTypes
 	class CSdtAppearance : public CSimpleType<ESdtAppearance, eDefValue>
 	{
 	public:
-		CSdtAppearance() {}
+        CSdtAppearance();// {}
 
-		virtual ESdtAppearance FromString(std::wstring &sValue)
-		{
+        virtual ESdtAppearance FromString(std::wstring &sValue);
+        /*{
 			if      ( L"boundingBox"     == sValue )	this->m_eValue = sdtappearenceBoundingBox;
 			else if ( L"tags"  == sValue )	this->m_eValue = sdtappearenceTags;
 			else if ( L"hidden"  == sValue )	this->m_eValue = sdtappearenceHidden;
 
 			return this->m_eValue;
-		}
+        }*/
 
-		virtual std::wstring    ToString  () const
-		{
+        virtual std::wstring    ToString  () const;
+        /*{
 			switch(this->m_eValue)
 			{
 			case sdtappearenceTags : return L"tags";
 			case sdtappearenceHidden  : return L"hidden";
 			default           : return L"boundingBox";
 			}
-		}
+        }*/
 
 		SimpleType_FromString     (ESdtAppearance)
 		SimpleType_Operator_Equal (CSdtAppearance)
